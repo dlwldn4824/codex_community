@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "1.0",
+  "project": "VibeCheck",
+  "updatedAt": "2026-08-16",
+  "purpose": "Codex에 위임한 계획·구현·반복·오류 복구·검증 과정을 심사용으로 기록합니다.",
+  "principles": [
+    "Codex의 첫 결과를 그대로 채택하지 않고, 사람이 제품 방향과 사용자 경험을 검토합니다.",
+    "검증되지 않은 결과는 완료나 PASS로 기록하지 않습니다.",
+    "공개 GitHub 저장소는 읽기 전용으로 분석하며 원격 저장소에 변경을 보내지 않습니다."
+  ],
+  "workflow": [
+    {
+      "phase": "PLAN",
+      "objective": "파일 목록 중심의 스캐너가 아닌 서비스 기능·데이터·권한 흐름을 보여주는 보안 지도를 정의",
+      "codexRole": "저장소 분석, 보안 규칙, 사용자 흐름을 연결하는 구현 계획 수립",
+      "humanReview": "사용자가 기술 로그보다 서비스 구조와 위험한 정보 흐름을 먼저 이해해야 한다는 방향을 결정",
+      "evidence": [
+        { "type": "document", "path": "docs/CODEX_BUILD_LOG.md" },
+        { "type": "commit", "hash": "fd24ece", "message": "connect hybrid fact model and clarify graph risks" }
+      ],
+      "status": "COMPLETED"
+    },
+    {
+      "phase": "IMPLEMENT",
+      "objective": "공개 GitHub 저장소를 실제 복제하고 Semgrep 결과와 코드 사실을 서비스 보안 지도로 변환",
+      "codexRole": "읽기 전용 clone, 코드 구조·API·권한 관계 추출, Semgrep 실행, 위험 edge 자연어 설명 구현",
+      "outputs": [
+        "core/project-analysis.js",
+        "core/static-scan.js",
+        "public/force-graph.js",
+        "public/external-project.js"
+      ],
+      "evidence": [
+        { "type": "commit", "hash": "b1f74b5", "message": "GitHub 공개 저장소 clone과 구조 분석" },
+        { "type": "commit", "hash": "0a526e9", "message": "기능별 노드와 데이터 흐름 edge 기반 보안 지도" },
+        { "type": "tool", "name": "Semgrep", "mode": "실제 정적 분석" }
+      ],
+      "status": "COMPLETED"
+    },
+    {
+      "phase": "REVIEW",
+      "objective": "초기 그래프가 분석 파이프라인처럼 보이고 사용자가 이해하기 어렵다는 문제를 검토",
+      "codexRole": "파일/API/Auth 중심 표현을 서비스 기능·데이터 흐름 표현으로 재설계",
+      "humanFeedback": "노드는 홈·로그인·프로필·외부 연동처럼 서비스 기능으로, edge는 로그인 정보 전달·개인정보 반환처럼 정보 이동으로 표시",
+      "evidence": [
+        { "type": "commit", "hash": "95a0276", "message": "focus security map on risky flows" },
+        { "type": "commit", "hash": "01eaed2", "message": "clarify about page copy" }
+      ],
+      "status": "COMPLETED"
+    },
+    {
+      "phase": "RECOVER",
+      "objective": "라우팅·그래프 확대/축소·재점검 진입처럼 실제 사용 중 발견된 오류를 수정",
+      "codexRole": "원인 확인, UI/라우팅 수정, 재검증 흐름 복구",
+      "recoveries": [
+        {
+          "issue": "GitHub URL을 입력해도 분석 결과가 보안 지도로 이동하지 않음",
+          "fix": "GitHub URL은 /api/analyze-project로 보내고 결과 페이지로 연결",
+          "evidence": { "type": "commit", "hash": "8f00a44", "message": "route GitHub analysis to security map" }
+        },
+        {
+          "issue": "브라우저 뒤로 가기에서 이전 #recheck 화면이 노출됨",
+          "fix": "오래된 recheck/reverify 해시를 홈으로 정리",
+          "evidence": { "type": "commit", "hash": "8c1b5ad", "message": "reset stale recheck routes to home" }
+        },
+        {
+          "issue": "수정안과 재점검 버튼이 화면에서 보이지 않음",
+          "fix": "해결 방법과 재점검 목록 양쪽에 다음 단계 버튼을 배치",
+          "evidence": { "type": "commit", "hash": "2802f7b", "message": "keep recheck actions visible in repair flow" }
+        }
+      ],
+      "status": "COMPLETED"
+    },
+    {
+      "phase": "VERIFY",
+      "objective": "로컬 Golden Demo와 공개 GitHub 분석 결과를 구분하여 검증",
+      "codexRole": "테스트 실행, 실제 HTTP 증거 수집, 동일 요청 재실행, Semgrep 재실행 결과 표시",
+      "checks": [
+        {
+          "name": "Golden Demo",
+          "scope": "승인된 로컬 테스트 대상",
+          "flow": "HTTP 200 증거 → BAC-001 위반 → 사람 승인 → 패치 → 동일 요청 HTTP 403 → PASS",
+          "status": "IMPLEMENTED"
+        },
+        {
+          "name": "공개 GitHub 저장소 분석",
+          "scope": "읽기 전용 임시 복제본",
+          "flow": "clone → 코드 구조 분석 → Semgrep → 서비스 보안 지도 → 수정안 검토",
+          "status": "IMPLEMENTED"
+        },
+        {
+          "name": "외부 저장소 수정 후 검증",
+          "scope": "새 로컬 복제본에만 적용",
+          "flow": "실제 적용된 수정안 → 빌드/테스트 → Semgrep 재실행 → 0건 PASS 또는 남은 검토 항목",
+          "status": "IN_PROGRESS",
+          "honestyNote": "원격 GitHub 저장소에는 변경을 보내지 않습니다. 격리 실행 환경이 없는 저장소의 build/test는 실행하지 않았다고 표시합니다."
+        }
+      ],
+      "commands": [
+        "node --check core/project-analysis.js",
+        "node --check public/force-graph.js",
+        "npm test"
+      ],
+      "status": "ONGOING"
+    }
+  ],
+  "currentProductBoundary": {
+    "implemented": [
+      "공개 GitHub 저장소 읽기 전용 clone 및 코드 구조 분석",
+      "Semgrep 실제 정적 분석",
+      "서비스 기능·데이터·권한 흐름 기반 보안 지도",
+      "승인된 로컬 대상의 실제 HTTP 공격·증거·패치·동일 공격 재검증"
+    ],
+    "notClaimedAsComplete": [
+      "임의 공개 저장소의 무조건적 자동 수정",
+      "격리 환경 없이 외부 저장소의 build/test 실행",
+      "외부 서비스에 대한 무단 공격 실행",
+      "원격 GitHub 저장소에 대한 자동 push 또는 병합"
+    ]
+  }
+}

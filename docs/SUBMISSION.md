@@ -68,6 +68,7 @@ npm test
 ## 제출물 구성
 
 - [90초 데모 영상 대본](DEMO_VIDEO_SCRIPT.md)
-- [Codex Build Log](CODEX_BUILD_LOG.md)
+- [Codex Build Log 설명](CODEX_BUILD_LOG.md)
+- [Codex Build Log JSON](codex-build-log.json)
 - [Value & Viability](VALUE_AND_VIABILITY.md)
 - [비개발자용 제품 설명](../README.md)
