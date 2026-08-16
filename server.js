@@ -7,7 +7,7 @@ const { buildKnowledgeGraph } = require("./core/kg");
 const { syncFinding } = require("./core/atlassian-demo");
 const { scanStaticCode, scanStaticCodeAsync } = require("./core/static-scan");
 const { indexCompanyPolicy, retrievePolicy } = require("./core/policy-rag");
-const { analyzeGitHubRepository, buildRepositoryGraph, buildUserSecurityMap } = require("./core/project-analysis");
+const { analyzeGitHubRepository, buildRepositoryGraph, buildUserSecurityMap, buildRepairPlan } = require("./core/project-analysis");
 
 const PORT = Number(process.env.PORT || 3000);
 const targetFile = path.join(__dirname, "target-app/users.js");
@@ -86,9 +86,9 @@ const server = http.createServer((req, res) => {
       state.logs = []; setAnalysisProgress(8, [8, 0, 0, 0]); log("VibeCheck", "running", "GitHub 저장소를 연결하는 중...");
       const project = await analyzeGitHubRepository(payload?.url || ""); state.logs[0].status = "done"; setAnalysisProgress(35, [100, 20, 0, 0]);
       log("Semgrep", "running", "연결된 저장소에 실제 오픈소스 규칙을 실행 중..."); setAnalysisProgress(48, [100, 55, 100, 0]);
-      const scan = await scanStaticCodeAsync([project.directory]); fs.rmSync(project.directory, { recursive: true, force: true }); const scanLog = state.logs.at(-1); scanLog.status = scan.status === "COMPLETED" ? "done" : "failed"; scanLog.detail = scan.status === "COMPLETED" ? `실제 정적 분석 ${scan.findings.length}건을 확인했습니다.` : "Semgrep 실행에 실패했습니다."; setAnalysisProgress(78, [100, 100, 100, 30]);
+      const scan = await scanStaticCodeAsync([project.directory]); const graph = buildRepositoryGraph(project, scan), userSecurityMap = buildUserSecurityMap(project, scan), repairPlan = buildRepairPlan(project, scan); fs.rmSync(project.directory, { recursive: true, force: true }); const scanLog = state.logs.at(-1); scanLog.status = scan.status === "COMPLETED" ? "done" : "failed"; scanLog.detail = scan.status === "COMPLETED" ? `실제 정적 분석 ${scan.findings.length}건을 확인했습니다.` : "Semgrep 실행에 실패했습니다."; setAnalysisProgress(78, [100, 100, 100, 30]);
       log("KG", "done", "파일 구조 · API · 인증 관련 파일 관계를 정리했습니다."); setAnalysisProgress(100, [100, 100, 100, 100]);
-      const graph = buildRepositoryGraph(project, scan), userSecurityMap = buildUserSecurityMap(project, scan); const output = { projectAnalysis: { name: `${project.owner}/${project.repository}`, fileCount: project.fileCount, files: project.files, routes: project.routes, authFiles: project.authFiles, staticScan: scan, graph, userSecurityMap }, logs: state.logs }; state.lastRun = output; json(res, 200, output);
+      const output = { projectAnalysis: { name: `${project.owner}/${project.repository}`, fileCount: project.fileCount, files: project.files, routes: project.routes, authFiles: project.authFiles, staticScan: scan, graph, userSecurityMap, repairPlan }, logs: state.logs }; state.lastRun = output; json(res, 200, output);
     } catch (error) { log("VibeCheck", "failed", error.message); json(res, 400, { error: error.message }); }
   });
   if (pathname === "/api/approve-fix" && req.method === "POST") {
@@ -103,6 +103,7 @@ const server = http.createServer((req, res) => {
   if (pathname === "/repository-graph.js") return serveFile(res, path.join(__dirname, "public/repository-graph.js"), "text/javascript; charset=utf-8");
   if (pathname === "/result-cover.js") return serveFile(res, path.join(__dirname, "public/result-cover.js"), "text/javascript; charset=utf-8");
   if (pathname === "/force-graph.js") return serveFile(res, path.join(__dirname, "public/force-graph.js"), "text/javascript; charset=utf-8");
+  if (pathname === "/about.js") return serveFile(res, path.join(__dirname, "public/about.js"), "text/javascript; charset=utf-8");
   if (pathname === "/vendor/cytoscape.min.js") return serveFile(res, path.join(__dirname, "node_modules/cytoscape/dist/cytoscape.min.js"), "text/javascript; charset=utf-8");
   if (pathname === "/styles.css") return serveFile(res, path.join(__dirname, "public/styles.css"), "text/css; charset=utf-8");
   if (pathname === "/integration.css") return serveFile(res, path.join(__dirname, "public/integration.css"), "text/css; charset=utf-8");
@@ -117,6 +118,7 @@ const server = http.createServer((req, res) => {
   if (pathname === "/analysis-view.css") return serveFile(res, path.join(__dirname, "public/analysis-view.css"), "text/css; charset=utf-8");
   if (pathname === "/cover-adjust.css") return serveFile(res, path.join(__dirname, "public/cover-adjust.css"), "text/css; charset=utf-8");
   if (pathname === "/cover-form.css") return serveFile(res, path.join(__dirname, "public/cover-form.css"), "text/css; charset=utf-8");
+  if (pathname === "/about.css") return serveFile(res, path.join(__dirname, "public/about.css"), "text/css; charset=utf-8");
   if (pathname.startsWith("/assets/")) return serveFile(res, path.join(__dirname, "public", pathname), pathname.endsWith(".ttf") ? "font/ttf" : "image/png");
   json(res, 404, { error: "Not found" });
 });

@@ -45,11 +45,7 @@ flowchart LR
 
 ## 실제 화면
 
-![시작 화면](images/home.png)
-
-![분석 진행 화면](images/analysis.png)
-
-![서비스 보안 지도 결과](images/security-map.png)
+MVP 화면은 시작 → 분석 진행 → 서비스 보안 지도 결과 순서로 구성됩니다. 각 단계는 로컬 실행 화면에서 직접 확인할 수 있습니다.
 
 ## 접속 및 실행
 

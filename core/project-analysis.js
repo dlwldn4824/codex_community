@@ -70,13 +70,14 @@ function projectType(files) {
 function extractCodeFacts(project) {
   const files = (project.allFiles || project.files).filter(file => /\.(js|jsx|ts|tsx|py|java|go|rb|php|html)$/i.test(file)).slice(0, 220);
   const records = files.map(file => { try { return { file, text: fs.readFileSync(path.join(project.directory, file), "utf8").slice(0, 50000) }; } catch { return { file, text: "" }; } });
-  const facts = { framework: projectType(project.allFiles || project.files), pages: [], components: [], apiEndpoints: [], databaseCalls: [], externalCalls: [], httpRequests: [], imports: [] };
+  const facts = { framework: projectType(project.allFiles || project.files), pages: [], components: [], apiEndpoints: [], databaseCalls: [], externalCalls: [], httpRequests: [], functions: [], imports: [] };
   records.forEach(({ file, text }) => {
     if (/(pages\/|app\/.*page\.|index\.(html|tsx|jsx)$)/i.test(file)) facts.pages.push(file);
     if (/(components\/|\.tsx$|\.jsx$)/i.test(file)) facts.components.push(file);
     if (/(prisma|sequelize|mongoose|database|\.query\(|SELECT\s|INSERT\s|UPDATE\s)/i.test(text)) facts.databaseCalls.push(file);
     if (/(fetch\(|axios\.|urllib|requests\.|https?:\/\/)/i.test(text)) facts.externalCalls.push(file);
     const requests = [...text.matchAll(/(?:fetch|axios\.(?:get|post|put|patch|delete))\s*\(\s*["'`]([^"'`\s?#]+)/g)]; requests.forEach(match => facts.httpRequests.push({ file, path: match[1], method: /axios\.post/i.test(match[0]) ? "POST" : "GET" }));
+    const functions = [...text.matchAll(/(?:function\s+|(?:const|let|var)\s+)([A-Za-z_$][\w$]{2,})\s*(?:=\s*(?:async\s*)?\(?[^=]*?\)?\s*=>|\()/g), ...text.matchAll(/^\s*def\s+([A-Za-z_]\w{2,})\s*\(/gm)]; functions.slice(0, 12).forEach(match => { if (/^(if|for|while|switch|catch|return|render)$/i.test(match[1])) return; facts.functions.push({ file, name: match[1] }); });
     const importMatches = [...text.matchAll(/(?:import.+?from\s+|require\()\s*["']([^"']+)["']/g)].slice(0, 20); importMatches.forEach(match => facts.imports.push({ from: file, to: match[1] }));
     const routeMatches = [...text.matchAll(/(?:app|router)\.(get|post|put|patch|delete)\s*\(\s*["'`]([^"'`]+)/g)]; routeMatches.forEach(match => facts.apiEndpoints.push({ file, method: match[1].toUpperCase(), path: match[2] }));
     if (/app\/api\/(.+?)\/route\.(js|ts)$/i.test(file)) facts.apiEndpoints.push({ file, method: "API", path: `/api/${file.match(/app\/api\/(.+?)\/route\.(js|ts)/i)[1]}` });
@@ -124,6 +125,26 @@ function buildUserSecurityMap(project, scan) {
   codeFacts.databaseCalls.slice(0, 5).forEach(file => addDetailNode(file, "데이터 처리", "서비스 데이터를 조회하거나 저장하는 코드"));
   codeFacts.externalCalls.slice(0, 5).forEach(file => addDetailNode(file, "외부 연동", "외부 주소 또는 API와 통신하는 코드"));
   codeFacts.components.filter(file => !fileNodeByFile.has(file)).slice(0, 6).forEach(file => addDetailNode(file, "기능 화면", "화면에서 사용자 입력 또는 결과를 처리하는 코드"));
+  const functionNodeByKey = new Map();
+  const functionLabel = name => {
+    if (/login|signin/i.test(name)) return "로그인 처리";
+    if (/logout|signout/i.test(name)) return "로그아웃 처리";
+    if (/profile|getuser|userprofile/i.test(name)) return "프로필 조회 처리";
+    if (/createuser|signup|register/i.test(name)) return "회원가입 처리";
+    if (/upload/i.test(name)) return "파일 업로드 처리";
+    if (/scan|analy/i.test(name)) return "보안 분석 처리";
+    if (/verify|validate/i.test(name)) return "검증 처리";
+    if (/fetch|request|call/i.test(name)) return "외부 요청 처리";
+    return `${name} 기능`;
+  };
+  codeFacts.functions.filter(item => /login|signin|logout|profile|getuser|userprofile|signup|register|upload|scan|analy|verify|valid|fetch|request|call/i.test(item.name)).slice(0, 12).forEach(item => {
+    const id = `function-${item.file.replace(/[^a-zA-Z0-9]/g, "-").slice(-35)}-${item.name}`;
+    if (functionNodeByKey.has(`${item.file}:${item.name}`)) return;
+    nodes.push({ id, type: "function", label: functionLabel(item.name), description: `${item.name}()에서 확인된 세부 기능`, sourceFiles: [item.file], confidence: "CONFIRMED" });
+    functionNodeByKey.set(`${item.file}:${item.name}`, id);
+    const parent = fileNodeByFile.get(item.file);
+    if (parent) addEdge(parent, id, "세부 기능 실행", "SAFE", "코드에서 함수가 정의된 위치를 확인했습니다.");
+  });
   const featureRules = [
     [/(login|signin|auth|session|token)/i, "로그인·인증", "인증 정보를 처리하는 기능"], [/(profile|user)/i, "사용자 프로필", "사용자 정보를 조회·처리하는 기능"], [/(admin|dashboard)/i, "관리자·대시보드", "관리자 또는 운영 화면 기능"], [/(payment|billing|checkout)/i, "결제", "결제 정보를 처리하는 기능"], [/(upload|file|media|image)/i, "파일 처리", "파일 업로드 또는 미디어 처리 기능"], [/(route|api|controller|server)/i, "서비스 API", "서비스 요청을 처리하는 기능"], [/(database|repository|model|store|prisma|sequelize|mongoose)/i, "데이터 저장소", "서비스 데이터를 읽고 저장하는 기능"], [/(security|scan|verify|rule|policy)/i, "보안 검증", "보안 규칙 또는 분석을 처리하는 기능"], [/(analy|model|predict|voice|audio)/i, "분석 기능", "입력 데이터를 분석하는 기능"]
   ];
@@ -131,7 +152,13 @@ function buildUserSecurityMap(project, scan) {
   source.forEach(({ file, text }) => { const rule = featureRules.find(([pattern]) => pattern.test(`${file}\n${text}`)); if (!rule) return; const [, label, description] = rule, key = label.replace(/[^a-zA-Z0-9가-힣]/g, ""); const id = `feature-${key}`; if (!nodes.some(node => node.id === id)) nodes.push({ id, type: "feature", label, description, sourceFiles: [file], confidence: "CONFIRMED" }); else nodes.find(node => node.id === id).sourceFiles.push(file); fileFeature.set(file, id); });
   const idData = has(/userId|targetId|\/users\/:id|\/users\/\$\{/i) ? ["사용자 ID"] : [];
   const personalFields = ["name", "email", "phone", "address"].filter(field => has(new RegExp(field, "i"))).map(field => ({ name: "이름", email: "이메일", phone: "전화번호", address: "주소" }[field]));
-  addEdge("home", "login", "로그인 화면으로 이동", "SAFE"); addEdge("login", "profile", "인증 정보 전달", "SAFE", "로그인 관련 코드가 확인된 경우에만 연결합니다.", idData); addEdge("profile", "personal-data", personalFields.length ? `${personalFields.join(" · ")} 요청` : "개인정보 요청", "SAFE", "프로필 관련 코드에서 확인된 데이터 흐름입니다.", idData); addEdge("profile", "database", "사용자 정보 조회", "SAFE", "데이터 저장소 접근 코드가 확인됐습니다.", idData); addEdge("admin", "database", "관리자 정보 조회", "SAFE"); addEdge("upload", "external", "파일 또는 데이터 전달", "UNKNOWN", "외부 전송 여부를 코드 근거로 추가 확인해야 합니다.");
+  const authData = has(/token|session/i) ? ["세션 정보", "인증 토큰"] : has(/password|login/i) ? ["로그인 정보"] : ["인증 정보"];
+  addEdge("home", "login", "로그인 화면으로 이동", "SAFE", "화면 이동 코드가 확인됐습니다. 로그인 정보는 다음 인증 단계에서만 처리되어야 합니다.");
+  addEdge("login", "profile", "인증·세션 정보 전달", "SAFE", "로그인 처리 뒤 사용자 세션을 사용하는 흐름입니다.", authData);
+  addEdge("profile", "personal-data", personalFields.length ? `${personalFields.join(" · ")} 요청` : "개인정보 요청", "SAFE", "프로필 관련 코드에서 확인된 데이터 흐름입니다.", idData);
+  addEdge("profile", "database", "사용자 정보 조회", "SAFE", "데이터 저장소 접근 코드가 확인됐습니다.", [...idData, ...personalFields]);
+  addEdge("admin", "database", "관리자 정보 조회", "SAFE", "관리자 기능에서 데이터 접근이 확인됐습니다.", [...idData, ...personalFields]);
+  addEdge("upload", "external", "파일 또는 데이터 전달", "UNKNOWN", "외부 전송 여부를 코드 근거로 추가 확인해야 합니다.", ["업로드 파일", "입력 데이터"]);
   const basenameToFeature = new Map([...fileFeature].map(([file, id]) => [path.basename(file).replace(/\.[^.]+$/, ""), id]));
   codeFacts.imports.forEach(link => { const sourceId = fileFeature.get(link.from), targetBase = path.basename(link.to).replace(/\.[^.]+$/, ""), targetId = basenameToFeature.get(targetBase); if (sourceId && targetId && sourceId !== targetId && !edges.some(edge => edge.source === sourceId && edge.target === targetId)) addEdge(sourceId, targetId, "기능 호출", "SAFE", "import 관계에서 직접 확인된 기능 연결입니다."); });
   const endpointNodes = [];
@@ -176,8 +203,36 @@ function buildUserSecurityMap(project, scan) {
   const riskTarget = finding => describeFinding(finding).target;
   const riskMeta = { external: ["외부 서비스 요청", "외부 주소 요청을 확인해야 합니다."], runtime: ["실행 환경", "컨테이너 실행 권한을 확인해야 합니다."], filesystem: ["파일 시스템", "파일 접근 경로를 확인해야 합니다."], database: ["사용자 데이터 저장소", "데이터 조회에 전달되는 입력값을 확인해야 합니다."], browser: ["브라우저 화면", "사용자 입력이 화면에 표시되는 경로를 확인해야 합니다."] };
   const securityFindings = scan.findings.map(describeFinding);
-  scan.findings.slice(0, 6).forEach((finding, index) => { const findingSummary = securityFindings[index], target = riskTarget(finding), [label, explanation] = riskMeta[target]; addNode(target, label, explanation, /$^/, "INFERRED"); const relativeFile = path.relative(project.directory, finding.file); const related = fileNodeByFile.get(relativeFile) ? nodes.find(node => node.id === fileNodeByFile.get(relativeFile)) : nodes.find(node => node.sourceFiles.some(file => finding.file.endsWith(file))) || nodes.find(node => node.id === "profile") || nodes[0]; edges.push({ id: `finding-${index}`, source: related.id, target, relation: "SECURITY_CHECK", displayLabel: findingSummary.edge, securityStatus: "WARNING", severity: "MEDIUM", evidenceIds: [`semgrep-${index}`], findingIds: [finding.rule], explanation: findingSummary.description, technicalDetails: findingSummary.details }); });
+  const groupedRisks = new Map();
+  scan.findings.slice(0, 12).forEach((finding, index) => {
+    const findingSummary = securityFindings[index], target = riskTarget(finding), [label, explanation] = riskMeta[target]; addNode(target, label, explanation, /$^/, "INFERRED");
+    const relativeFile = path.relative(project.directory, finding.file);
+    const related = fileNodeByFile.get(relativeFile) ? nodes.find(node => node.id === fileNodeByFile.get(relativeFile)) : nodes.find(node => node.sourceFiles.some(file => finding.file.endsWith(file))) || nodes.find(node => node.id === "profile") || nodes[0];
+    const key = `${related.id}:${target}:${findingSummary.edge}`;
+    const existing = groupedRisks.get(key) || { source: related.id, target, summary: findingSummary, findings: [] }; existing.findings.push(finding); groupedRisks.set(key, existing);
+  });
+  [...groupedRisks.values()].slice(0, 8).forEach((group, index) => {
+    const details = group.summary.details, count = group.findings.length;
+    edges.push({ id: `finding-${index}`, source: group.source, target: group.target, relation: "SECURITY_CHECK", displayLabel: count > 1 ? `${group.summary.edge} (${count}건)` : group.summary.edge, securityStatus: "WARNING", severity: "MEDIUM", evidenceIds: group.findings.map((_, findingIndex) => `semgrep-${findingIndex}`), findingIds: group.findings.map(finding => finding.rule), explanation: count > 1 ? `${group.summary.description} 같은 유형의 정적 분석 결과 ${count}건을 하나의 흐름으로 묶었습니다.` : group.summary.description, technicalDetails: details });
+  });
   return { projectType: type, codeFacts, nodes, edges, securityFindings };
 }
 
-module.exports = { analyzeGitHubRepository, buildRepositoryGraph, buildUserSecurityMap };
+function buildRepairPlan(project, scan) {
+  const describe = finding => {
+    const signal = `${finding.rule} ${finding.message} ${finding.file}`.toLowerCase();
+    if (/secret|api.?key|token|password|credential/.test(signal)) return { title: "비밀 정보를 환경 설정으로 분리", reason: "코드에 남은 키·토큰·비밀번호는 저장소와 배포 로그를 통해 노출될 수 있습니다.", before: "const apiKey = \"...\";", after: "const apiKey = process.env.API_KEY;", recheck: "코드와 설정 파일에 실제 비밀 값이 남아 있지 않은지 다시 검사" };
+    if (/path|file|directory|upload/.test(signal)) return { title: "파일 경로 접근 범위 제한", reason: "사용자 입력으로 파일 경로를 만들면 허용되지 않은 파일에 접근할 가능성이 있습니다.", before: "const filePath = userInput;", after: "const filePath = resolveAllowedPath(userInput);\nif (!filePath) return denyAccess();", recheck: "상위 경로 이동과 허용되지 않은 확장자 요청을 다시 검사" };
+    if (/url|uri|http|request|fetch|axios|redirect/.test(signal)) return { title: "외부 요청 대상과 전달 데이터 확인", reason: "외부 URL 요청은 인증 정보나 사용자 데이터가 의도하지 않은 곳으로 전달될 수 있습니다.", before: "await fetch(targetUrl, options);", after: "if (!isAllowedUrl(targetUrl)) return denyRequest();\nawait fetch(targetUrl, safeOptions);", recheck: "허용되지 않은 URL과 민감 정보가 포함된 요청을 다시 검사" };
+    if (/auth|permission|role|user|access/.test(signal)) return { title: "요청자 권한 검사 추가", reason: "로그인 여부만 확인하면 권한이 없는 사용자도 기능에 접근할 수 있습니다.", before: "if (!session) return deny();", after: "if (!session || !hasRequiredPermission(session.user)) return deny();", recheck: "일반 사용자와 관리자 계정으로 동일 기능 접근을 다시 검사" };
+    return { title: "입력값과 보안 설정 검증", reason: "정적 분석이 추가 검토가 필요한 코드 위치를 찾았습니다.", before: "// 현재 처리 로직", after: "// 입력 검증과 권한 확인을 추가", recheck: "수정한 코드 경로를 Semgrep 규칙으로 다시 검사" };
+  };
+  const unique = new Map();
+  scan.findings.slice(0, 8).forEach(finding => {
+    const file = path.relative(project.directory, finding.file), proposal = describe(finding), key = `${file}:${proposal.title}`;
+    if (!unique.has(key)) unique.set(key, { file, line: finding.line, rule: finding.rule, message: finding.message, ...proposal });
+  });
+  return [...unique.values()].slice(0, 5);
+}
+
+module.exports = { analyzeGitHubRepository, buildRepositoryGraph, buildUserSecurityMap, buildRepairPlan };
