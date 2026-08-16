@@ -1,0 +1,470 @@
+{
+  "test": "relationship-contrast-ood-v1",
+  "pairs": 20,
+  "examples": 40,
+  "example_accuracy": 0.875,
+  "pair_flip_accuracy": 0.75,
+  "passed": true,
+  "results": [
+    {
+      "pair": 1,
+      "own": {
+        "text": "member01 accessed a profile owned by member01.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.997,
+        "scores": {
+          "OWN_PROFILE": 0.9649,
+          "OTHER_USER": 0.0029
+        }
+      },
+      "other": {
+        "text": "member01 accessed a profile owned by member02.",
+        "prediction": "OWN_PROFILE",
+        "correct": false,
+        "confidence": 0.994,
+        "scores": {
+          "OWN_PROFILE": 0.9235,
+          "OTHER_USER": 0.0056
+        }
+      }
+    },
+    {
+      "pair": 2,
+      "own": {
+        "text": "Caller member07 opened the account registered to member07.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9926,
+        "scores": {
+          "OWN_PROFILE": 0.983,
+          "OTHER_USER": 0.0073
+        }
+      },
+      "other": {
+        "text": "Caller member07 opened the account registered to member19.",
+        "prediction": "OWN_PROFILE",
+        "correct": false,
+        "confidence": 0.9867,
+        "scores": {
+          "OWN_PROFILE": 0.9777,
+          "OTHER_USER": 0.0132
+        }
+      }
+    },
+    {
+      "pair": 3,
+      "own": {
+        "text": "The requester inspected a profile that belongs to the requester.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9984,
+        "scores": {
+          "OWN_PROFILE": 0.988,
+          "OTHER_USER": 0.0016
+        }
+      },
+      "other": {
+        "text": "The requester inspected a profile that belongs to a different person.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9943,
+        "scores": {
+          "OWN_PROFILE": 0.0057,
+          "OTHER_USER": 0.9928
+        }
+      }
+    },
+    {
+      "pair": 4,
+      "own": {
+        "text": "An actor viewed the account associated with that actor.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9977,
+        "scores": {
+          "OWN_PROFILE": 0.9902,
+          "OTHER_USER": 0.0022
+        }
+      },
+      "other": {
+        "text": "An actor viewed an account not associated with that actor.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9895,
+        "scores": {
+          "OWN_PROFILE": 0.0101,
+          "OTHER_USER": 0.946
+        }
+      }
+    },
+    {
+      "pair": 5,
+      "own": {
+        "text": "The principal queried its personal user record.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9961,
+        "scores": {
+          "OWN_PROFILE": 0.9378,
+          "OTHER_USER": 0.0037
+        }
+      },
+      "other": {
+        "text": "The principal queried a third party's user record.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9757,
+        "scores": {
+          "OWN_PROFILE": 0.0244,
+          "OTHER_USER": 0.9801
+        }
+      }
+    },
+    {
+      "pair": 6,
+      "own": {
+        "text": "Audit: actor=member03, profile_owner=member03.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9934,
+        "scores": {
+          "OWN_PROFILE": 0.9836,
+          "OTHER_USER": 0.0066
+        }
+      },
+      "other": {
+        "text": "Audit: actor=member03, profile_owner=member44.",
+        "prediction": "OWN_PROFILE",
+        "correct": false,
+        "confidence": 0.986,
+        "scores": {
+          "OWN_PROFILE": 0.9711,
+          "OTHER_USER": 0.0138
+        }
+      }
+    },
+    {
+      "pair": 7,
+      "own": {
+        "text": "caller_id and owner_id both resolve to member12.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9882,
+        "scores": {
+          "OWN_PROFILE": 0.9678,
+          "OTHER_USER": 0.0116
+        }
+      },
+      "other": {
+        "text": "caller_id resolves to member12 while owner_id resolves to member33.",
+        "prediction": "OWN_PROFILE",
+        "correct": false,
+        "confidence": 0.566,
+        "scores": {
+          "OWN_PROFILE": 0.5919,
+          "OTHER_USER": 0.4538
+        }
+      }
+    },
+    {
+      "pair": 8,
+      "own": {
+        "text": "The resource owner is the same user who made the request.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9986,
+        "scores": {
+          "OWN_PROFILE": 0.982,
+          "OTHER_USER": 0.0014
+        }
+      },
+      "other": {
+        "text": "The resource owner is not the user who made the request.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9818,
+        "scores": {
+          "OWN_PROFILE": 0.0181,
+          "OTHER_USER": 0.9769
+        }
+      }
+    },
+    {
+      "pair": 9,
+      "own": {
+        "text": "This profile is self-owned by the active identity.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9988,
+        "scores": {
+          "OWN_PROFILE": 0.9889,
+          "OTHER_USER": 0.0012
+        }
+      },
+      "other": {
+        "text": "This profile is externally owned, not by the active identity.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9224,
+        "scores": {
+          "OWN_PROFILE": 0.0452,
+          "OTHER_USER": 0.5375
+        }
+      }
+    },
+    {
+      "pair": 10,
+      "own": {
+        "text": "The account holder and requesting identity are identical.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9974,
+        "scores": {
+          "OWN_PROFILE": 0.954,
+          "OTHER_USER": 0.0025
+        }
+      },
+      "other": {
+        "text": "The account holder and requesting identity are different.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9889,
+        "scores": {
+          "OWN_PROFILE": 0.011,
+          "OTHER_USER": 0.9761
+        }
+      }
+    },
+    {
+      "pair": 11,
+      "own": {
+        "text": "The MEMBER read their own customer record.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9971,
+        "scores": {
+          "OWN_PROFILE": 0.9875,
+          "OTHER_USER": 0.0028
+        }
+      },
+      "other": {
+        "text": "The MEMBER read another customer's record.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.964,
+        "scores": {
+          "OWN_PROFILE": 0.0367,
+          "OTHER_USER": 0.9808
+        }
+      }
+    },
+    {
+      "pair": 12,
+      "own": {
+        "text": "The ADMIN changed a profile belonging to themselves.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.994,
+        "scores": {
+          "OWN_PROFILE": 0.9347,
+          "OTHER_USER": 0.0057
+        }
+      },
+      "other": {
+        "text": "The ADMIN changed a profile belonging to somebody else.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9939,
+        "scores": {
+          "OWN_PROFILE": 0.006,
+          "OTHER_USER": 0.9905
+        }
+      }
+    },
+    {
+      "pair": 13,
+      "own": {
+        "text": "The GUEST requested the same identity's account.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9981,
+        "scores": {
+          "OWN_PROFILE": 0.9902,
+          "OTHER_USER": 0.0019
+        }
+      },
+      "other": {
+        "text": "The GUEST requested an unrelated identity's account.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.992,
+        "scores": {
+          "OWN_PROFILE": 0.008,
+          "OTHER_USER": 0.9911
+        }
+      }
+    },
+    {
+      "pair": 14,
+      "own": {
+        "text": "Request target: the caller's individual profile.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9964,
+        "scores": {
+          "OWN_PROFILE": 0.9903,
+          "OTHER_USER": 0.0036
+        }
+      },
+      "other": {
+        "text": "Request target: a separate user's individual profile.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9907,
+        "scores": {
+          "OWN_PROFILE": 0.0093,
+          "OTHER_USER": 0.9905
+        }
+      }
+    },
+    {
+      "pair": 15,
+      "own": {
+        "text": "Evidence says the profile does belong to the actor.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9987,
+        "scores": {
+          "OWN_PROFILE": 0.9933,
+          "OTHER_USER": 0.0013
+        }
+      },
+      "other": {
+        "text": "Evidence says the profile does not belong to the actor.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9966,
+        "scores": {
+          "OWN_PROFILE": 0.003,
+          "OTHER_USER": 0.87
+        }
+      }
+    },
+    {
+      "pair": 16,
+      "own": {
+        "text": "The operation concerned the requester's own data.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9896,
+        "scores": {
+          "OWN_PROFILE": 0.9328,
+          "OTHER_USER": 0.0098
+        }
+      },
+      "other": {
+        "text": "The operation concerned data owned outside the requester.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9905,
+        "scores": {
+          "OWN_PROFILE": 0.0093,
+          "OTHER_USER": 0.9665
+        }
+      }
+    },
+    {
+      "pair": 17,
+      "own": {
+        "text": "Actor and owner reference one identical identity.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9981,
+        "scores": {
+          "OWN_PROFILE": 0.9861,
+          "OTHER_USER": 0.0018
+        }
+      },
+      "other": {
+        "text": "Actor and owner reference two distinct identities.",
+        "prediction": "OWN_PROFILE",
+        "correct": false,
+        "confidence": 0.9901,
+        "scores": {
+          "OWN_PROFILE": 0.6723,
+          "OTHER_USER": 0.0067
+        }
+      }
+    },
+    {
+      "pair": 18,
+      "own": {
+        "text": "The accessed user object is tied back to the caller.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9933,
+        "scores": {
+          "OWN_PROFILE": 0.9716,
+          "OTHER_USER": 0.0065
+        }
+      },
+      "other": {
+        "text": "The accessed user object is tied to someone other than the caller.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9837,
+        "scores": {
+          "OWN_PROFILE": 0.0163,
+          "OTHER_USER": 0.9821
+        }
+      }
+    },
+    {
+      "pair": 19,
+      "own": {
+        "text": "Ownership verification matched the active principal.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9985,
+        "scores": {
+          "OWN_PROFILE": 0.9842,
+          "OTHER_USER": 0.0015
+        }
+      },
+      "other": {
+        "text": "Ownership verification matched a different principal.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9906,
+        "scores": {
+          "OWN_PROFILE": 0.0093,
+          "OTHER_USER": 0.9784
+        }
+      }
+    },
+    {
+      "pair": 20,
+      "own": {
+        "text": "The session user is also the profile owner.",
+        "prediction": "OWN_PROFILE",
+        "correct": true,
+        "confidence": 0.9985,
+        "scores": {
+          "OWN_PROFILE": 0.9886,
+          "OTHER_USER": 0.0015
+        }
+      },
+      "other": {
+        "text": "The session user is not the profile owner.",
+        "prediction": "OTHER_USER",
+        "correct": true,
+        "confidence": 0.9938,
+        "scores": {
+          "OWN_PROFILE": 0.0061,
+          "OTHER_USER": 0.9726
+        }
+      }
+    }
+  ]
+}

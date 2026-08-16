@@ -1,0 +1,4 @@
+transformers==4.55.2
+scikit-learn==1.7.1
+runpod==1.7.13
+hf_transfer==0.1.9

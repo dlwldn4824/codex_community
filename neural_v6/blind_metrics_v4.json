@@ -1,0 +1,137 @@
+{
+  "blind_set": "v4-final-holdout",
+  "blind_examples": 60,
+  "exact_match_accuracy": 0.9,
+  "macro_f1": 0.9663299663299663,
+  "field_metrics": {
+    "actorRole": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0
+    },
+    "action": {
+      "accuracy": 0.9,
+      "macro_f1": 0.898989898989899
+    },
+    "relationship": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0
+    }
+  },
+  "deployment_gate_passed": true,
+  "failures": [
+    {
+      "case": 1,
+      "text": "The MEMBER reviewed the account belonging to the active user.",
+      "expected": {
+        "actorRole": "MEMBER",
+        "action": "READ",
+        "relationship": "OWN_PROFILE"
+      },
+      "predicted": {
+        "actorRole": "MEMBER",
+        "action": "WRITE",
+        "relationship": "OWN_PROFILE"
+      },
+      "relationship_confidence": 0.9985,
+      "relationship_scores": {
+        "OWN_PROFILE": 0.9865,
+        "OTHER_USER": 0.0014
+      }
+    },
+    {
+      "case": 6,
+      "text": "Audit: a MEMBER principal reviewed an account belonging to a separate user.",
+      "expected": {
+        "actorRole": "MEMBER",
+        "action": "READ",
+        "relationship": "OTHER_USER"
+      },
+      "predicted": {
+        "actorRole": "MEMBER",
+        "action": "WRITE",
+        "relationship": "OTHER_USER"
+      },
+      "relationship_confidence": 0.9875,
+      "relationship_scores": {
+        "OWN_PROFILE": 0.0126,
+        "OTHER_USER": 0.9906
+      }
+    },
+    {
+      "case": 21,
+      "text": "A session authorized as ADMIN reviewed the account belonging to the active user.",
+      "expected": {
+        "actorRole": "ADMIN",
+        "action": "READ",
+        "relationship": "OWN_PROFILE"
+      },
+      "predicted": {
+        "actorRole": "ADMIN",
+        "action": "WRITE",
+        "relationship": "OWN_PROFILE"
+      },
+      "relationship_confidence": 0.998,
+      "relationship_scores": {
+        "OWN_PROFILE": 0.9785,
+        "OTHER_USER": 0.002
+      }
+    },
+    {
+      "case": 26,
+      "text": "The ADMIN reviewed an account belonging to a separate user.",
+      "expected": {
+        "actorRole": "ADMIN",
+        "action": "READ",
+        "relationship": "OTHER_USER"
+      },
+      "predicted": {
+        "actorRole": "ADMIN",
+        "action": "WRITE",
+        "relationship": "OTHER_USER"
+      },
+      "relationship_confidence": 0.9878,
+      "relationship_scores": {
+        "OWN_PROFILE": 0.0123,
+        "OTHER_USER": 0.9917
+      }
+    },
+    {
+      "case": 41,
+      "text": "Evidence shows a GUEST identity reviewed the account belonging to the active user.",
+      "expected": {
+        "actorRole": "GUEST",
+        "action": "READ",
+        "relationship": "OWN_PROFILE"
+      },
+      "predicted": {
+        "actorRole": "GUEST",
+        "action": "WRITE",
+        "relationship": "OWN_PROFILE"
+      },
+      "relationship_confidence": 0.9983,
+      "relationship_scores": {
+        "OWN_PROFILE": 0.9889,
+        "OTHER_USER": 0.0017
+      }
+    },
+    {
+      "case": 46,
+      "text": "A session authorized as GUEST reviewed an account belonging to a separate user.",
+      "expected": {
+        "actorRole": "GUEST",
+        "action": "READ",
+        "relationship": "OTHER_USER"
+      },
+      "predicted": {
+        "actorRole": "GUEST",
+        "action": "WRITE",
+        "relationship": "OTHER_USER"
+      },
+      "relationship_confidence": 0.987,
+      "relationship_scores": {
+        "OWN_PROFILE": 0.0131,
+        "OTHER_USER": 0.9918
+      }
+    }
+  ]
+}

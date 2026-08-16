@@ -1,0 +1,800 @@
+{"text": "During the session, member21 (GUEST) changed another user's account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member15 issued GET for USER_PROFILE/15; registered owner: member15.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member58 retrieved a profile registered to the same member.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member59 (GUEST), verb GET, user 59, owner member59.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member45 updated a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member57, a ADMIN, looked up another user's account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/2 by ADMIN:member01; account holder=member02.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member39/GUEST; PATCH /api/users/39; resource-owner member39.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member47 (MEMBER) read their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member32/MEMBER; GET /api/users/33; resource-owner member33.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member44 (ADMIN), verb PUT, user 44, owner member44.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member95 looked up a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member59 read a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/14 by ADMIN:member13; account holder=member14.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "MEMBER member10 issued GET for USER_PROFILE/11; registered owner: member11.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member79 rewrote the account they own.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member21 changed their own profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member97 issued GET for USER_PROFILE/97; registered owner: member97.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member38/ADMIN; POST /api/users/39; resource-owner member39.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member13 (GUEST), verb PATCH, user 13, owner member13.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/55 by ADMIN:member54; account holder=member55.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member57 issued GET for USER_PROFILE/57; registered owner: member57.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member09 edited someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member60 (MEMBER) changed their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member84 rewrote an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member85 (MEMBER), verb POST, user 85, owner member85.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member73 (GUEST), verb GET, user 73, owner member73.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN viewed another user's account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member56 modified the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member03 requested an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member66 (MEMBER), verb GET, user 66, owner member66.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member79 accessed their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member63 (GUEST) read a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member85 permission:GUEST operation:GET profile:85 belongs-to:member85", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN rewrote someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member12 patched the account they own.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member11 permission:MEMBER operation:DELETE profile:12 belongs-to:member12", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: PATCH users/51 by ADMIN:member50; account holder=member51.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member54 permission:GUEST operation:GET profile:55 belongs-to:member55", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/18 by GUEST:member18; account holder=member18.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member53, a ADMIN, looked up an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member59 read an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member89/ADMIN; PUT /api/users/90; resource-owner member90.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "GUEST member93 issued GET for USER_PROFILE/93; registered owner: member93.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PATCH users/51 by MEMBER:member51; account holder=member51.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member56, a GUEST, revised a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A GUEST changed their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member31 (MEMBER), verb PATCH, user 32, owner member32.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member70 (MEMBER) rewrote their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member85, a ADMIN, requested their personal account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member70 issued DELETE for USER_PROFILE/70; registered owner: member70.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/96 by ADMIN:member96; account holder=member96.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member48 role=ADMIN method=GET target=49 owner=member49", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: POST users/36 by MEMBER:member35; account holder=member36.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member68 role=ADMIN method=GET target=69 owner=member69", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER read a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member88, a MEMBER, viewed another user's account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member64, a MEMBER, patched the account they own.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The GUEST account member27 requested a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member42 modified someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member06 patched their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member92 (GUEST) fetched the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member27, a ADMIN, updated their personal account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member50 permission:ADMIN operation:DELETE profile:50 belongs-to:member50", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member91 rewrote their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member38 opened their personal account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member70 edited a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "MEMBER member12 issued GET for USER_PROFILE/13; registered owner: member13.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: PATCH users/41 by GUEST:member41; account holder=member41.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member95 (MEMBER), verb GET, user 96, owner member96.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "MEMBER member87 issued DELETE for USER_PROFILE/87; registered owner: member87.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member16 issued GET for USER_PROFILE/17; registered owner: member17.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member02 (ADMIN), verb DELETE, user 3, owner member03.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member73/GUEST; DELETE /api/users/74; resource-owner member74.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member02 role=MEMBER method=GET target=3 owner=member03", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member74, a MEMBER, read another user's account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member93 role=MEMBER method=GET target=94 owner=member94", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member93, a ADMIN, read a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN patched the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member12 retrieved a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member15/MEMBER; POST /api/users/16; resource-owner member16.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member50 role=ADMIN method=GET target=51 owner=member51", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/83 by GUEST:member82; account holder=member83.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The ADMIN account member71 altered their personal account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST updated another user's account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER modified an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER fetched a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER accessed someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member54 patched a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member48 (ADMIN), verb POST, user 49, owner member49.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member56 role=GUEST method=GET target=57 owner=member57", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that ADMIN user member41 changed an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member60 permission:ADMIN operation:GET profile:61 belongs-to:member61", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/79 by GUEST:member78; account holder=member79.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member13/MEMBER; PATCH /api/users/14; resource-owner member14.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member78 patched their own profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member90, a ADMIN, updated a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member36 edited another user's account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The ADMIN account member04 opened the account they own.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member42 (MEMBER), verb GET, user 42, owner member42.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member36 revised their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member82 changed an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member13, a GUEST, looked up their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/81 by ADMIN:member80; account holder=member81.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member02 role=MEMBER method=PUT target=2 owner=member02", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member27 issued PUT for USER_PROFILE/28; registered owner: member28.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member26 (ADMIN) looked up their personal account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member46/MEMBER; GET /api/users/46; resource-owner member46.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member97 role=MEMBER method=POST target=97 owner=member97", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PUT users/48 by MEMBER:member47; account holder=member48.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN modified a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member74 changed an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member52 modified the account they own.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member11 permission:ADMIN operation:GET profile:11 belongs-to:member11", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member64/ADMIN; GET /api/users/65; resource-owner member65.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with GUEST privileges, member80 opened their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member57 permission:MEMBER operation:DELETE profile:57 belongs-to:member57", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST revised a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: DELETE users/58 by MEMBER:member57; account holder=member58.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member83 requested the account they own.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member83 permission:MEMBER operation:GET profile:84 belongs-to:member84", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member26 permission:MEMBER operation:GET profile:26 belongs-to:member26", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member40 altered the account they own.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member18 role=MEMBER method=GET target=18 owner=member18", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The GUEST account member03 looked up their personal account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member79/GUEST; POST /api/users/80; resource-owner member80.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member12 permission:MEMBER operation:GET profile:12 belongs-to:member12", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member93/MEMBER; PUT /api/users/93; resource-owner member93.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member55 (GUEST) read another user's account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with GUEST privileges, member31 accessed an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN updated a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member76 opened a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member63 looked up the account they own.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member59 rewrote a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member65 (ADMIN) revised the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member08 (GUEST), verb GET, user 8, owner member08.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member24 issued DELETE for USER_PROFILE/25; registered owner: member25.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A GUEST accessed a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member73 (MEMBER), verb PATCH, user 74, owner member74.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member37 (GUEST), verb PUT, user 37, owner member37.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member91/MEMBER; GET /api/users/92; resource-owner member92.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN revised another user's account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member13 fetched a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member96 permission:GUEST operation:POST profile:96 belongs-to:member96", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member89 issued DELETE for USER_PROFILE/89; registered owner: member89.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member33 (ADMIN), verb GET, user 33, owner member33.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member89 fetched a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PUT users/54 by ADMIN:member54; account holder=member54.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member89 (GUEST) changed their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN fetched someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: PUT users/70 by MEMBER:member69; account holder=member70.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member20 role=GUEST method=PATCH target=21 owner=member21", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that ADMIN user member23 patched the account they own.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member02 role=GUEST method=DELETE target=3 owner=member03", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member81 permission:GUEST operation:GET profile:81 belongs-to:member81", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member58 issued GET for USER_PROFILE/59; registered owner: member59.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member88 (ADMIN), verb GET, user 89, owner member89.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member17 (MEMBER) opened someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: POST users/45 by GUEST:member45; account holder=member45.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member96, a GUEST, accessed their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member28 issued GET for USER_PROFILE/29; registered owner: member29.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member78, a GUEST, updated a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member22 rewrote their own profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member54 (MEMBER) patched the account they own.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member33 issued DELETE for USER_PROFILE/34; registered owner: member34.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "MEMBER member22 issued GET for USER_PROFILE/22; registered owner: member22.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: DELETE users/69 by MEMBER:member69; account holder=member69.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member26 role=ADMIN method=DELETE target=27 owner=member27", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member46 (GUEST) updated their own profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member08 fetched their personal account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member51 fetched a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member55/MEMBER; POST /api/users/56; resource-owner member56.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member57 read their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member69 revised their own profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member93, a ADMIN, fetched their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member17 (GUEST), verb DELETE, user 17, owner member17.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member18, a ADMIN, requested the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member24 (ADMIN) viewed a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member12/GUEST; PUT /api/users/13; resource-owner member13.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member25 (MEMBER) fetched a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member01 (MEMBER) modified a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member05 (GUEST) altered a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member33, a ADMIN, patched their own profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member21 issued PUT for USER_PROFILE/21; registered owner: member21.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member07 accessed a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member56 role=ADMIN method=PATCH target=56 owner=member56", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member13 permission:ADMIN operation:GET profile:13 belongs-to:member13", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member52 patched a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member92 changed someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member77 (MEMBER), verb DELETE, user 77, owner member77.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member58, a GUEST, updated someone else's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member35 fetched another user's account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A GUEST opened their personal account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member77 rewrote their personal account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member64/MEMBER; GET /api/users/64; resource-owner member64.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member86 changed the account they own.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member89 (GUEST), verb GET, user 89, owner member89.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member60 issued DELETE for USER_PROFILE/60; registered owner: member60.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member43 role=MEMBER method=PUT target=44 owner=member44", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/56 by MEMBER:member56; account holder=member56.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member11 fetched their personal account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member69 issued GET for USER_PROFILE/69; registered owner: member69.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member82 rewrote their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member84, a MEMBER, patched their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member62/GUEST; GET /api/users/63; resource-owner member63.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: POST users/79 by MEMBER:member79; account holder=member79.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member30 permission:ADMIN operation:DELETE profile:30 belongs-to:member30", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member01, a ADMIN, edited a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member68 edited someone else's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/85 by GUEST:member84; account holder=member85.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member17 read their personal account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: DELETE users/37 by ADMIN:member36; account holder=member37.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member28 revised another user's account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member36/ADMIN; DELETE /api/users/36; resource-owner member36.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member34, a MEMBER, changed someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member46/ADMIN; POST /api/users/47; resource-owner member47.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member85/GUEST; PUT /api/users/86; resource-owner member86.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member83 (GUEST) read an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member28 issued PUT for USER_PROFILE/28; registered owner: member28.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member50 updated another user's account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that ADMIN user member12 retrieved the account they own.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/63 by ADMIN:member62; account holder=member63.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member32 permission:ADMIN operation:POST profile:32 belongs-to:member32", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member16 patched the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member29 permission:ADMIN operation:GET profile:29 belongs-to:member29", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member91 (ADMIN), verb POST, user 92, owner member92.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member07 permission:ADMIN operation:GET profile:7 belongs-to:member07", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member85 permission:ADMIN operation:PATCH profile:86 belongs-to:member86", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member49 role=GUEST method=DELETE target=49 owner=member49", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member57 (ADMIN) changed a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member52 issued GET for USER_PROFILE/52; registered owner: member52.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member20 permission:MEMBER operation:GET profile:20 belongs-to:member20", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN opened someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER viewed a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member03/GUEST; DELETE /api/users/3; resource-owner member03.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member82, a MEMBER, fetched a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member49 (ADMIN) edited a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member28 (ADMIN) fetched their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member43 altered their own profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member83 permission:MEMBER operation:PATCH profile:83 belongs-to:member83", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member25 updated a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member87/GUEST; GET /api/users/87; resource-owner member87.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member52 permission:ADMIN operation:GET profile:53 belongs-to:member53", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member09, a GUEST, looked up their personal account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member24 (MEMBER) revised someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member67 retrieved a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member75 role=MEMBER method=GET target=76 owner=member76", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN requested an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member16/ADMIN; DELETE /api/users/16; resource-owner member16.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member53 (MEMBER), verb POST, user 54, owner member54.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member79/GUEST; GET /api/users/79; resource-owner member79.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member15 viewed an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member07 revised someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member13 altered someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: DELETE users/94 by ADMIN:member93; account holder=member94.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER opened their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST patched a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member69 role=MEMBER method=GET target=70 owner=member70", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member65 role=MEMBER method=PUT target=66 owner=member66", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member49 (MEMBER) opened the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member20 role=ADMIN method=DELETE target=21 owner=member21", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/55 by GUEST:member55; account holder=member55.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member27 issued GET for USER_PROFILE/27; registered owner: member27.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member67 requested a different member's profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member22 role=MEMBER method=GET target=23 owner=member23", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: POST users/7 by ADMIN:member06; account holder=member07.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member65 looked up a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member31 edited a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member10 role=GUEST method=DELETE target=11 owner=member11", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member27 (ADMIN) revised an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member58 modified another user's account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with GUEST privileges, member94 edited a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member25 (MEMBER) read an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member78 (ADMIN), verb GET, user 78, owner member78.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member03 edited someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: DELETE users/5 by GUEST:member05; account holder=member05.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member61/MEMBER; POST /api/users/61; resource-owner member61.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member96 revised their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The GUEST account member30 updated their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member73 looked up someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member22 issued DELETE for USER_PROFILE/22; registered owner: member22.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member03 altered a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member84 (ADMIN), verb GET, user 84, owner member84.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The GUEST account member66 changed a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member13 opened the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member16, a MEMBER, altered a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member04 permission:MEMBER operation:GET profile:4 belongs-to:member04", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member33 retrieved a different member's profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member18 role=GUEST method=DELETE target=19 owner=member19", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member35, a ADMIN, rewrote an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member04/MEMBER; GET /api/users/5; resource-owner member05.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member59 permission:MEMBER operation:PATCH profile:60 belongs-to:member60", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member57 accessed an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member44, a MEMBER, updated a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member28 role=MEMBER method=GET target=29 owner=member29", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member37 altered an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member95 requested their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member87/GUEST; DELETE /api/users/88; resource-owner member88.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member32 (ADMIN), verb PUT, user 33, owner member33.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member56 role=ADMIN method=GET target=57 owner=member57", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member15, a GUEST, changed a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: DELETE users/11 by ADMIN:member10; account holder=member11.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member25 permission:GUEST operation:PATCH profile:25 belongs-to:member25", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member08 (ADMIN) retrieved another user's account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member24/ADMIN; POST /api/users/24; resource-owner member24.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PUT users/63 by MEMBER:member63; account holder=member63.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The GUEST account member62 updated another user's account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member45/MEMBER; PATCH /api/users/46; resource-owner member46.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member36 permission:MEMBER operation:GET profile:36 belongs-to:member36", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member40/ADMIN; POST /api/users/40; resource-owner member40.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member44 (ADMIN) looked up their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/83 by ADMIN:member82; account holder=member83.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member35 issued GET for USER_PROFILE/35; registered owner: member35.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member90 read the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member27 (MEMBER) requested the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member64, a MEMBER, revised someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member95/ADMIN; DELETE /api/users/96; resource-owner member96.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member78 (ADMIN), verb GET, user 79, owner member79.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member02 (ADMIN) accessed their personal account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member65 fetched an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member80, a GUEST, edited a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member67/MEMBER; POST /api/users/67; resource-owner member67.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member20 rewrote an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with GUEST privileges, member24 patched their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member68, a MEMBER, rewrote their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member18 issued GET for USER_PROFILE/19; registered owner: member19.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member77 (GUEST) fetched a different member's profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member18/ADMIN; DELETE /api/users/19; resource-owner member19.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER retrieved the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member53 (GUEST), verb GET, user 53, owner member53.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member77 permission:MEMBER operation:GET profile:78 belongs-to:member78", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member03 (MEMBER) changed the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member90, a MEMBER, modified their own profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member80/GUEST; GET /api/users/81; resource-owner member81.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member24 (MEMBER), verb GET, user 24, owner member24.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member09 role=ADMIN method=GET target=10 owner=member10", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member91, a ADMIN, retrieved a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member23 (MEMBER) looked up their personal account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member94 (GUEST), verb POST, user 94, owner member94.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member97 (ADMIN), verb PUT, user 1, owner member01.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member01 permission:GUEST operation:DELETE profile:1 belongs-to:member01", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN updated another user's account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member03 role=ADMIN method=GET target=3 owner=member03", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A MEMBER read their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/35 by MEMBER:member34; account holder=member35.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member81 permission:MEMBER operation:GET profile:82 belongs-to:member82", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member92 updated their own profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member81, a ADMIN, viewed someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member38 issued GET for USER_PROFILE/39; registered owner: member39.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member76 issued GET for USER_PROFILE/77; registered owner: member77.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that ADMIN user member02 looked up another user's account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member34 (GUEST), verb GET, user 35, owner member35.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member29 edited the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member40 modified an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with GUEST privileges, member95 updated the account they own.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/40 by MEMBER:member40; account holder=member40.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PATCH users/9 by ADMIN:member08; account holder=member09.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member72 rewrote a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member55, a ADMIN, revised a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member33 (MEMBER) read the account they own.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member95/GUEST; DELETE /api/users/96; resource-owner member96.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member33 permission:GUEST operation:PATCH profile:33 belongs-to:member33", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member13, a GUEST, rewrote a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member20 modified the account they own.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member16 (MEMBER), verb GET, user 16, owner member16.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member70/GUEST; GET /api/users/71; resource-owner member71.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: PATCH users/72 by GUEST:member71; account holder=member72.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member19 retrieved their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member53 role=GUEST method=PUT target=53 owner=member53", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member86, a MEMBER, fetched a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member36 role=MEMBER method=GET target=37 owner=member37", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member26 (GUEST), verb GET, user 27, owner member27.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member71/MEMBER; POST /api/users/72; resource-owner member72.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member74, a MEMBER, patched a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member47/GUEST; PUT /api/users/47; resource-owner member47.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member61 permission:MEMBER operation:DELETE profile:62 belongs-to:member62", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member84 (MEMBER) opened someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member06 (MEMBER), verb GET, user 6, owner member06.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member59 permission:GUEST operation:POST profile:60 belongs-to:member60", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member61 read a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member72 (ADMIN), verb GET, user 73, owner member73.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member76 (ADMIN), verb PATCH, user 76, owner member76.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member62 permission:MEMBER operation:GET profile:62 belongs-to:member62", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member81, a GUEST, read another user's account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member96 role=ADMIN method=GET target=97 owner=member97", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member46/ADMIN; GET /api/users/47; resource-owner member47.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member89 (ADMIN) requested someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that ADMIN user member51 opened another user's account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member41 (GUEST) accessed an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member29 retrieved their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member52 modified their own profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member23 role=ADMIN method=GET target=23 owner=member23", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member39 (MEMBER), verb DELETE, user 40, owner member40.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member60 (MEMBER), verb GET, user 60, owner member60.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member34 role=ADMIN method=PUT target=35 owner=member35", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER accessed the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member29 looked up an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member23 patched a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member87 permission:ADMIN operation:POST profile:88 belongs-to:member88", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member83 (ADMIN) opened a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member16 (GUEST), verb GET, user 16, owner member16.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member67 retrieved another user's account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member26 (GUEST) changed a profile registered to the same member.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member85, a GUEST, opened an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/75 by GUEST:member74; account holder=member75.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member58 issued GET for USER_PROFILE/59; registered owner: member59.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member42 (ADMIN) read the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PATCH users/41 by ADMIN:member40; account holder=member41.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that ADMIN user member34 looked up a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: DELETE users/58 by ADMIN:member58; account holder=member58.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN edited another user's account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member71/MEMBER; PATCH /api/users/71; resource-owner member71.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member36 issued GET for USER_PROFILE/37; registered owner: member37.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member68, a GUEST, accessed the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PATCH users/26 by ADMIN:member26; account holder=member26.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member52 fetched the account they own.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member68 (MEMBER) modified a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER requested a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member62, a MEMBER, updated their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member39 changed the account they own.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member51 (GUEST), verb PATCH, user 51, owner member51.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member79 role=MEMBER method=GET target=80 owner=member80", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member25/ADMIN; GET /api/users/25; resource-owner member25.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST fetched a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member12 issued GET for USER_PROFILE/12; registered owner: member12.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member37 permission:ADMIN operation:GET profile:37 belongs-to:member37", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member93, a GUEST, modified their own profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member12, a MEMBER, revised someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member28 (ADMIN), verb DELETE, user 29, owner member29.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/25 by GUEST:member24; account holder=member25.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: PATCH users/20 by MEMBER:member19; account holder=member20.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member54 fetched the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member82 retrieved their personal account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member74/ADMIN; GET /api/users/75; resource-owner member75.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member31 issued GET for USER_PROFILE/31; registered owner: member31.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member44/ADMIN; DELETE /api/users/45; resource-owner member45.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member66, a MEMBER, revised an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER revised another user's account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member17 (ADMIN) changed their personal account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member31 (MEMBER) retrieved a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member21 (MEMBER) accessed the account they own.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/15 by MEMBER:member14; account holder=member15.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member38 altered the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member08 permission:MEMBER operation:GET profile:8 belongs-to:member08", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member35 (MEMBER) fetched their personal account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member10 fetched their personal account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member38 edited their own profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member38 permission:MEMBER operation:GET profile:38 belongs-to:member38", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member07 role=ADMIN method=GET target=8 owner=member08", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member48 patched someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member03 (ADMIN), verb GET, user 4, owner member04.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member29 issued PATCH for USER_PROFILE/29; registered owner: member29.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member59 opened a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/86 by ADMIN:member86; account holder=member86.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member65/GUEST; DELETE /api/users/66; resource-owner member66.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member22 rewrote a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/1 by ADMIN:member01; account holder=member01.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PUT users/42 by ADMIN:member42; account holder=member42.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member53 rewrote a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member05 revised their own profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member68 (MEMBER) viewed someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member86, a GUEST, viewed their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member88, a MEMBER, revised their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member07 viewed a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST viewed their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member77 fetched their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member37 requested the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member86 (GUEST), verb GET, user 87, owner member87.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member36 (ADMIN) read the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member45 opened a different member's profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member60 (GUEST) opened a profile registered to the same member.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/58 by MEMBER:member58; account holder=member58.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member04 (MEMBER), verb DELETE, user 4, owner member04.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member42 role=GUEST method=GET target=43 owner=member43", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member26 role=MEMBER method=GET target=27 owner=member27", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member19 patched the account they own.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member72 role=ADMIN method=POST target=72 owner=member72", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member86 modified a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member28 role=MEMBER method=GET target=28 owner=member28", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member21 edited an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member55 (MEMBER), verb POST, user 55, owner member55.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member07 (MEMBER) patched the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member64 updated another user's account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member97 permission:MEMBER operation:GET profile:1 belongs-to:member01", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "MEMBER member67 issued PUT for USER_PROFILE/68; registered owner: member68.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The ADMIN account member20 read their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member72 (MEMBER) rewrote someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member51 (ADMIN) edited an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member58, a MEMBER, altered a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member61 (ADMIN) patched the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member47 (ADMIN) opened a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member54 altered their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member47 revised the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/14 by MEMBER:member14; account holder=member14.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN retrieved an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The ADMIN account member94 changed a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "GUEST member16 issued PATCH for USER_PROFILE/17; registered owner: member17.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member39 (GUEST) read a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member21 issued GET for USER_PROFILE/21; registered owner: member21.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member83/GUEST; GET /api/users/83; resource-owner member83.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member40/GUEST; GET /api/users/41; resource-owner member41.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member17 issued GET for USER_PROFILE/17; registered owner: member17.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member75 issued PUT for USER_PROFILE/76; registered owner: member76.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member06 (GUEST), verb GET, user 6, owner member06.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/44 by MEMBER:member44; account holder=member44.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member11 read a profile registered to the same member.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: POST users/58 by GUEST:member57; account holder=member58.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member30 permission:ADMIN operation:POST profile:31 belongs-to:member31", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member72 read another user's account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member77/GUEST; GET /api/users/77; resource-owner member77.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member18 (GUEST) updated the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member74 (GUEST) fetched the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST edited their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PUT users/31 by GUEST:member31; account holder=member31.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member30/MEMBER; GET /api/users/31; resource-owner member31.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member09 (GUEST) changed another user's account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/7 by MEMBER:member06; account holder=member07.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "MEMBER member89 issued GET for USER_PROFILE/90; registered owner: member90.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member29 role=MEMBER method=POST target=30 owner=member30", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: POST users/66 by ADMIN:member66; account holder=member66.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member50 issued GET for USER_PROFILE/51; registered owner: member51.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member59 (MEMBER), verb PATCH, user 59, owner member59.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member70 (GUEST) read their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/65 by GUEST:member64; account holder=member65.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member63 patched the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member72 rewrote their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member62 (GUEST) fetched their personal account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/72 by MEMBER:member71; account holder=member72.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER revised the account they own.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member40 altered the account they own.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member04, a ADMIN, looked up someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER revised their own profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member16, a ADMIN, fetched their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member86 issued GET for USER_PROFILE/87; registered owner: member87.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member70 changed a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member09 opened someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member88 issued DELETE for USER_PROFILE/88; registered owner: member88.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A MEMBER accessed another user's account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member55 permission:GUEST operation:POST profile:55 belongs-to:member55", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PUT users/42 by MEMBER:member41; account holder=member42.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member73 (MEMBER), verb GET, user 74, owner member74.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN patched a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member60 (GUEST), verb GET, user 61, owner member61.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member45 (ADMIN) changed their personal account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member27 (MEMBER) opened someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member04 role=GUEST method=GET target=4 owner=member04", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member09 accessed their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: DELETE users/35 by GUEST:member35; account holder=member35.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member68 role=ADMIN method=DELETE target=68 owner=member68", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member47, a ADMIN, changed a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member38, a MEMBER, altered an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A GUEST looked up their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member80 retrieved another user's account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member04 (ADMIN), verb POST, user 5, owner member05.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: DELETE users/26 by MEMBER:member25; account holder=member26.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member02/MEMBER; GET /api/users/2; resource-owner member02.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/53 by GUEST:member52; account holder=member53.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member94, a MEMBER, viewed an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member15 (GUEST) read the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A MEMBER modified a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "GUEST member67 issued DELETE for USER_PROFILE/68; registered owner: member68.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: DELETE users/25 by GUEST:member24; account holder=member25.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member54/MEMBER; GET /api/users/54; resource-owner member54.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member71, a GUEST, viewed a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/91 by ADMIN:member90; account holder=member91.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member19 permission:GUEST operation:PUT profile:19 belongs-to:member19", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member63 issued PATCH for USER_PROFILE/64; registered owner: member64.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN retrieved an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/23 by GUEST:member22; account holder=member23.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member87, a ADMIN, read the account they own.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member66 (MEMBER) altered their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member19 permission:ADMIN operation:GET profile:19 belongs-to:member19", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/47 by GUEST:member46; account holder=member47.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member14 modified a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "GUEST member72 issued GET for USER_PROFILE/73; registered owner: member73.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member01 (MEMBER) opened their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member80/ADMIN; PUT /api/users/80; resource-owner member80.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member92 role=GUEST method=DELETE target=92 owner=member92", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member65 role=MEMBER method=DELETE target=65 owner=member65", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member31 viewed a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member17 accessed a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member83/ADMIN; PATCH /api/users/84; resource-owner member84.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member05 looked up another user's account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member48/MEMBER; GET /api/users/48; resource-owner member48.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member50 issued GET for USER_PROFILE/50; registered owner: member50.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN accessed another user's account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with GUEST privileges, member34 modified the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member07 issued PUT for USER_PROFILE/7; registered owner: member07.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member37, a MEMBER, fetched a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member76 fetched the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member55 opened a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN read a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN opened the account they own.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The GUEST account member97 modified the account they own.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member27 permission:GUEST operation:POST profile:27 belongs-to:member27", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PUT users/24 by MEMBER:member23; account holder=member24.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member17 revised a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member90 permission:GUEST operation:POST profile:90 belongs-to:member90", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: PATCH users/20 by ADMIN:member20; account holder=member20.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member63 role=GUEST method=GET target=63 owner=member63", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: POST users/9 by GUEST:member08; account holder=member09.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member76 permission:ADMIN operation:GET profile:77 belongs-to:member77", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN revised an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "GUEST member32 issued GET for USER_PROFILE/33; registered owner: member33.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member03 (MEMBER) fetched their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member14 (GUEST), verb GET, user 14, owner member14.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A ADMIN retrieved a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member15 updated another user's account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member78/ADMIN; PATCH /api/users/78; resource-owner member78.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member87 looked up a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member91, a ADMIN, opened a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member43 revised an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN revised the account they own.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A MEMBER opened another user's account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER viewed someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member75, a ADMIN, rewrote their own profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member94 permission:ADMIN operation:GET profile:95 belongs-to:member95", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member37, a ADMIN, revised their own profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member82 issued GET for USER_PROFILE/82; registered owner: member82.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member07, a GUEST, rewrote an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member49 role=MEMBER method=PUT target=49 owner=member49", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member22/GUEST; PATCH /api/users/23; resource-owner member23.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member15 modified the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member28 changed their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member39 issued GET for USER_PROFILE/39; registered owner: member39.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member53/MEMBER; PUT /api/users/53; resource-owner member53.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member62 modified a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member39 permission:MEMBER operation:PUT profile:39 belongs-to:member39", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member33 retrieved someone else's profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member90 permission:ADMIN operation:GET profile:90 belongs-to:member90", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member91/GUEST; PATCH /api/users/92; resource-owner member92.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member34 permission:ADMIN operation:DELETE profile:34 belongs-to:member34", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member42 patched the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member01 opened an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: PUT users/43 by ADMIN:member42; account holder=member43.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member80 (ADMIN), verb GET, user 80, owner member80.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST patched the account they own.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member06 looked up their own profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member15/GUEST; PUT /api/users/15; resource-owner member15.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member41 role=ADMIN method=GET target=41 owner=member41", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member09/GUEST; POST /api/users/9; resource-owner member09.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/67 by GUEST:member67; account holder=member67.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member89 issued PUT for USER_PROFILE/90; registered owner: member90.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member94 (ADMIN), verb GET, user 94, owner member94.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member61 (GUEST), verb GET, user 61, owner member61.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST looked up another user's account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member02 issued GET for USER_PROFILE/2; registered owner: member02.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that MEMBER user member61 requested their personal account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member68 permission:GUEST operation:GET profile:69 belongs-to:member69", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member18 changed a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member46, a MEMBER, changed a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member49 (GUEST) read a different member's profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member73/MEMBER; PATCH /api/users/73; resource-owner member73.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member51 updated their own profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member66 (GUEST), verb GET, user 67, owner member67.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A GUEST retrieved another user's account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The ADMIN account member69 accessed another user's account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member21, a GUEST, read a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "MEMBER member21 issued PATCH for USER_PROFILE/22; registered owner: member22.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member49/MEMBER; POST /api/users/50; resource-owner member50.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member69 permission:GUEST operation:PUT profile:70 belongs-to:member70", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "ADMIN member62 issued POST for USER_PROFILE/62; registered owner: member62.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member90, a MEMBER, read a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member83 issued DELETE for USER_PROFILE/84; registered owner: member84.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member76 (ADMIN), verb GET, user 76, owner member76.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST rewrote a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with GUEST privileges, member14 altered a profile registered to the same member.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member76 (GUEST) patched another user's account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with MEMBER privileges, member60 patched a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member06 role=GUEST method=DELETE target=7 owner=member07", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member48 permission:ADMIN operation:PATCH profile:48 belongs-to:member48", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member30 (MEMBER) modified another user's account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member75 permission:GUEST operation:GET profile:75 belongs-to:member75", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member64 (ADMIN), verb PUT, user 64, owner member64.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member43 read a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member71 permission:GUEST operation:GET profile:71 belongs-to:member71", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member85 looked up an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member72, a GUEST, requested the account they own.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member81, a ADMIN, read their personal account.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member84 (GUEST) patched someone else's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The GUEST account member05 viewed their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member19 retrieved a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member61 (GUEST), verb POST, user 62, owner member62.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Acting with GUEST privileges, member78 read their own profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member23 modified a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member95 (GUEST), verb GET, user 95, owner member95.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member81 role=GUEST method=PATCH target=82 owner=member82", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A MEMBER edited their personal account.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member14 role=GUEST method=DELETE target=15 owner=member15", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "A GUEST rewrote their own profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member37 role=MEMBER method=DELETE target=38 owner=member38", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member88 role=ADMIN method=GET target=88 owner=member88", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member34 issued GET for USER_PROFILE/34; registered owner: member34.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/9 by ADMIN:member09; account holder=member09.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member32, a MEMBER, rewrote a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/32 by MEMBER:member32; account holder=member32.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST viewed the account they own.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member85/MEMBER; GET /api/users/86; resource-owner member86.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member75/MEMBER; DELETE /api/users/75; resource-owner member75.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member16 issued POST for USER_PROFILE/17; registered owner: member17.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Security narrative: member67, a ADMIN, modified a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member38 (ADMIN), verb DELETE, user 38, owner member38.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member19 rewrote a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member23 (GUEST), verb PUT, user 23, owner member23.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member31, a ADMIN, edited their personal account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member22 issued PATCH for USER_PROFILE/23; registered owner: member23.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member87 changed their own profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with ADMIN privileges, member33 revised a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member91 permission:GUEST operation:GET profile:91 belongs-to:member91", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member06 viewed a profile belonging to another user.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member06 permission:MEMBER operation:POST profile:6 belongs-to:member06", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: DELETE users/43 by MEMBER:member43; account holder=member43.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member12/ADMIN; POST /api/users/13; resource-owner member13.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "MEMBER member10 issued GET for USER_PROFILE/10; registered owner: member10.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that ADMIN user member77 looked up an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member55 viewed their personal account.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member53, a GUEST, viewed another user's account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member74/ADMIN; PUT /api/users/74; resource-owner member74.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member32 looked up the account they own.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member04/GUEST; PATCH /api/users/5; resource-owner member05.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member47 (MEMBER), verb POST, user 47, owner member47.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member05 role=ADMIN method=GET target=5 owner=member05", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "GUEST member93 issued DELETE for USER_PROFILE/94; registered owner: member94.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member74 revised the profile belonging to themselves.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member84, a GUEST, read a profile registered to the same member.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member81 permission:MEMBER operation:PUT profile:81 belongs-to:member81", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member79 accessed a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member63 role=GUEST method=PATCH target=64 owner=member64", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member66 (GUEST) requested a profile registered to the same member.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The GUEST account member69 opened another user's account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member14 permission:ADMIN operation:PATCH profile:15 belongs-to:member15", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member94 (MEMBER) edited the account they own.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member46 (ADMIN), verb DELETE, user 46, owner member46.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: GET users/6 by ADMIN:member05; account holder=member06.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member07 read their personal account.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "MEMBER member45 issued POST for USER_PROFILE/45; registered owner: member45.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member29 looked up a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that ADMIN user member41 changed a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member88 modified a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member39 (ADMIN) rewrote another user's account.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The MEMBER account member48 patched a profile registered to the same member.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member32 patched their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "ADMIN member92 issued GET for USER_PROFILE/93; registered owner: member93.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member91/MEMBER; POST /api/users/91; resource-owner member91.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member23 viewed a profile belonging to another user.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "A ADMIN accessed the profile belonging to themselves.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member51 permission:MEMBER operation:PATCH profile:52 belongs-to:member52", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/25 by MEMBER:member24; account holder=member25.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member90 rewrote an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member41 role=MEMBER method=PUT target=41 owner=member41", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST changed a profile registered to the same member.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member87 permission:MEMBER operation:GET profile:88 belongs-to:member88", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member23 retrieved a different member's profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: GET users/49 by GUEST:member48; account holder=member49.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member14 accessed the account they own.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member44 (GUEST) edited their personal account.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Access record: POST users/11 by GUEST:member11; account holder=member11.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A MEMBER patched the account they own.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A GUEST accessed someone else's profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "requester:member97 permission:GUEST operation:PATCH profile:1 belongs-to:member01", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member70 role=ADMIN method=GET target=71 owner=member71", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member66/ADMIN; GET /api/users/67; resource-owner member67.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member96 (GUEST) revised a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member20 role=GUEST method=GET target=20 owner=member20", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member14 accessed someone else's profile.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member44 role=GUEST method=GET target=45 owner=member45", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member10 looked up an account registered to someone else.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Audit: principal member30/GUEST; GET /api/users/31; resource-owner member31.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Acting with ADMIN privileges, member30 viewed a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "The audit says that GUEST user member73 looked up a profile belonging to another user.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member56 retrieved the profile belonging to themselves.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Security narrative: member17, a ADMIN, revised a different member's profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "During the session, member08 (GUEST) changed their own profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The ADMIN account member75 read a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member20 permission:MEMBER operation:GET profile:21 belongs-to:member21", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "During the session, member81 (ADMIN) modified their own profile.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The MEMBER account member08 edited a different member's profile.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member43 permission:ADMIN operation:GET profile:43 belongs-to:member43", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "actor=member84 role=ADMIN method=GET target=85 owner=member85", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Access record: PATCH users/95 by MEMBER:member95; account holder=member95.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member65 (GUEST), verb GET, user 65, owner member65.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member08 permission:MEMBER operation:GET profile:9 belongs-to:member09", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "GUEST member10 issued GET for USER_PROFILE/10; registered owner: member10.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with MEMBER privileges, member65 retrieved their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "During the session, member42 (GUEST) modified the account they own.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Acting with GUEST privileges, member92 updated a different member's profile.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "requester:member92 permission:ADMIN operation:GET profile:92 belongs-to:member92", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member17 permission:MEMBER operation:POST profile:18 belongs-to:member18", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that MEMBER user member26 modified an account registered to someone else.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Access record: PATCH users/43 by GUEST:member43; account holder=member43.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "A MEMBER viewed their own profile.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "API event \u2014 caller member11 (ADMIN), verb GET, user 12, owner member12.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "API event \u2014 caller member52 (ADMIN), verb DELETE, user 52, owner member52.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "The GUEST account member25 fetched an account registered to someone else.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "The ADMIN account member73 revised a profile registered to the same member.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "requester:member09 permission:MEMBER operation:PATCH profile:10 belongs-to:member10", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "The audit says that GUEST user member47 fetched someone else's profile.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "actor=member77 role=GUEST method=POST target=78 owner=member78", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "actor=member30 role=MEMBER method=GET target=30 owner=member30", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Audit: principal member18/ADMIN; DELETE /api/users/18; resource-owner member18.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}

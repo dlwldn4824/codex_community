@@ -1,0 +1,800 @@
+{"evidence": "A GUEST accessed a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER accessed their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER accessed their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER accessed the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST accessed a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER accessed a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a user record registered to another member.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST accessed a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN accessed the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the MEMBER caller operated on their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a third party's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST accessed a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was an account owned by somebody else.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER accessed their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN accessed a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a profile not owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST accessed a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER accessed their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as ADMIN, requested their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as GUEST, requested a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the GUEST caller operated on someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST accessed a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A GUEST accessed the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested someone else's profile.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A GUEST accessed a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a GUEST: target was the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed a profile tied to that same user.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as GUEST, requested the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a user record registered to another member.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Audit evidence: the ADMIN caller operated on a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A ADMIN identity performed an operation against the caller's profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested someone else's profile.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "The active principal, authorized as MEMBER, requested a user record registered to the actor.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a MEMBER: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Security event for a ADMIN: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against another user's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A MEMBER accessed another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A MEMBER identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A GUEST identity performed an operation against an account owned by somebody else.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against a third party's account.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A MEMBER accessed the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the ADMIN caller operated on a user record registered to the actor.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was the account owned by the caller.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against another user's account.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a ADMIN: target was a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST accessed a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on their own profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a MEMBER: target was a profile tied to that same user.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on a profile belonging to a different user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "A ADMIN accessed their personal account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "A MEMBER identity performed an operation against their personal account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "A GUEST identity performed an operation against a profile belonging to the requester.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as MEMBER, requested a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile not owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 0}
+{"evidence": "A ADMIN identity performed an operation against the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Security event for a GUEST: target was the account owned by the caller.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "The active principal, authorized as ADMIN, requested the principal's own account.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the GUEST caller operated on the caller's profile.", "hypothesis": "The profile belongs to the actor.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on the principal's own account.", "hypothesis": "The profile belongs to another user.", "label": 0}
+{"evidence": "Security event for a GUEST: target was a profile tied to a separate user.", "hypothesis": "The profile belongs to another user.", "label": 1}
+{"evidence": "Audit evidence: the MEMBER caller operated on their own profile.", "hypothesis": "The profile belongs to another user.", "label": 0}
