@@ -31,6 +31,7 @@ function applyRoute() {
   if (route === "result") return showResult(lastData);
   if (route === "solution") return showSolution(lastData);
   if (route === "recheck" && typeof window.vibeShowRecheck === "function") return window.vibeShowRecheck();
+  if (route === "reverify" && typeof window.vibeShowReverify === "function") return window.vibeShowReverify();
   showHome();
 }
 window.vibeNavigate = navigateTo;
