@@ -104,6 +104,7 @@ const server = http.createServer((req, res) => {
   if (pathname === "/result-cover.js") return serveFile(res, path.join(__dirname, "public/result-cover.js"), "text/javascript; charset=utf-8");
   if (pathname === "/force-graph.js") return serveFile(res, path.join(__dirname, "public/force-graph.js"), "text/javascript; charset=utf-8");
   if (pathname === "/about.js") return serveFile(res, path.join(__dirname, "public/about.js"), "text/javascript; charset=utf-8");
+  if (pathname === "/attack-speed.js") return serveFile(res, path.join(__dirname, "public/attack-speed.js"), "text/javascript; charset=utf-8");
   if (pathname === "/vendor/cytoscape.min.js") return serveFile(res, path.join(__dirname, "node_modules/cytoscape/dist/cytoscape.min.js"), "text/javascript; charset=utf-8");
   if (pathname === "/styles.css") return serveFile(res, path.join(__dirname, "public/styles.css"), "text/css; charset=utf-8");
   if (pathname === "/integration.css") return serveFile(res, path.join(__dirname, "public/integration.css"), "text/css; charset=utf-8");
