@@ -34,7 +34,8 @@ showResult = function(data) {
   map.className = "service-flow-graph";
   map.innerHTML = `<p class="flow-legend">기능과 데이터가 이동하는 길입니다. <b>빨간 선</b>은 실제 코드 근거가 있어 점검이 필요한 흐름입니다.</p><div class="flow-controls"><button type="button" data-zoom="out" aria-label="축소">−</button><button type="button" data-zoom="in" aria-label="확대">+</button><button type="button" data-zoom="fit" aria-label="전체 보기">□</button></div><aside class="graph-side-panel"><span class="panel-label">보안 확인 근거</span><h3>빨간 선을 선택하세요.</h3><p>이곳에서 어떤 데이터가 이동하고, 왜 보안 확인이 필요한지 바로 보여줍니다.</p></aside><div class="service-flow-canvas"></div>`;
   const sidePanel = map.querySelector(".graph-side-panel");
-  const cy = cytoscape({ container: map.querySelector(".service-flow-canvas"), elements, wheelSensitivity: 0, userZoomingEnabled: false, userPanningEnabled: true, autoungrabify: true, boxSelectionEnabled: false, layout: { name: "breadthfirst", directed: true, spacingFactor: 2.35, padding: 145, animate: false, avoidOverlap: true, nodeDimensionsIncludeLabels: true }, style: [
+  const canvas = map.querySelector(".service-flow-canvas");
+  const cy = cytoscape({ container: canvas, elements, minZoom: 0.08, maxZoom: 3, wheelSensitivity: 0, userZoomingEnabled: false, userPanningEnabled: true, autoungrabify: true, boxSelectionEnabled: false, layout: { name: "breadthfirst", directed: true, spacingFactor: 2.35, padding: 145, animate: false, avoidOverlap: true, nodeDimensionsIncludeLabels: true }, style: [
     { selector: "node", style: { "background-color": "#ffffff", "border-width": 2.5, "border-color": "#52739f", "label": "data(label)", "color": "#0b1830", "font-family": "HiKR, sans-serif", "font-size": 16, "font-weight": 700, "text-wrap": "wrap", "text-max-width": 120, "text-valign": "center", "text-halign": "center", "width": 126, "height": 126, "shape": "ellipse" } },
     { selector: "edge", style: { "width": 1.6, "target-arrow-shape": "triangle", "curve-style": "bezier", "control-point-step-size": 60, "label": "data(label)", "font-family": "HiKR, sans-serif", "font-size": 12, "font-weight": 700, "text-rotation": "none", "text-margin-y": "data(labelOffset)", "text-background-color": "#f9fcff", "text-background-opacity": 1, "text-background-padding": 5 } },
     { selector: "edge.safe-edge", style: { "line-color": "#101820", "target-arrow-color": "#101820", "color": "#101820" } },
@@ -43,9 +44,14 @@ showResult = function(data) {
   ] });
   cy.userZoomingEnabled(false);
   cy.nodes().lock();
-  const zoomAtCenter = multiplier => { const next = Math.max(0.45, Math.min(2.2, cy.zoom() * multiplier)); cy.zoom({ level: next, renderedPosition: { x: map.clientWidth / 2, y: map.clientHeight / 2 } }); };
-  map.querySelector('[data-zoom="in"]').addEventListener("click", () => zoomAtCenter(1.18));
-  map.querySelector('[data-zoom="out"]').addEventListener("click", () => zoomAtCenter(0.84));
+  // fit() 직후의 배율은 큰 저장소에서 0.45보다 작을 수 있습니다.
+  // 이전 하한값 때문에 −를 눌러도 오히려 확대되거나 변화가 없었습니다.
+  const zoomAtCenter = multiplier => {
+    const next = Math.max(0.08, Math.min(3, cy.zoom() * multiplier));
+    cy.zoom({ level: next, renderedPosition: { x: canvas.clientWidth / 2, y: canvas.clientHeight / 2 } });
+  };
+  map.querySelector('[data-zoom="in"]').addEventListener("click", event => { event.preventDefault(); zoomAtCenter(1.2); });
+  map.querySelector('[data-zoom="out"]').addEventListener("click", event => { event.preventDefault(); zoomAtCenter(0.75); });
   map.querySelector('[data-zoom="fit"]').addEventListener("click", () => cy.fit(cy.elements(), 105));
   cy.on("tap", "node", event => { const node = event.target.data(); sidePanel.classList.remove("risk"); sidePanel.innerHTML = `<span class="panel-label">기능 정보</span><h3>${escape(node.label)}</h3><p>${escape(node.description)}</p><small>관련 코드: ${escape(node.sourceFiles.join(", ") || "확인된 파일 없음")}</small>`; });
   cy.on("tap", "edge", event => { const edge = event.target.data(), technical = edge.technicalDetails, isRisk = edge.risk; sidePanel.classList.toggle("risk", isRisk); sidePanel.innerHTML = `<span class="panel-label">${isRisk ? "확인된 보안 위험" : "기능 연결 정보"}</span><h3>${escape(edge.label)}</h3><p>${escape(edge.explanation || "코드에서 확인된 기능 간 흐름입니다.")}</p><small>전달될 수 있는 데이터: ${escape(edge.dataFields.join(" · ") || "코드에서 특정 데이터 항목을 확정하지 못함")}<br/>관련 코드: ${escape(edge.sourceFiles.join(", ") || "상세 코드 확인 필요")}${technical ? `<br/>근거 위치: ${escape(`${technical.file}:${technical.line}`)}` : ""}</small>`; });
