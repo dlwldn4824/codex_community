@@ -6,6 +6,12 @@ import {
   type AttemptResult,
   type RuleStatus,
 } from './engine/orchestrator'
+import {
+  applyApprovedFix,
+  executeAttack,
+  resetTarget,
+  type LiveAttackResult,
+} from './engine/liveHarness'
 import './App.css'
 
 type DemoPhase =
@@ -39,31 +45,58 @@ function App() {
   const [phase, setPhase] = useState<DemoPhase>('constitution-review')
   const [activeStep, setActiveStep] = useState(-1)
   const [result, setResult] = useState<AttemptResult>(baseline)
+  const [liveAttack, setLiveAttack] = useState<LiveAttackResult>()
+  const [harnessError, setHarnessError] = useState<string>()
 
   const runFirstAttempt = async () => {
-    setPhase('attempting')
-    for (let index = 0; index <= 6; index += 1) {
-      setActiveStep(index)
-      await sleep(index === 6 ? 700 : 360)
+    try {
+      setHarnessError(undefined)
+      setPhase('attempting')
+      await resetTarget()
+      for (let index = 0; index <= 5; index += 1) {
+        setActiveStep(index)
+        await sleep(260)
+      }
+      setActiveStep(6)
+      const attack = await executeAttack()
+      setLiveAttack(attack)
+      setResult(runAttempt(1))
+      setPhase('violated')
+      setActiveStep(6)
+    } catch (error) {
+      setHarnessError(error instanceof Error ? error.message : String(error))
+      setPhase('ready')
+      setActiveStep(-1)
     }
-    setResult(runAttempt(1))
-    setPhase('violated')
-    setActiveStep(6)
   }
 
   const runRecovery = async () => {
-    setPhase('recovering')
-    for (let index = 7; index <= 10; index += 1) {
-      setActiveStep(index)
-      await sleep(index === 9 ? 800 : 520)
+    try {
+      setHarnessError(undefined)
+      setPhase('recovering')
+      for (let index = 7; index <= 9; index += 1) {
+        setActiveStep(index)
+        await sleep(360)
+      }
+      await applyApprovedFix()
+      setActiveStep(10)
+      const replay = await executeAttack(liveAttack?.sessionId)
+      setLiveAttack(replay)
+      setResult(runAttempt(2, result))
+      setPhase('release-review')
+      setActiveStep(10)
+    } catch (error) {
+      setHarnessError(error instanceof Error ? error.message : String(error))
+      setPhase('violated')
+      setActiveStep(6)
     }
-    setResult(runAttempt(2, result))
-    setPhase('release-review')
-    setActiveStep(10)
   }
 
-  const resetDemo = () => {
+  const resetDemo = async () => {
+    await resetTarget().catch(() => undefined)
     setResult(baseline)
+    setLiveAttack(undefined)
+    setHarnessError(undefined)
     setPhase('constitution-review')
     setActiveStep(-1)
   }
@@ -75,8 +108,11 @@ function App() {
 
   const stepState = (index: number) => {
     if (phase === 'constitution-review' || phase === 'ready') return 'pending'
-    if (phase === 'violated' && index === 6) return 'fail'
-    if (phase === 'violated' && index > 6) return 'pending'
+    if (phase === 'violated' || phase === 'rejected') {
+      if (index < 6 || index === 7 || index === 8) return 'pass'
+      if (index === 6) return 'fail'
+      return 'pending'
+    }
     if (phase === 'release-review' || phase === 'released') return 'pass'
     if (index < activeStep) return index === 6 && phase === 'recovering' ? 'fail' : 'pass'
     if (index === activeStep) return 'running'
@@ -212,10 +248,12 @@ function App() {
                   </span>
                   <span className="step-name">{step}</span>
                   <span className="step-detail">
-                    {index === 4 && state === 'pass' ? 'vite build · 742ms' : ''}
-                    {index === 5 && state === 'pass' ? 'feature test · PASS' : ''}
-                    {index === 6 && state === 'fail' ? 'SEC-AUTH-03 violated' : ''}
-                    {index === 10 && state === 'pass' ? '3 / 3 pass' : ''}
+                    {index === 4 && state === 'pass' ? 'runtime policy · PASS' : ''}
+                    {index === 5 && state === 'pass' ? liveAttack?.featureTest.detail ?? 'feature test · PASS' : ''}
+                    {index === 6 && state === 'fail' ? `HTTP ${liveAttack?.response.status ?? 200} · attack succeeded` : ''}
+                    {index === 7 && state === 'pass' ? `session ${liveAttack?.sessionId ?? '—'}` : ''}
+                    {index === 8 && state === 'pass' ? `${liveAttack?.rule.id ?? 'SEC-AUTH-03'} · ${liveAttack?.rule.verdict ?? 'VIOLATED'}` : ''}
+                    {index === 10 && state === 'pass' ? `HTTP ${liveAttack?.response.status ?? 403} · blocked` : ''}
                   </span>
                 </div>
               )
@@ -242,21 +280,35 @@ function App() {
             </div>
           )}
 
+          {harnessError && (
+            <div className="harness-error">
+              HTTP harness unavailable: {harnessError}
+            </div>
+          )}
+
           {(phase === 'violated' || phase === 'rejected') && result.counterexample && (
             <div className="evidence-card">
               <div className="evidence-header">
                 <span>{phase === 'rejected' ? 'PROPOSAL REJECTED' : 'DECISION REQUIRED · ATTACK SUCCEEDED'}</span>
-                <span>CRITICAL</span>
+                <span>SESSION #{liveAttack?.sessionId ?? '—'} · CRITICAL</span>
               </div>
               <div className="attack-verdict">
                 <b>기능은 작동합니다. 공격도 작동합니다.</b>
-                <span>Executed adversarial request · deterministic rule evaluation</span>
+                <span>Live HTTP request · {liveAttack?.startedAt ?? 'waiting for evidence'}</span>
+              </div>
+              <div className="attack-logs">
+                {liveAttack?.logs.map((log, index) => (
+                  <div className={log.level} key={`${log.at}-${index}`}>
+                    <time>{new Date(log.at).toLocaleTimeString('ko-KR', { hour12: false })}</time>
+                    <span>{log.message}</span>
+                  </div>
+                ))}
               </div>
               <div className="flow">
-                <code>member01</code><span>→</span>
-                <code>GET /api/admin/users</code><span>→</span>
+                <code>{liveAttack?.request.actor ?? 'member01'}</code><span>→</span>
+                <code>{liveAttack?.request.method ?? 'GET'} {liveAttack?.request.path ?? '/api/admin/users'}</code><span>→</span>
                 <code>user02</code><span>→</span>
-                <strong>200 OK</strong>
+                <strong>{liveAttack?.response.status ?? 200} {liveAttack?.response.status === 403 ? 'FORBIDDEN' : 'OK'}</strong>
               </div>
               <div className="decision-summary">
                 <div><span>WHY IT BROKE</span><b>Administrator API has no server-side role guard.</b></div>
@@ -284,7 +336,10 @@ function App() {
               <span className="restored-icon">✓</span>
               <div>
                 <b>{phase === 'released' ? 'Release approved' : 'Security boundary restored'}</b>
-                <p>SEC-AUTH-03 returns 403 while the administrator API remains functional.</p>
+                <p>
+                  Replayed #{liveAttack?.sessionId ?? '—'} · HTTP {liveAttack?.response.status ?? 403} ·
+                  SEC-AUTH-03 PASS
+                </p>
               </div>
               {phase === 'release-review' ? (
                 <button className="release-button" type="button" onClick={() => setPhase('released')}>

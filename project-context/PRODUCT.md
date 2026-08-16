@@ -29,4 +29,4 @@ The judge sees `BUILD ✓ / FEATURE ✓ / SECURITY ✕` and the message: **“Th
 
 ## Claim boundary
 
-The current Golden Demo executes an adversarial request against an in-browser executable authorization policy. It does not yet send network traffic to an independently running HTTP service, crawl arbitrary applications, or claim general penetration-testing coverage.
+The Golden Demo sends real HTTP traffic from the server-side attack runner to the target administrator API. It applies an approved source patch and replays the same attack session. It proves one Broken Access Control scenario; it does not crawl arbitrary applications or claim general penetration-testing coverage.

@@ -157,12 +157,18 @@ blockquote {
 .empty-console p { margin: 0; }
 .live-console { justify-content: flex-start; border-style: solid; background: #111419; }
 .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 10px var(--blue); animation: blink 1s infinite; }
+.harness-error { border: 1px solid rgba(255,98,109,.4); background: var(--red-dim); color: #e9a8ae; border-radius: 6px; padding: 11px; font: 9px var(--mono); }
 
 .evidence-card { border: 1px solid rgba(255,98,109,.35); border-radius: 7px; background: var(--red-dim); overflow: hidden; }
 .evidence-header { display: flex; justify-content: space-between; color: var(--red); padding: 10px 12px; border-bottom: 1px solid rgba(255,98,109,.2); font: 9px var(--mono); letter-spacing: .06em; }
 .attack-verdict { padding: 12px 12px 4px; }
 .attack-verdict b { display: block; color: #f1c2c6; font-size: 12px; }
 .attack-verdict span { display: block; color: #8c6b70; font: 8px var(--mono); margin-top: 5px; }
+.attack-logs { margin: 6px 12px; padding: 8px; background: #0e1013; border: 1px solid #2b2428; border-radius: 4px; }
+.attack-logs div { display: grid; grid-template-columns: 68px 1fr; gap: 8px; padding: 3px 0; color: #89909a; font: 8px var(--mono); }
+.attack-logs time { color: #535a64; }
+.attack-logs .success span { color: var(--green); }
+.attack-logs .danger span { color: var(--red); }
 .flow { display: flex; align-items: center; gap: 7px; padding: 14px 12px 8px; color: #818994; font-size: 10px; flex-wrap: wrap; }
 .flow code { background: #181419; border: 1px solid #39262b; padding: 4px 6px; border-radius: 4px; color: #d6c3c5; font: 9px var(--mono); }
 .flow strong { color: var(--red); font: 9px var(--mono); }
