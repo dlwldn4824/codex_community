@@ -5,6 +5,10 @@
   "description": "A neuro-symbolic security harness for vibe coding",
   "scripts": {
     "start": "node server.js",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "setup:semgrep": "python3 -m pip install --target .tools/semgrep semgrep"
+  },
+  "dependencies": {
+    "cytoscape": "^3.34.1"
   }
 }
