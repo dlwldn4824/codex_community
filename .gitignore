@@ -1,3 +1,4 @@
 .tools/
+node_modules/
 target-app/*.before-vibecheck
 data/company-policies/
