@@ -21,6 +21,8 @@ test("Golden Demo: real attack → violation → approval patch → replay pass"
   assert.equal(before.kg.reasoning.includes("VIOLATION"), true);
   assert.equal(before.integration.jira.status, "수정 대기");
   assert.equal(before.integration.progress.percent, 50);
+  assert.equal(before.staticScan.engine, "Semgrep");
+  assert.equal(before.staticScan.status, "COMPLETED");
   const after = await run("/api/approve-fix");
   assert.equal(after.evidence.status, 403);
   assert.equal(after.verification.verdict, "PASS");

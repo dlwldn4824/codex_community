@@ -5,6 +5,7 @@ const { extractSecurityFacts } = require("./core/facts");
 const { verify } = require("./core/verifier");
 const { buildKnowledgeGraph } = require("./core/kg");
 const { syncFinding } = require("./core/atlassian-demo");
+const { scanStaticCode } = require("./core/static-scan");
 
 const PORT = Number(process.env.PORT || 3000);
 const targetFile = path.join(__dirname, "target-app/users.js");
@@ -31,7 +32,9 @@ function runRealAttack(callback) {
       const target = usersModule().users["2"];
       const evidence = { attackId: "Attack-001", request: "GET /api/users/2", status: response.statusCode, response: body ? JSON.parse(body) : null, actor: { id: "1", name: "member01", role: "MEMBER" }, targetId: "2", resourceOwner: target, executedAt: new Date().toISOString() };
       const facts = extractSecurityFacts(evidence); const verification = verify(facts); const kg = buildKnowledgeGraph(evidence, facts, verification);
-      state.lastRun = { evidence, facts, verification, kg, patched: state.patched, logs: state.logs };
+      const staticScan = state.staticScan || scanStaticCode();
+      state.staticScan = staticScan;
+      state.lastRun = { evidence, facts, verification, kg, staticScan, patched: state.patched, logs: state.logs };
       state.lastRun.integration = syncFinding(state.lastRun);
       callback(state.lastRun);
     });
@@ -54,7 +57,7 @@ const server = http.createServer((req, res) => {
   const pathname = new URL(req.url, `http://${req.headers.host}`).pathname;
   if (handleTarget(req, res, pathname)) return;
   if (pathname === "/api/run-attack" && req.method === "POST") {
-    state.logs = []; log("01 프로젝트 이해", "done", "로컬 API와 사용자 정책을 확인했습니다."); log("02 보안 지식 검색", "done", "BAC-001 / OWASP 접근 제어 규칙을 선택했습니다."); log("03 공격 실행", "running", "GET /api/users/2 를 실제 HTTP로 실행합니다.");
+    state.logs = []; log("01 프로젝트 이해", "done", "로컬 API와 사용자 정책을 확인했습니다."); const scan = state.staticScan || scanStaticCode(); state.staticScan = scan; log("02 Semgrep 정적 분석", scan.status === "COMPLETED" ? "done" : "failed", scan.status === "COMPLETED" ? `실제 오픈소스 규칙 ${scan.findings.length}건을 확인했습니다.` : "Semgrep 실행에 실패했습니다."); log("03 보안 지식 검색", "done", "BAC-001 / OWASP 접근 제어 규칙을 선택했습니다."); log("04 공격 실행", "running", "GET /api/users/2 를 실제 HTTP로 실행합니다.");
     return runRealAttack(result => { log("04 NeSy 검증", result.verification.verdict === "VIOLATION" ? "failed" : "done", `관측: ${result.evidence.status}, 판정: ${result.verification.verdict}`); json(res, 200, result); });
   }
   if (pathname === "/api/approve-fix" && req.method === "POST") {
