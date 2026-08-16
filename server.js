@@ -85,6 +85,8 @@ const server = http.createServer((req, res) => {
   if (pathname === "/result-simple.css") return serveFile(res, path.join(__dirname, "public/result-simple.css"), "text/css; charset=utf-8");
   if (pathname === "/result-override.css") return serveFile(res, path.join(__dirname, "public/result-override.css"), "text/css; charset=utf-8");
   if (pathname === "/result-redesign.css") return serveFile(res, path.join(__dirname, "public/result-redesign.css"), "text/css; charset=utf-8");
+  if (pathname === "/cover.css") return serveFile(res, path.join(__dirname, "public/cover.css"), "text/css; charset=utf-8");
+  if (pathname.startsWith("/assets/")) return serveFile(res, path.join(__dirname, "public", pathname), pathname.endsWith(".ttf") ? "font/ttf" : "image/png");
   json(res, 404, { error: "Not found" });
 });
 
