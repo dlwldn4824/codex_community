@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>VibeCheck — 바이브 코딩 보안 검증</title><link rel="stylesheet" href="/styles.css" /></head>
+<body>
+  <header><a class="brand" href="/">Vibe<span>Check</span></a><div class="tag">Neuro-Symbolic Security Harness</div><div class="scope">● LOCAL DEMO ONLY</div></header>
+  <main>
+    <section class="hero"><div><p class="eyebrow">AI는 수행하고 · 시스템은 검증하고 · 사람은 결정합니다</p><h1>내 앱을 <em>공격해 보세요.</em></h1><p class="sub">“안전하다”는 AI의 말이 아니라, 실제 공격 재실행으로 증명합니다.</p></div><button id="attack" class="primary">⚡ 내 앱 공격하기</button></section>
+    <nav class="flow"><span>01 이해</span><i>→</i><span>02 공격</span><i>→</i><span>03 검증</span><i>→</i><span>04 결정</span><i>→</i><span>05 수리</span><i>→</i><span>06 재실행</span></nav>
+    <section id="empty" class="empty"><div class="radar">⌁</div><h2>실행 준비 완료</h2><p>로컬 데모 대상으로만 실제 HTTP 보안 테스트를 실행합니다.</p></section>
+    <div id="dashboard" hidden>
+      <section class="cards">
+        <article class="card breaker"><label>🔴 CODEX BREAKER</label><h2>실제 공격 증거</h2><div class="request">GET <b>/api/users/2</b></div><p>로그인: <b>member01</b> (MEMBER)</p><p>대상 소유자: <b>member02</b></p><div id="http" class="http">HTTP —</div></article>
+        <article class="card incident"><label>WHAT IF YOU SHIPPED THIS?</label><h2 id="headline">공격 결과를 분석 중입니다</h2><ol id="timeline"></ol><div id="impact" class="impact"></div></article>
+        <article class="card referee"><label>⚖ NeSy REFEREE</label><h2>결정적 규칙 검증</h2><div id="facts" class="facts"></div><div id="verdict" class="verdict"></div></article>
+      </section>
+      <section class="lower">
+        <article class="panel kg"><div class="panel-title"><span>SECURITY KNOWLEDGE GRAPH</span><small>실제 추론에 사용됨</small></div><div id="graph" class="graph"></div><p id="reasoning" class="reasoning"></p></article>
+        <article class="panel log"><div class="panel-title"><span>CODEX ORCHESTRATION</span><small>실패를 숨기지 않습니다</small></div><div id="logs"></div></article>
+      </section>
+      <section id="decision" class="decision"><div><label>HUMAN CHECKPOINT</label><h2 id="decision-title">결정이 필요합니다</h2><p id="decision-copy"></p><div id="diff" class="diff" hidden><span>- 로그인 여부만 확인</span><span>+ ADMIN 또는 본인만 허용</span></div></div><button id="fix" class="primary">Codex 수정안 승인 및 검증</button></section>
+    </div>
+    <section class="constitution"><div><label>SECURITY CONSTITUTION · 승인됨</label><h2>사람이 읽고 승인한 보안 약속</h2></div><p>01 다른 사용자는 내 비공개 프로필을 볼 수 없다.<br/>02 관리자는 모든 사용자 프로필을 볼 수 있다.</p></section>
+  </main><footer>VibeCheck · authorized local development targets only · <a href="https://github.com/dlwldn4824/codex_community">GitHub</a></footer>
+  <script src="/app.js"></script>
+</body></html>

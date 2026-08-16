@@ -1,0 +1,9 @@
+[
+  {
+    "id": "BAC-001",
+    "name": "일반 회원은 다른 회원의 프로필을 읽을 수 없다",
+    "expected": "DENY",
+    "severity": "CRITICAL",
+    "source": ["프로젝트 정책", "OWASP Broken Access Control"]
+  }
+]

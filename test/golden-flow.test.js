@@ -1,0 +1,23 @@
+const test = require("node:test");
+const assert = require("node:assert/strict");
+const fs = require("fs");
+const path = require("path");
+process.env.PORT = "3107";
+const { server } = require("../server");
+
+const target = path.join(__dirname, "../target-app/users.js");
+const original = fs.readFileSync(target, "utf8");
+
+test("Golden Demo: real attack → violation → approval patch → replay pass", async (t) => {
+  await new Promise(resolve => server.listen(3107, resolve));
+  t.after(() => { server.close(); fs.writeFileSync(target, original); try { fs.unlinkSync(`${target}.before-vibecheck`); } catch {} });
+  const run = async route => (await fetch(`http://127.0.0.1:3107${route}`, { method: "POST" })).json();
+  const before = await run("/api/run-attack");
+  assert.equal(before.evidence.status, 200);
+  assert.equal(before.verification.verdict, "VIOLATION");
+  assert.equal(before.kg.reasoning.includes("VIOLATION"), true);
+  const after = await run("/api/approve-fix");
+  assert.equal(after.evidence.status, 403);
+  assert.equal(after.verification.verdict, "PASS");
+  assert.equal(fs.readFileSync(target, "utf8").includes('requester.role !== "ADMIN"'), true);
+});
