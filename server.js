@@ -6,15 +6,17 @@ const { verify } = require("./core/verifier");
 const { buildKnowledgeGraph } = require("./core/kg");
 const { syncFinding } = require("./core/atlassian-demo");
 const { scanStaticCode } = require("./core/static-scan");
+const { indexCompanyPolicy, retrievePolicy } = require("./core/policy-rag");
 
 const PORT = Number(process.env.PORT || 3000);
 const targetFile = path.join(__dirname, "target-app/users.js");
-const state = { lastRun: null, patched: false, logs: [] };
+const state = { lastRun: null, patched: false, logs: [], companyPolicy: null };
 const log = (step, status, detail) => state.logs.push({ step, status, detail, at: new Date().toISOString() });
 const usersModule = () => { delete require.cache[require.resolve("./target-app/users")]; return require("./target-app/users"); };
 
 function json(res, status, data) { res.writeHead(status, { "content-type": "application/json; charset=utf-8" }); res.end(JSON.stringify(data)); }
 function serveFile(res, file, type) { res.writeHead(200, { "content-type": type }); res.end(fs.readFileSync(file)); }
+function readJson(req, callback) { let body = ""; req.on("data", chunk => { body += chunk; if (body.length > 500000) req.destroy(); }); req.on("end", () => { try { callback(JSON.parse(body || "{}")); } catch { callback(null); } }); }
 
 function handleTarget(req, res, pathname) {
   const match = pathname.match(/^\/api\/users\/(\d+)$/);
@@ -34,7 +36,8 @@ function runRealAttack(callback) {
       const facts = extractSecurityFacts(evidence); const verification = verify(facts); const kg = buildKnowledgeGraph(evidence, facts, verification);
       const staticScan = state.staticScan || scanStaticCode();
       state.staticScan = staticScan;
-      state.lastRun = { evidence, facts, verification, kg, staticScan, patched: state.patched, logs: state.logs };
+      const policyRag = retrievePolicy(state.companyPolicy);
+      state.lastRun = { evidence, facts, verification, kg, staticScan, policyRag, patched: state.patched, logs: state.logs };
       state.lastRun.integration = syncFinding(state.lastRun);
       callback(state.lastRun);
     });
@@ -57,9 +60,16 @@ const server = http.createServer((req, res) => {
   const pathname = new URL(req.url, `http://${req.headers.host}`).pathname;
   if (handleTarget(req, res, pathname)) return;
   if (pathname === "/api/run-attack" && req.method === "POST") {
-    state.logs = []; log("01 프로젝트 이해", "done", "로컬 API와 사용자 정책을 확인했습니다."); const scan = state.staticScan || scanStaticCode(); state.staticScan = scan; log("02 Semgrep 정적 분석", scan.status === "COMPLETED" ? "done" : "failed", scan.status === "COMPLETED" ? `실제 오픈소스 규칙 ${scan.findings.length}건을 확인했습니다.` : "Semgrep 실행에 실패했습니다."); log("03 보안 지식 검색", "done", "BAC-001 / OWASP 접근 제어 규칙을 선택했습니다."); log("04 공격 실행", "running", "GET /api/users/2 를 실제 HTTP로 실행합니다.");
+    state.logs = []; log("01 프로젝트 이해", "done", "로컬 API와 사용자 정책을 확인했습니다."); if (state.companyPolicy) log("02 회사 정책 문서 검색", "done", `${state.companyPolicy.name}에서 관련 정책 문단을 검색합니다.`); const scan = state.staticScan || scanStaticCode(); state.staticScan = scan; log("03 Semgrep 정적 분석", scan.status === "COMPLETED" ? "done" : "failed", scan.status === "COMPLETED" ? `실제 오픈소스 규칙 ${scan.findings.length}건을 확인했습니다.` : "Semgrep 실행에 실패했습니다."); log("04 보안 지식 검색", "done", "BAC-001 / OWASP 접근 제어 규칙을 선택했습니다."); log("05 공격 실행", "running", "GET /api/users/2 를 실제 HTTP로 실행합니다.");
     return runRealAttack(result => { log("04 NeSy 검증", result.verification.verdict === "VIOLATION" ? "failed" : "done", `관측: ${result.evidence.status}, 판정: ${result.verification.verdict}`); json(res, 200, result); });
   }
+  if (pathname === "/api/company-policy" && req.method === "POST") return readJson(req, payload => {
+    if (!payload || typeof payload.text !== "string" || !payload.text.trim()) return json(res, 400, { error: "텍스트 문서만 업로드할 수 있습니다." });
+    const name = String(payload.name || "company-policy.txt").replace(/[^a-zA-Z0-9가-힣._ -]/g, "_").slice(0, 100);
+    const directory = path.join(__dirname, "data/company-policies"); fs.mkdirSync(directory, { recursive: true }); fs.writeFileSync(path.join(directory, `${Date.now()}-${name}`), payload.text.slice(0, 500000), "utf8");
+    state.companyPolicy = indexCompanyPolicy({ name, text: payload.text });
+    json(res, 201, { name, chunks: state.companyPolicy.chunks.length, method: state.companyPolicy.method });
+  });
   if (pathname === "/api/approve-fix" && req.method === "POST") {
     try { applyAuthorizationPatch(); log("05 사람 승인", "done", "서버 측 최소 권한 패치를 적용했습니다."); log("06 동일 공격 재실행", "running", "원래 공격 요청을 그대로 재생합니다."); return runRealAttack(result => { log("07 재검증", result.verification.verdict === "PASS" ? "done" : "failed", `관측: ${result.evidence.status}, 판정: ${result.verification.verdict}`); json(res, 200, result); }); } catch (error) { return json(res, 409, { error: error.message }); }
   }
@@ -74,6 +84,7 @@ const server = http.createServer((req, res) => {
   if (pathname === "/result-layout.css") return serveFile(res, path.join(__dirname, "public/result-layout.css"), "text/css; charset=utf-8");
   if (pathname === "/result-simple.css") return serveFile(res, path.join(__dirname, "public/result-simple.css"), "text/css; charset=utf-8");
   if (pathname === "/result-override.css") return serveFile(res, path.join(__dirname, "public/result-override.css"), "text/css; charset=utf-8");
+  if (pathname === "/result-redesign.css") return serveFile(res, path.join(__dirname, "public/result-redesign.css"), "text/css; charset=utf-8");
   json(res, 404, { error: "Not found" });
 });
 
