@@ -1,0 +1,32 @@
+{
+  "project": "Member Directory",
+  "sourceRequirement": "관리자 API는 관리자만 접근할 수 있고, 일반 회원은 자신의 정보만 볼 수 있다.",
+  "actors": ["ADMIN", "MEMBER"],
+  "resources": ["USER_PROFILE", "ADMIN_USERS"],
+  "rules": [
+    {
+      "id": "SEC-AUTH-01",
+      "actor": "ADMIN",
+      "action": "READ",
+      "resource": "ADMIN_USERS",
+      "effect": "ALLOW",
+      "description": "Admin can access the administrator user API."
+    },
+    {
+      "id": "SEC-AUTH-02",
+      "actor": "MEMBER",
+      "action": "READ",
+      "resource": "OWN_PROFILE",
+      "effect": "ALLOW",
+      "description": "Member can read their own profile."
+    },
+    {
+      "id": "SEC-AUTH-03",
+      "actor": "MEMBER",
+      "action": "READ",
+      "resource": "ADMIN_USERS",
+      "effect": "DENY",
+      "description": "Member cannot access the administrator user API."
+    }
+  ]
+}
