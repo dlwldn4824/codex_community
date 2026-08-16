@@ -4,6 +4,7 @@ aboutPage.innerHTML = `<nav class="about-nav"><div class="about-brand"><b>V</b>V
 document.body.append(aboutPage);
 aboutPage.querySelector(".about-hero h1").innerHTML = "AI가 만든 코드를,<br/><em>사람이 이해하고 검증하게.</em>";
 aboutPage.querySelector(".about-section h2").textContent = "현재 구현 내용";
+aboutPage.querySelector(".about-hero > p:last-of-type").innerHTML = "VibeCheck는 저장소의 파일 목록이 아니라 서비스 기능과 데이터·권한 흐름을 보안 지도로 보여줍니다.<br/>위험 가능성이 있는 연결은 실제 코드 근거와 함께 사람이 이해할 수 있는 말로 설명합니다.";
 const aboutSizingStyle = document.createElement("style");
 aboutSizingStyle.textContent = `.about-hero h1{font-size:clamp(44px,5.2vw,84px)!important;line-height:1.12!important;word-break:keep-all}.about-hero h1 em{white-space:nowrap}.about-section h2{font-size:clamp(30px,3.8vw,54px)!important;white-space:nowrap}@media(max-width:760px){.about-hero h1 em,.about-section h2{white-space:normal}}`;
 document.head.append(aboutSizingStyle);
