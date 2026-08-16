@@ -23,6 +23,7 @@ flowchart LR
 | Semgrep 연결 | `7b0842a` · 실제 오픈소스 정적 분석 연동 |
 | 회사 정책 근거 | `5efe822` · 정책 문서 업로드와 문단 검색 |
 | GitHub 분석 | `b1f74b5` · 공개 저장소 clone과 구조 분석 |
+| Codex API 수정 연결 | `core/codex-repair.js` · 구조화된 diff를 한 파일 단위로 검증 후 로컬 복제본에만 적용 |
 | 기능별 보안 지도 | `0a526e9` · Cytoscape.js와 세분화된 노드/edge |
 | 문서화 | `3617651` · 제품 화면과 비개발자 설명 |
 

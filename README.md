@@ -28,6 +28,18 @@ Codex는 단순히 코드를 작성하는 데만 쓰지 않았습니다. 저장�
 - 승인된 로컬 테스트 대상: 실제 HTTP 요청 증거, 규칙 판정, 사람 승인, 패치, 같은 요청 재실행까지 확인합니다.
 - 외부 저장소 수정·재검증: 새 로컬 복제본에만 적용하며, Semgrep 결과가 0건일 때만 PASS로 표시합니다. 자동 수정이 어려운 항목과 격리 실행 환경이 필요한 build/test는 남은 검토 항목으로 정직하게 표시합니다.
 
+### Codex API로 수정안 만들기
+
+재점검에서 실제 Codex 수정안을 만들려면 프로젝트 루트에 `.env` 파일을 만들고 `OPENAI_API_KEY`를 설정합니다. 키는 Git에 포함하지 않으며, Codex API는 수정 대상 파일 하나와 해당 Semgrep 근거만 받아 최소 unified diff를 생성합니다. VibeCheck는 그 diff가 **현재 새 로컬 복제본의 한 파일만** 바꾸는지 `git apply --check`으로 확인한 후에만 적용합니다.
+
+```bash
+cp .env.example .env
+# .env에 OPENAI_API_KEY 입력
+npm start
+```
+
+기본적으로 비용과 검토 범위를 위해 서로 다른 파일 3개까지만 요청합니다. `VIBECHECK_REPAIR_MAX_ITEMS=1~10`으로 조정할 수 있습니다. OpenAI의 Responses API와 구조화된 JSON 출력을 사용합니다. [공식 OpenAI API 문서](https://platform.openai.com/docs/quickstart/make-your-first-api-request)
+
 ## 화면으로 보는 VibeCheck
 
 ### 시작과 분석

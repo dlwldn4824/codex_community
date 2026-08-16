@@ -27,6 +27,7 @@
       "outputs": [
         "core/project-analysis.js",
         "core/static-scan.js",
+        "core/codex-repair.js",
         "public/force-graph.js",
         "public/external-project.js"
       ],
@@ -108,11 +109,13 @@
     "implemented": [
       "공개 GitHub 저장소 읽기 전용 clone 및 코드 구조 분석",
       "Semgrep 실제 정적 분석",
+      "OPENAI_API_KEY가 설정된 경우 Codex API의 구조화된 수정 diff 생성과 로컬 복제본 적용 검증",
       "서비스 기능·데이터·권한 흐름 기반 보안 지도",
       "승인된 로컬 대상의 실제 HTTP 공격·증거·패치·동일 공격 재검증"
     ],
     "notClaimedAsComplete": [
       "임의 공개 저장소의 무조건적 자동 수정",
+      "OPENAI_API_KEY 없이 Codex API를 호출했다고 주장하는 것",
       "격리 환경 없이 외부 저장소의 build/test 실행",
       "외부 서비스에 대한 무단 공격 실행",
       "원격 GitHub 저장소에 대한 자동 push 또는 병합"

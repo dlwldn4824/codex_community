@@ -8,6 +8,10 @@ const { syncFinding } = require("./core/atlassian-demo");
 const { scanStaticCode, scanStaticCodeAsync } = require("./core/static-scan");
 const { indexCompanyPolicy, retrievePolicy } = require("./core/policy-rag");
 const { analyzeGitHubRepository, applySafeRepairProposals, buildRepositoryGraph, buildUserSecurityMap, buildRepairPlan } = require("./core/project-analysis");
+const { proposeAndApplyCodexRepairs } = require("./core/codex-repair");
+
+// .env는 Git에 포함하지 않습니다. 개발 환경에서 OPENAI_API_KEY만 읽습니다.
+if (fs.existsSync(path.join(__dirname, ".env"))) process.loadEnvFile(path.join(__dirname, ".env"));
 
 const PORT = Number(process.env.PORT || 3000);
 const targetFile = path.join(__dirname, "target-app/users.js");
@@ -63,7 +67,7 @@ function applyAuthorizationPatch() {
   state.patched = true; return true;
 }
 
-const server = http.createServer((req, res) => {
+function handleRequest(req, res) {
   const pathname = new URL(req.url, `http://${req.headers.host}`).pathname;
   if (handleTarget(req, res, pathname)) return;
   if (pathname === "/api/run-attack" && req.method === "POST") {
@@ -103,15 +107,39 @@ const server = http.createServer((req, res) => {
     try {
       project = await analyzeGitHubRepository(sourceUrl);
       const before = await scanStaticCodeAsync([project.directory]);
-      const repair = await applySafeRepairProposals(project);
+      const proposed = buildRepairPlan(project, before);
+      const deterministicRepair = await applySafeRepairProposals(project);
+      const codexRepair = await proposeAndApplyCodexRepairs(project, before.findings);
+      const repair = {
+        applied: [...deterministicRepair.applied, ...codexRepair.applied],
+        unresolved: [...deterministicRepair.unresolved, ...codexRepair.reviewRequired]
+      };
       const after = await scanStaticCodeAsync([project.directory]);
+      const remaining = buildRepairPlan(project, after);
+      const fullyResolved = after.status === "COMPLETED" && after.findings.length === 0;
       json(res, 200, {
         sourceUrl,
         before: { findings: before.findings.length, status: before.status },
         after: { findings: after.findings.length, status: after.status },
+        proposed,
         applied: repair.applied,
         unresolved: repair.unresolved,
-        note: "원격 GitHub 저장소에는 변경을 보내지 않았습니다. 새로 복제한 로컬 사본에서만 SHA 고정 패치를 적용하고 다시 정적 분석했습니다."
+        codexRepair: {
+          status: codexRepair.status,
+          model: codexRepair.model,
+          attempted: codexRepair.attempted,
+          reason: codexRepair.reason
+        },
+        remaining,
+        verdict: fullyResolved ? "PASS" : "REVIEW_REQUIRED",
+        verification: {
+          semgrep: fullyResolved ? "PASS" : "REVIEW_REQUIRED",
+          buildAndTest: "NOT_RUN",
+          buildAndTestReason: "공개 저장소 코드는 격리 실행 환경 없이 이 서버에서 실행하지 않습니다."
+        },
+        note: repair.applied.length
+          ? "원격 GitHub 저장소에는 변경을 보내지 않았습니다. 새 로컬 복제본에서 실제 적용된 수정만 다시 정적 분석했습니다."
+          : "이 재점검에서는 안전하게 자동 적용할 수 있는 수정이 없었습니다. 따라서 새 로컬 복제본의 코드가 바뀌지 않아 Semgrep 결과도 그대로 남았습니다."
       });
     } catch (error) { json(res, 400, { error: error.message }); }
     finally { if (project?.directory) fs.rmSync(project.directory, { recursive: true, force: true }); }
@@ -147,7 +175,9 @@ const server = http.createServer((req, res) => {
   if (pathname === "/about.css") return serveFile(res, path.join(__dirname, "public/about.css"), "text/css; charset=utf-8");
   if (pathname.startsWith("/assets/")) return serveFile(res, path.join(__dirname, "public", pathname), pathname.endsWith(".ttf") ? "font/ttf" : "image/png");
   json(res, 404, { error: "Not found" });
-});
+}
+
+const server = http.createServer(handleRequest);
 
 if (require.main === module) server.listen(PORT, () => console.log(`VibeCheck running at http://localhost:${PORT}`));
-module.exports = { server, runRealAttack, applyAuthorizationPatch };
+module.exports = { server, handleRequest, runRealAttack, applyAuthorizationPatch };
