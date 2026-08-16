@@ -219,6 +219,15 @@ function buildUserSecurityMap(project, scan) {
 }
 
 function buildRepairPlan(project, scan) {
+  const friendlyEvidence = finding => {
+    const signal = `${finding.rule} ${finding.message} ${finding.file}`.toLowerCase();
+    if (/\.github\/workflows|github-actions|action.*pin|mutable-action-tag/.test(signal)) return "배포 자동화 파일에서 버전이 바뀔 수 있는 외부 도구를 사용하고 있습니다. 같은 태그 이름이라도 나중에 다른 코드로 바뀔 수 있으므로, 검토한 정확한 버전으로 고정해야 합니다.";
+    if (/secret|api.?key|token|password|credential/.test(signal)) return "코드 또는 설정에 비밀 값으로 보이는 정보가 있습니다. 이 값이 저장소·로그·화면에 남으면 외부에 노출될 수 있습니다.";
+    if (/path|file|directory|upload/.test(signal)) return "사용자가 넣은 값으로 파일 위치를 정할 수 있는 코드가 있습니다. 허용하지 않은 파일까지 열리지 않도록 범위를 확인해야 합니다.";
+    if (/url|uri|http|request|fetch|axios|redirect/.test(signal)) return "외부 주소로 요청을 보내는 코드가 있습니다. 어떤 주소로 어떤 정보가 전달되는지 제한하는지 확인해야 합니다.";
+    if (/auth|permission|role|user|access/.test(signal)) return "사용자 권한과 관련된 코드가 있습니다. 로그인한 사용자라도 이 기능을 사용할 권한이 있는지 한 번 더 확인해야 합니다.";
+    return "보안 도구가 이 코드 위치에서 추가 확인이 필요한 설정을 찾았습니다. 실제 서비스에서 허용한 동작인지 검토해야 합니다.";
+  };
   const describe = finding => {
     const signal = `${finding.rule} ${finding.message} ${finding.file}`.toLowerCase();
     const before = finding.snippet?.trim() || "현재 탐지된 코드 줄을 열어 검토";
@@ -231,8 +240,10 @@ function buildRepairPlan(project, scan) {
   };
   const unique = new Map();
   scan.findings.forEach(finding => {
-    const file = path.relative(project.directory, finding.file), proposal = describe(finding), key = `${file}:${proposal.title}`;
-    if (!unique.has(key)) unique.set(key, { file, line: finding.line, rule: finding.rule, message: finding.message, ...proposal });
+    // 한 파일 안에서도 줄·규칙이 다르면 서로 다른 수정 지점입니다.
+    // 같은 유형이라는 이유로 숨기지 않고, 모든 Semgrep 근거를 제안 카드로 남깁니다.
+    const file = path.relative(project.directory, finding.file), proposal = describe(finding), key = `${file}:${finding.line}:${finding.rule}`;
+    if (!unique.has(key)) unique.set(key, { file, line: finding.line, rule: finding.rule, message: finding.message, evidence: friendlyEvidence(finding), ...proposal });
   });
   return [...unique.values()];
 }
