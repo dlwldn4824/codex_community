@@ -14,7 +14,6 @@ VibeCheck는 결선 라이브 데모를 위해, 기능 설명뿐 아니라 **실
 | --- | --- |
 | 실제로 동작하는 MVP | 공개 GitHub 저장소 읽기 전용 분석, Semgrep 정적 분석, 서비스 보안 지도, 승인된 로컬 대상의 공격·수정·재검증 흐름 |
 | GitHub 저장소 또는 서비스 링크 | 이 저장소와 로컬 실행 주소 `http://localhost:3000` |
-| 핵심 사용자 흐름 데모 | [90초 데모 영상 대본](docs/DEMO_VIDEO_SCRIPT.md) |
 | Codex Build Log | [사람이 읽는 Build Log](docs/CODEX_BUILD_LOG.md) · [심사용 JSON Build Log](docs/codex-build-log.json) |
 | Value & Viability | [대상 사용자·기대 가치·운영 가능성·확장 방향](docs/VALUE_AND_VIABILITY.md) |
 | 결선 제출 요약 | [채점 기준별 구현 근거와 실제 범위](docs/submission/FINAL_SUBMISSION.md) |
