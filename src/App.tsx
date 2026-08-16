@@ -304,6 +304,36 @@ function App() {
                   </div>
                 ))}
               </div>
+              <div className="rag-evidence">
+                <div className="rag-heading">
+                  <span>WHY THIS RULE? · SECURITY RAG</span>
+                  <small>{liveAttack?.retrieval.method ?? 'retrieving evidence'}</small>
+                </div>
+                <div className="rag-sources">
+                  {liveAttack?.retrieval.sources.map((source) => (
+                    <article key={source.id}>
+                      <div>
+                        <span className={source.scope === 'GLOBAL_SECURITY' ? 'global' : 'project'}>
+                          {source.scope === 'GLOBAL_SECURITY' ? 'GLOBAL' : 'PROJECT'}
+                        </span>
+                        <b>{source.id} · {source.title}</b>
+                      </div>
+                      <p>“{source.quote}”</p>
+                    </article>
+                  ))}
+                </div>
+                <div className="structured-facts">
+                  <span>ACTOR <b>{liveAttack?.structuredAnalysis.actor ?? 'MEMBER'}</b></span>
+                  <span>ACTION <b>{liveAttack?.structuredAnalysis.action ?? 'READ'}</b></span>
+                  <span>RESOURCE <b>{liveAttack?.structuredAnalysis.resource ?? 'ADMIN_USERS'}</b></span>
+                  <span>OBSERVED <b>HTTP {liveAttack?.structuredAnalysis.observedStatus ?? 200}</b></span>
+                </div>
+                <div className="symbolic-proof">
+                  <code>{liveAttack?.rule.expression ?? 'IF role = MEMBER AND resource = ADMIN_USERS THEN DENY'}</code>
+                  <span>Expected <b>{liveAttack?.rule.expected ?? 'DENY'}</b></span>
+                  <span>Observed <b className="fail">{liveAttack?.rule.observed ?? 'ALLOW'}</b></span>
+                </div>
+              </div>
               <div className="flow">
                 <code>{liveAttack?.request.actor ?? 'member01'}</code><span>→</span>
                 <code>{liveAttack?.request.method ?? 'GET'} {liveAttack?.request.path ?? '/api/admin/users'}</code><span>→</span>

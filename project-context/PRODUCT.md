@@ -12,6 +12,13 @@ VibeSpec asks: **Does the attack work too?**
 
 The product does not report that code “may be vulnerable.” It executes a concrete adversarial request and connects the observed response to a deterministic rule verdict.
 
+Security evidence is retrieved from two corpora:
+
+- Global criteria: OWASP, CWE, and API authorization guidance.
+- Project context: security policy, API specification, and prior product intent.
+
+Retrieved sources explain why a rule applies. They do not decide whether the rule passed.
+
 ## Golden demo
 
 1. Extract symbolic authorization rules and ask a human to approve them.

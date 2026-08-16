@@ -3,6 +3,7 @@ import { mkdir, readFile, stat, writeFile } from 'node:fs/promises'
 import { extname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { randomBytes } from 'node:crypto'
+import { retrieveSecurityEvidence } from './retrieval.ts'
 
 const port = Number(process.env.PORT ?? 8787)
 const root = resolve(import.meta.dirname, '..')
@@ -114,6 +115,9 @@ async function runAttack(existingSession?: string) {
   const featureResponse = await fetch(target, {
     headers: { authorization: `Bearer ${tokenFor('ADMIN')}` },
   })
+  const retrieval = await retrieveSecurityEvidence(
+    'MEMBER reads ADMIN_USERS through GET /api/admin/users and receives HTTP 200 user profile data missing server-side authorization broken access control',
+  )
   const expected = 'DENY'
   const observed = attackResponse.status === 403 ? 'DENY' : 'ALLOW'
 
@@ -137,6 +141,16 @@ async function runAttack(existingSession?: string) {
     response: {
       status: attackResponse.status,
       body: attackBody,
+    },
+    retrieval,
+    structuredAnalysis: {
+      mode: 'DETERMINISTIC_FALLBACK',
+      actor: 'MEMBER',
+      action: 'READ',
+      resource: 'ADMIN_USERS',
+      endpoint: '/api/admin/users',
+      observedStatus: attackResponse.status,
+      dataReturned: attackResponse.status === 200,
     },
     rule: {
       id: 'SEC-AUTH-03',

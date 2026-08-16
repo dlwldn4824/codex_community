@@ -30,4 +30,6 @@ npm run build
 
 The demo runs a local HTTP target and orchestrator. The attack runner authenticates as `MEMBER`, sends a real HTTP request to `/api/admin/users`, captures the response, applies an approved source patch, and replays the same attack session.
 
+The evidence layer retrieves top-k supporting passages from `security_docs/` and `project_docs/`. Retrieval explains why `SEC-AUTH-03` applies; deterministic code still computes the verdict.
+
 It demonstrates one Broken Access Control scenario and does not claim general-purpose penetration-testing coverage.

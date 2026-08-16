@@ -169,6 +169,27 @@ blockquote {
 .attack-logs time { color: #535a64; }
 .attack-logs .success span { color: var(--green); }
 .attack-logs .danger span { color: var(--red); }
+.rag-evidence { margin: 8px 12px; border: 1px solid #2d333c; background: #101216; border-radius: 5px; overflow: hidden; }
+.rag-heading { display: flex; align-items: center; justify-content: space-between; padding: 8px 9px; border-bottom: 1px solid #272c33; }
+.rag-heading span { color: var(--blue); font: 8px var(--mono); letter-spacing: .06em; }
+.rag-heading small { color: #535b66; font: 7px var(--mono); }
+.rag-sources { display: grid; grid-template-columns: 1fr 1fr; }
+.rag-sources article { min-width: 0; padding: 8px 9px; border-right: 1px solid #22272e; border-bottom: 1px solid #22272e; }
+.rag-sources article:nth-child(2n) { border-right: 0; }
+.rag-sources article div { display: flex; gap: 6px; align-items: center; }
+.rag-sources article div span { border-radius: 3px; padding: 2px 4px; font: 6px var(--mono); }
+.rag-sources .global { color: #91b5f3; background: rgba(114,165,255,.12); }
+.rag-sources .project { color: #d6b474; background: rgba(230,180,90,.11); }
+.rag-sources article b { color: #aab1bb; font: 7px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rag-sources article p { color: #656d78; font-size: 8px; line-height: 1.45; margin: 5px 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.structured-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #252a31; border-top: 1px solid #252a31; }
+.structured-facts span { background: #12151a; padding: 7px; color: #555e69; font: 6px var(--mono); }
+.structured-facts b { display: block; color: #a8afb8; font-size: 7px; margin-top: 3px; }
+.symbolic-proof { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: center; padding: 8px 9px; }
+.symbolic-proof code { color: #9da5af; font: 7px var(--mono); }
+.symbolic-proof span { color: #626a74; font: 7px var(--mono); }
+.symbolic-proof b { color: var(--green); margin-left: 3px; }
+.symbolic-proof b.fail { color: var(--red); }
 .flow { display: flex; align-items: center; gap: 7px; padding: 14px 12px 8px; color: #818994; font-size: 10px; flex-wrap: wrap; }
 .flow code { background: #181419; border: 1px solid #39262b; padding: 4px 6px; border-radius: 4px; color: #d6c3c5; font: 9px var(--mono); }
 .flow strong { color: var(--red); font: 9px var(--mono); }

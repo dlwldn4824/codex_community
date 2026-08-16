@@ -4,6 +4,15 @@ export interface AttackLog {
   level: 'info' | 'success' | 'danger'
 }
 
+export interface RetrievedSource {
+  id: string
+  title: string
+  scope: 'GLOBAL_SECURITY' | 'PROJECT_CONTEXT'
+  path: string
+  score: number
+  quote: string
+}
+
 export interface LiveAttackResult {
   sessionId: string
   replay: boolean
@@ -21,6 +30,20 @@ export interface LiveAttackResult {
   response: {
     status: number
     body: unknown
+  }
+  retrieval: {
+    method: string
+    query: string
+    sources: RetrievedSource[]
+  }
+  structuredAnalysis: {
+    mode: 'DETERMINISTIC_FALLBACK'
+    actor: string
+    action: string
+    resource: string
+    endpoint: string
+    observedStatus: number
+    dataReturned: boolean
   }
   rule: {
     id: string
