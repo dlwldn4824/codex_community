@@ -17,6 +17,8 @@ AI는 코드와 공격 결과의 의미를 이해하고, Symbolic Engine은 사�
 | 로컬 실행 | [http://localhost:3000](http://localhost:3000) |
 | 팀 | 박지원 · 유성호 · 이보민 · 이지우 |
 
+![VibeCheck 표지](docs/slides/01-cover.jpg)
+
 ---
 
 ## 한 줄 정의
@@ -42,6 +44,8 @@ AI는 코드와 공격 결과의 의미를 이해하고, Symbolic Engine은 사�
 > 누구나 하루 만에 서비스를 배포하는 시대.  
 > 그런데 그 코드가 안전한지는 잘 확인하고 있을까요?
 
+![배포는 빨라졌지만 보안 검증은 따라오지 못하는가](docs/slides/04-is-it-safe.jpg)
+
 ### 실제로 반복되는 보안 문제
 
 RedAccess가 Lovable, Replit, Base44, Netlify 관련 공개 자산 약 **38만 개**를 조사한 결과입니다.
@@ -52,6 +56,8 @@ RedAccess가 Lovable, Replit, Base44, Netlify 관련 공개 자산 약 **38만 �
 
 빠르게 배포된 웹앱에서는 인증 누락, 과도한 권한, 민감정보 노출 같은 **기본적인 보안 문제**가 반복됩니다.
 
+![Vibe Coding Security Issues — RedAccess 조사](docs/slides/06-security-issues.jpg)
+
 ### 보안에서 메워야 하는 3가지 격차
 
 | 격차 | 질문 | 의미 |
@@ -61,6 +67,8 @@ RedAccess가 Lovable, Replit, Base44, Netlify 관련 공개 자산 약 **38만 �
 | **Validation Gap** | 같은 공격도 막히는가? | AI가 “고쳤다”고 말해도, 동일 요청이 실제로 차단됐는지 증명되지 않음 |
 
 생성 속도가 검증 속도보다 빠르면, 이해되지 않고 검증되지 않은 코드 위험이 누적됩니다.
+
+![보안에서 해결해야 하는 3가지 격차](docs/slides/07-three-gaps.jpg)
 
 ### 개발자도 검증을 건너뛰고 있다
 
@@ -76,6 +84,8 @@ Sonar가 전 세계 전문 개발자 1,100명 이상을 조사한 결과입니�
 
 즉 **검증 과정조차 AI에게 맡기는 공백**이 생깁니다. AI가 만든 코드는 요구사항을 놓칠 수 있고, 그 이유조차 개발자가 이해하기 어렵기 때문에 **사람이 판단할 수 있는 검증 과정**이 필요합니다.
 
+![AI 코드 비율과 실제 검증 비율](docs/slides/09-sonar-stats.jpg)
+
 ---
 
 ## 기존 도구의 한계
@@ -90,6 +100,8 @@ Sonar가 전 세계 전문 개발자 1,100명 이상을 조사한 결과입니�
 VibeCheck는 이 네 가지를 대체하지 않습니다.  
 **정적 신호 → 실제 HTTP 증거 → 규칙 판정 → 사람 승인 → 동일 공격 재검증**을 하나의 흐름으로 연결합니다.
 
+![기존 보안 해결 시도의 강점과 공백](docs/slides/14-existing-tools.jpg)
+
 ---
 
 ## 누구를 위한 제품인가
@@ -102,6 +114,8 @@ VibeCheck는 이 네 가지를 대체하지 않습니다.
 | 02 | 수천 줄의 AI 코드를 매번 검토할 수 없다. AI 생성 속도를 사람 코드 리뷰가 따라가지 못한다. |
 | 03 | 다시 AI에게 물어봐도 확신할 수 없다. “보안 문제 없어?”라는 답은 나오지만, 실제로 공격이 차단되는지는 알 수 없다. |
 | 04 | 보안 도구의 결과도 어렵다. `CWE-639`, Broken Access Control, 파일 경로와 경고 목록만으로는 내 서비스에서 무슨 일이 일어나는지 이해하기 어렵다. |
+
+![바이브 코딩으로 앱을 만든 개발자의 Pain Point](docs/slides/16-persona.jpg)
 
 ---
 
@@ -129,6 +143,8 @@ After      MEMBER → GET /api/users/2     403 · PASS
 
 한 번 막은 공격은 회귀 테스트로 남겨 다음 배포에도 확인합니다.
 
+![What is VibeCheck — 정책부터 Replay까지](docs/slides/19-what-is-vibecheck.jpg)
+
 ---
 
 ## 사용자 여정
@@ -142,6 +158,8 @@ After      MEMBER → GET /api/users/2     403 · PASS
 | 위험 이해 | 서비스 지도에서 데이터 흐름과 위험 연결 이유를 본다 | 이해 |
 | 실제 검증 | 멤버1이 멤버2 정보를 요청한다. 서버가 `200 OK`로 다른 사람 정보를 돌려준다 | 경각심 |
 | 수정 및 재검증 | 수정안을 검토·승인한 뒤 같은 요청을 다시 실행한다. `403 PASS`로 차단을 확인한다 | 확신 |
+
+![시작부터 재검증까지 사용자 여정](docs/slides/17-user-journey.jpg)
 
 ---
 
@@ -205,6 +223,8 @@ Authorization must be enforced server-side.
 
 파일 목록 대신 **홈 · 로그인 · 프로필 · 외부 연동** 같은 기능 단위로 묶고, edge에는 로그인 정보 전달, 개인정보 반환, 외부 주소 요청처럼 정보가 어디로 가는지를 적습니다.
 
+![정상 흐름은 검정, 위험 흐름은 빨강으로 표시하는 보안 지도](docs/slides/24-security-map.jpg)
+
 ### 5. Symbolic Engine이 규칙과 관측을 비교한다
 
 사람이 승인한 규칙과 관측 사실을 코드로 비교합니다. AI가 임의로 안전하다고 말하지 않습니다.
@@ -220,6 +240,8 @@ Observed  ALLOW
 → VIOLATION
 ```
 
+![AI가 사실을 추출하고 Symbolic Rule이 관측과 규칙을 비교한다](docs/slides/25-neural-symbolic.jpg)
+
 ### 6. 사람이 승인하고, 같은 공격을 다시 실행한다
 
 Codex가 수정했다고 말하는 것도 믿지 않습니다. 사람이 수정안을 승인한 뒤에만 패치를 적용하고, **처음 성공했던 동일 공격을 다시 실행**해 실제로 차단됐는지 확인합니다.
@@ -227,6 +249,8 @@ Codex가 수정했다고 말하는 것도 믿지 않습니다. 사람이 수정�
 ```text
 Attack → Evidence → Rule Verdict → Human Approve → Codex Repair → Replay
 ```
+
+![사람이 수정안을 승인하고 동일 공격을 Replay한다](docs/slides/26-human-replay.jpg)
 
 ---
 
@@ -279,6 +303,8 @@ flowchart LR
 | 보안팀 | 정책 문서가 배포 전 검증 시나리오와 판정 기준이 된다 |
 | 서비스 오너 | `200 노출 → 403 PASS`처럼 수정 전후 실제 결과로 승인한다 |
 | 조직 | 한 번 막은 공격을 회귀 테스트로 넘겨 다음 배포에도 확인한다 |
+
+![개발자·보안팀·서비스 오너·조직별 기대 효과](docs/slides/28-expected-impact.jpg)
 
 ---
 
@@ -367,6 +393,8 @@ flowchart LR
 | **03 Enterprise** | 기업별 보안 정책·내부 문서를 연결해 조직 기준에 맞는 검증 |
 | **04 Continuous Security** | Jira·Confluence·CI/CD와 연결해 발견 → 담당자 → 수정 → 재검증까지 추적 |
 
+![Web에서 IDE, GitHub Action, Enterprise, Continuous Security로 확장](docs/slides/29-roadmap.jpg)
+
 ---
 
 ## Codex Build Orchestration
@@ -386,6 +414,8 @@ Codex는 한 번 코드를 생성하는 도구가 아니라, 계획부터 배포
 
 작업별 근거와 아직 완료되지 않은 범위는 [Build Log](docs/CODEX_BUILD_LOG.md)와 [심사용 JSON](docs/codex-build-log.json)에 분리해 기록했습니다.
 
+![PLAN부터 SHIP까지 Codex Build Orchestration](docs/slides/30-codex-orchestration.jpg)
+
 ---
 
 ## 팀
@@ -396,6 +426,8 @@ Codex는 한 번 코드를 생성하는 도구가 아니라, 계획부터 배포
 | **AI 모델** | 유성호 | DistilBERT/NLI 모델 학습, Security Facts 추출, Neural-Symbolic 구조 설계, 규칙 기반 보안 검증 및 재검증 파이프라인 |
 | **Insight · UX** | 박지원 | 사용자 여정·서비스 플로우, 보안 결과 시각화 및 대시보드 UX/UI 기획, 발표자료 디자인, 데모 시나리오·영상, 서비스 메시지 |
 | **Insight · 전략** | 이보민 | 바이브코딩 보안 문제 정의, SAST·DAST·AI 코드리뷰 경쟁 분석, 타깃·Value Proposition, 차별화·사업성, 피치 스토리라인 |
+
+![팀 역할 — Build, AI 모델, Insight](docs/slides/31-team.jpg)
 
 ---
 
