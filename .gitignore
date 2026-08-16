@@ -2,3 +2,12 @@
 node_modules/
 target-app/*.before-vibecheck
 data/company-policies/
+.env
+.venv/
+__pycache__/
+*.pyc
+artifacts/
+*.safetensors
+*.pt
+*.tar.gz
+*.zip

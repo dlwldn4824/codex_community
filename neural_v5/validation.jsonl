@@ -1,0 +1,200 @@
+{"text": "According to the incident note, a ADMIN had their personal account edited.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [ADMIN] member95 => GET profile-96; ownership resolves to member96.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access opened someone else's profile during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member45, privilege=GUEST, http_method=GET, subject=45, holder=member45)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member30, privilege=ADMIN, http_method=PATCH, subject=31, holder=member31)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with GUEST access retrieved another user's account during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member16, privilege=MEMBER, http_method=GET, subject=16, holder=member16)", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a ADMIN had a different member's profile modified.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access viewed a profile registered to the same member during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member71, privilege=GUEST, http_method=GET, subject=72, holder=member72)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member55 => PATCH profile-56; ownership resolves to member56.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Trace [GUEST] member47 => GET profile-47; ownership resolves to member47.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [GUEST] member85 => POST profile-85; ownership resolves to member85.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access altered a different member's profile during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a ADMIN had a profile belonging to another user edited.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a GUEST had the account they own modified.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access fetched the account they own during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access revised someone else's profile during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access read another user's account during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a ADMIN had the account they own requested.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [GUEST] member69 => GET profile-70; ownership resolves to member70.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member59, privilege=MEMBER, http_method=DELETE, subject=60, holder=member60)", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member82, privilege=ADMIN, http_method=GET, subject=82, holder=member82)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access retrieved someone else's profile during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member02 => GET profile-2; ownership resolves to member02.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access opened a profile belonging to another user during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [ADMIN] member09 => PUT profile-9; ownership resolves to member09.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a GUEST had someone else's profile accessed.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member50 => PATCH profile-50; ownership resolves to member50.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access altered the profile belonging to themselves during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access fetched their personal account during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access altered their personal account during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member40 => PATCH profile-40; ownership resolves to member40.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a MEMBER had their own profile opened.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [GUEST] member89 => POST profile-90; ownership resolves to member90.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member26, privilege=ADMIN, http_method=DELETE, subject=27, holder=member27)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a MEMBER had their own profile updated.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member67 => PATCH profile-68; ownership resolves to member68.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member61, privilege=GUEST, http_method=GET, subject=62, holder=member62)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access retrieved an account registered to someone else during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a GUEST had someone else's profile requested.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a GUEST had a different member's profile read.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with GUEST access rewrote the profile belonging to themselves during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access retrieved the profile belonging to themselves during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access altered the profile belonging to themselves during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access retrieved another user's account during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access looked up a profile belonging to another user during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member10, privilege=MEMBER, http_method=GET, subject=10, holder=member10)", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member53, privilege=MEMBER, http_method=PATCH, subject=54, holder=member54)", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member11, privilege=ADMIN, http_method=DELETE, subject=11, holder=member11)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a MEMBER had the account they own fetched.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member23 => GET profile-24; ownership resolves to member24.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access revised a different member's profile during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access revised the profile belonging to themselves during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member74, privilege=ADMIN, http_method=GET, subject=74, holder=member74)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access revised an account registered to someone else during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a ADMIN had a profile belonging to another user retrieved.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access modified their personal account during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member73, privilege=GUEST, http_method=DELETE, subject=73, holder=member73)", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member78, privilege=ADMIN, http_method=GET, subject=78, holder=member78)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member31 => GET profile-32; ownership resolves to member32.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a MEMBER had someone else's profile edited.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access opened the profile belonging to themselves during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member43, privilege=GUEST, http_method=GET, subject=43, holder=member43)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a ADMIN had a different member's profile altered.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member87, privilege=GUEST, http_method=POST, subject=87, holder=member87)", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [GUEST] member81 => PUT profile-81; ownership resolves to member81.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access accessed their own profile during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [ADMIN] member76 => GET profile-76; ownership resolves to member76.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access looked up another user's account during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [ADMIN] member34 => POST profile-35; ownership resolves to member35.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access accessed a profile registered to the same member during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access modified a profile registered to the same member during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access revised a profile registered to the same member during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access altered someone else's profile during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access altered the account they own during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access looked up the account they own during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member19 => GET profile-20; ownership resolves to member20.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [GUEST] member95 => PATCH profile-96; ownership resolves to member96.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access read their own profile during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access rewrote someone else's profile during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member02, privilege=GUEST, http_method=DELETE, subject=3, holder=member03)", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member08, privilege=MEMBER, http_method=GET, subject=8, holder=member08)", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a MEMBER had the profile belonging to themselves fetched.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member93, privilege=GUEST, http_method=DELETE, subject=94, holder=member94)", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member57 => DELETE profile-58; ownership resolves to member58.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with GUEST access updated another user's account during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a ADMIN had another user's account revised.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with GUEST access read the profile belonging to themselves during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a GUEST had someone else's profile modified.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Trace [ADMIN] member87 => GET profile-88; ownership resolves to member88.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access changed someone else's profile during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access read their own profile during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access read a profile registered to the same member during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member75, privilege=GUEST, http_method=PUT, subject=75, holder=member75)", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a GUEST had the profile belonging to themselves rewrote.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access looked up a profile belonging to another user during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member65, privilege=GUEST, http_method=GET, subject=66, holder=member66)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with GUEST access altered a profile registered to the same member during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a GUEST had their personal account revised.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member42, privilege=MEMBER, http_method=POST, subject=42, holder=member42)", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access patched the account they own during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member63 => DELETE profile-64; ownership resolves to member64.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member14, privilege=MEMBER, http_method=GET, subject=14, holder=member14)", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access updated their personal account during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access patched their own profile during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [GUEST] member49 => GET profile-49; ownership resolves to member49.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [ADMIN] member93 => GET profile-94; ownership resolves to member94.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [GUEST] member06 => DELETE profile-7; ownership resolves to member07.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member36, privilege=MEMBER, http_method=PUT, subject=36, holder=member36)", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access viewed a profile registered to the same member during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access retrieved the account they own during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member02, privilege=ADMIN, http_method=GET, subject=3, holder=member03)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [GUEST] member51 => GET profile-51; ownership resolves to member51.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a ADMIN had a profile belonging to another user read.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [GUEST] member67 => GET profile-68; ownership resolves to member68.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member21 => GET profile-22; ownership resolves to member22.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a GUEST had their own profile edited.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member59, privilege=GUEST, http_method=GET, subject=60, holder=member60)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [GUEST] member83 => DELETE profile-83; ownership resolves to member83.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a ADMIN had the account they own changed.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a MEMBER had an account registered to someone else opened.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [GUEST] member79 => POST profile-79; ownership resolves to member79.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [GUEST] member41 => GET profile-41; ownership resolves to member41.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member65 => DELETE profile-66; ownership resolves to member66.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a MEMBER had a profile belonging to another user viewed.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access updated a profile belonging to another user during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a MEMBER had the account they own fetched.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [ADMIN] member36 => DELETE profile-37; ownership resolves to member37.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a GUEST had their own profile accessed.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member24, privilege=ADMIN, http_method=POST, subject=25, holder=member25)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a GUEST had someone else's profile retrieved.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [ADMIN] member38 => PUT profile-39; ownership resolves to member39.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member53, privilege=GUEST, http_method=GET, subject=53, holder=member53)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member72, privilege=ADMIN, http_method=GET, subject=72, holder=member72)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a MEMBER had an account registered to someone else fetched.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member06, privilege=MEMBER, http_method=GET, subject=6, holder=member06)", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a MEMBER had the account they own updated.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member89, privilege=ADMIN, http_method=GET, subject=90, holder=member90)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access rewrote their own profile during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access edited another user's account during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member28, privilege=ADMIN, http_method=DELETE, subject=29, holder=member29)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member13, privilege=ADMIN, http_method=DELETE, subject=13, holder=member13)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member44 => DELETE profile-44; ownership resolves to member44.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a ADMIN had an account registered to someone else fetched.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access fetched an account registered to someone else during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [ADMIN] member97 => GET profile-1; ownership resolves to member01.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member04, privilege=GUEST, http_method=POST, subject=5, holder=member05)", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Trace [GUEST] member91 => POST profile-92; ownership resolves to member92.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member70, privilege=ADMIN, http_method=GET, subject=70, holder=member70)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member63, privilege=GUEST, http_method=GET, subject=64, holder=member64)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member12 => GET profile-12; ownership resolves to member12.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a ADMIN had a different member's profile edited.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with GUEST access requested the account they own during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member04, privilege=MEMBER, http_method=GET, subject=4, holder=member04)", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access changed someone else's profile during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with MEMBER access revised a profile registered to the same member during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access rewrote someone else's profile during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a MEMBER had someone else's profile modified.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member33 => GET profile-34; ownership resolves to member34.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access retrieved an account registered to someone else during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access retrieved a different member's profile during the request.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "Trace [ADMIN] member15 => DELETE profile-15; ownership resolves to member15.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access changed another user's account during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with ADMIN access edited a profile belonging to another user during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "An operator with GUEST access edited the account they own during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member48, privilege=MEMBER, http_method=DELETE, subject=48, holder=member48)", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [MEMBER] member25 => GET profile-26; ownership resolves to member26.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member91, privilege=ADMIN, http_method=GET, subject=92, holder=member92)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a GUEST had their own profile opened.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access retrieved the account they own during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access patched a different member's profile during the request.", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a ADMIN had a profile registered to the same member fetched.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "Trace [ADMIN] member32 => PUT profile-33; ownership resolves to member33.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member46, privilege=MEMBER, http_method=PATCH, subject=46, holder=member46)", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member21, privilege=ADMIN, http_method=POST, subject=21, holder=member21)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a GUEST had someone else's profile edited.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member04, privilege=ADMIN, http_method=GET, subject=5, holder=member05)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member61, privilege=MEMBER, http_method=PATCH, subject=62, holder=member62)", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member29 => GET profile-30; ownership resolves to member30.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member19, privilege=ADMIN, http_method=PATCH, subject=19, holder=member19)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access viewed the profile belonging to themselves during the request.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member07, privilege=ADMIN, http_method=PUT, subject=7, holder=member07)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member17, privilege=ADMIN, http_method=PATCH, subject=17, holder=member17)", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member97, privilege=GUEST, http_method=PATCH, subject=1, holder=member01)", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a MEMBER had the account they own retrieved.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with ADMIN access patched a profile registered to the same member during the request.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a ADMIN had a profile registered to the same member edited.", "facts": {"actorRole": "ADMIN", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member84, privilege=ADMIN, http_method=GET, subject=84, holder=member84)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with GUEST access rewrote a different member's profile during the request.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "Trace [MEMBER] member27 => GET profile-28; ownership resolves to member28.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a GUEST had a profile belonging to another user rewrote.", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member38, privilege=MEMBER, http_method=POST, subject=38, holder=member38)", "facts": {"actorRole": "MEMBER", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member80, privilege=ADMIN, http_method=GET, subject=80, holder=member80)", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "profile_event(caller=member57, privilege=GUEST, http_method=GET, subject=58, holder=member58)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member55, privilege=GUEST, http_method=GET, subject=55, holder=member55)", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OWN_PROFILE"}}
+{"text": "An operator with MEMBER access requested a different member's profile during the request.", "facts": {"actorRole": "MEMBER", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "According to the incident note, a ADMIN had an account registered to someone else fetched.", "facts": {"actorRole": "ADMIN", "action": "READ", "relationship": "OTHER_USER"}}
+{"text": "profile_event(caller=member77, privilege=GUEST, http_method=PATCH, subject=77, holder=member77)", "facts": {"actorRole": "GUEST", "action": "WRITE", "relationship": "OWN_PROFILE"}}
+{"text": "According to the incident note, a GUEST had a profile belonging to another user viewed.", "facts": {"actorRole": "GUEST", "action": "READ", "relationship": "OTHER_USER"}}
