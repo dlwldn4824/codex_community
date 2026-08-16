@@ -70,20 +70,21 @@ showSolution = function(data) {
   window.vibeShowReverify = () => showReverify(window.vibeReverifyResult);
   const openRecheck = () => {
     const rows = visiblePlan.map((item, index) => `<article class="recheck-row"><b>${String(index + 1).padStart(2, "0")}</b><div><strong>${escape(item.file)} · ${escape(item.title)}</strong><p>수정 전: Semgrep이 ${escape(item.line)}번째 줄 근처를 확인했습니다.</p><p>수정 후 확인: ${escape(item.recheck)}</p></div><em>검토 대기</em></article>`).join("") || `<p>재점검할 수정 항목이 없습니다.</p>`;
-    solutionPage.innerHTML = `<p class="eyebrow">재점검 리스트</p><h2>반영할 수정안을<br/>확인하세요.</h2><p class="repair-intro">원격 GitHub 저장소는 그대로 두고, 새 로컬 사본에 Codex 수정안을 적용한 뒤 Semgrep을 다시 실행합니다.</p><section class="recheck-list">${rows}</section><section class="repair-recheck"><span>검증 순서</span><h3>수정 사본 생성 → 정적 분석 재실행</h3><p>원본 저장소에는 어떤 변경도 전송하지 않습니다. 수정 가능한 항목은 새로 복제한 사본에만 적용하고, 수정 전·후 결과를 비교합니다.</p></section><div class="solution-actions"><button class="quiet-btn" id="back-to-repairs">← 재점검</button><button class="about-cta" id="run-recheck">반영 후 재검증 →</button></div>`;
+    solutionPage.innerHTML = `<p class="eyebrow">재점검 리스트</p><h2>반영할 수정안을<br/>확인하세요.</h2><p class="repair-intro">원격 GitHub 저장소는 그대로 두고, 새 로컬 사본에 Codex 수정안을 적용한 뒤 Semgrep을 다시 실행합니다.</p><div class="solution-actions repair-action-top"><button class="about-cta" data-run-recheck>Codex 수정안 적용 후 재점검 →</button></div><section class="recheck-list">${rows}</section><section class="repair-recheck"><span>검증 순서</span><h3>수정 사본 생성 → 정적 분석 재실행</h3><p>원본 저장소에는 어떤 변경도 전송하지 않습니다. 수정 가능한 항목은 새로 복제한 사본에만 적용하고, 수정 전·후 결과를 비교합니다.</p></section><div class="solution-actions"><button class="quiet-btn" id="back-to-repairs">← 재점검</button><button class="about-cta" data-run-recheck>Codex 수정안 적용 후 재점검 →</button></div>`;
     document.querySelector("#back-to-repairs").addEventListener("click", () => window.vibeNavigate?.("solution"));
-    document.querySelector("#run-recheck").addEventListener("click", async event => {
+    document.querySelectorAll("[data-run-recheck]").forEach(runButton => runButton.addEventListener("click", async event => {
       const button = event.currentTarget; button.disabled = true; button.textContent = "수정 사본을 만들고 재점검 중…";
+      document.querySelectorAll("[data-run-recheck]").forEach(item => { if (item !== button) item.disabled = true; });
       try {
         const response = await fetch("/api/recheck-project", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ url: data.projectAnalysis.sourceUrl }) });
         const result = await response.json(); if (!response.ok) throw new Error(result.error);
         window.vibeReverifyResult = result;
         window.vibeNavigate?.("reverify");
-      } catch (error) { alert(error.message); button.disabled = false; button.textContent = "Codex 수정안 적용 후 재점검 →"; }
-    });
+      } catch (error) { alert(error.message); document.querySelectorAll("[data-run-recheck]").forEach(item => { item.disabled = false; item.textContent = "Codex 수정안 적용 후 재점검 →"; }); }
+    }));
   };
   window.vibeShowRecheck = openRecheck;
-  solutionPage.innerHTML = `<p class="eyebrow">재점검 · ${visiblePlan.length} ITEMS</p><h2>${visiblePlan.length}개 수정 지점을<br/>하나씩 검토하세요.</h2><p class="repair-intro">Semgrep이 확인한 ${visiblePlan.length}개 코드 위치를 빠짐없이 보여줍니다. 원격 GitHub 저장소에는 아무것도 수정하거나 반영하지 않습니다.</p><section class="repair-file-list">${cards}</section><div class="solution-actions"><button class="quiet-btn" id="back-to-map">← 보안 지도 돌아가기</button><button class="about-cta" id="open-recheck">다음: 재점검 리스트 보기 →</button></div>`;
+  solutionPage.innerHTML = `<p class="eyebrow">재점검 · ${visiblePlan.length} ITEMS</p><h2>${visiblePlan.length}개 수정 지점을<br/>하나씩 검토하세요.</h2><p class="repair-intro">Semgrep이 확인한 ${visiblePlan.length}개 코드 위치를 빠짐없이 보여줍니다. 원격 GitHub 저장소에는 아무것도 수정하거나 반영하지 않습니다.</p><div class="solution-actions repair-action-top"><button class="about-cta" data-open-recheck>재점검 리스트 보기 →</button></div><section class="repair-file-list">${cards}</section><div class="solution-actions"><button class="quiet-btn" id="back-to-map">← 보안 지도 돌아가기</button><button class="about-cta" data-open-recheck>재점검 리스트 보기 →</button></div>`;
   document.querySelector("#back-to-map").addEventListener("click", () => window.vibeNavigate?.("result"));
-  document.querySelector("#open-recheck").addEventListener("click", () => window.vibeNavigate?.("recheck"));
+  document.querySelectorAll("[data-open-recheck]").forEach(button => button.addEventListener("click", () => window.vibeNavigate?.("recheck")));
 };
