@@ -1,25 +1,34 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>VibeCheck — 바이브 코딩 보안 검증</title><link rel="stylesheet" href="/styles.css" /></head>
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeCheck — 실제 공격으로 증명하는 보안 검증</title><link rel="stylesheet" href="/styles.css" />
+</head>
 <body>
-  <header><a class="brand" href="/">Vibe<span>Check</span></a><div class="tag">Neuro-Symbolic Security Harness</div><div class="scope">● LOCAL DEMO ONLY</div></header>
-  <main>
-    <section class="hero"><div><p class="eyebrow">AI는 수행하고 · 시스템은 검증하고 · 사람은 결정합니다</p><h1>내 앱을 <em>공격해 보세요.</em></h1><p class="sub">“안전하다”는 AI의 말이 아니라, 실제 공격 재실행으로 증명합니다.</p></div><button id="attack" class="primary">⚡ 내 앱 공격하기</button></section>
-    <nav class="flow"><span>01 이해</span><i>→</i><span>02 공격</span><i>→</i><span>03 검증</span><i>→</i><span>04 결정</span><i>→</i><span>05 수리</span><i>→</i><span>06 재실행</span></nav>
-    <section id="empty" class="empty"><div class="radar">⌁</div><h2>실행 준비 완료</h2><p>로컬 데모 대상으로만 실제 HTTP 보안 테스트를 실행합니다.</p></section>
-    <div id="dashboard" hidden>
-      <section class="cards">
-        <article class="card breaker"><label>🔴 CODEX BREAKER</label><h2>실제 공격 증거</h2><div class="request">GET <b>/api/users/2</b></div><p>로그인: <b>member01</b> (MEMBER)</p><p>대상 소유자: <b>member02</b></p><div id="http" class="http">HTTP —</div></article>
-        <article class="card incident"><label>WHAT IF YOU SHIPPED THIS?</label><h2 id="headline">공격 결과를 분석 중입니다</h2><ol id="timeline"></ol><div id="impact" class="impact"></div></article>
-        <article class="card referee"><label>⚖ NeSy REFEREE</label><h2>결정적 규칙 검증</h2><div id="facts" class="facts"></div><div id="verdict" class="verdict"></div></article>
-      </section>
-      <section class="lower">
-        <article class="panel kg"><div class="panel-title"><span>SECURITY KNOWLEDGE GRAPH</span><small>실제 추론에 사용됨</small></div><div id="graph" class="graph"></div><p id="reasoning" class="reasoning"></p></article>
-        <article class="panel log"><div class="panel-title"><span>CODEX ORCHESTRATION</span><small>실패를 숨기지 않습니다</small></div><div id="logs"></div></article>
-      </section>
-      <section id="decision" class="decision"><div><label>HUMAN CHECKPOINT</label><h2 id="decision-title">결정이 필요합니다</h2><p id="decision-copy"></p><div id="diff" class="diff" hidden><span>- 로그인 여부만 확인</span><span>+ ADMIN 또는 본인만 허용</span></div></div><button id="fix" class="primary">Codex 수정안 승인 및 검증</button></section>
-    </div>
-    <section class="constitution"><div><label>SECURITY CONSTITUTION · 승인됨</label><h2>사람이 읽고 승인한 보안 약속</h2></div><p>01 다른 사용자는 내 비공개 프로필을 볼 수 없다.<br/>02 관리자는 모든 사용자 프로필을 볼 수 있다.</p></section>
-  </main><footer>VibeCheck · authorized local development targets only · <a href="https://github.com/dlwldn4824/codex_community">GitHub</a></footer>
-  <script src="/app.js"></script>
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brand-mark">V</span>VibeCheck</a><p class="product-label">SECURITY HARNESS</p>
+    <nav class="side-nav" aria-label="제품 탐색"><a class="active" href="#dashboard">▣ <span>대시보드</span></a><a href="#project">◇ <span>프로젝트</span></a><a href="#logs">▤ <span>검증 기록</span></a><a href="#constitution">◈ <span>Security Constitution</span></a><a href="#graph">⌘ <span>Knowledge Graph</span></a></nav>
+    <div class="project-card" id="project"><span class="cap">현재 프로젝트</span><b>demo-vibecoding-app</b><small><i></i> localhost · 연결됨</small></div>
+    <div class="side-stat"><span class="cap">TODAY'S VIBE CHECK</span><div><b id="check-count">—</b><span>실행</span></div><div><b id="violation-count">—</b><span>위반</span></div><div><b id="repair-count">—</b><span>수정</span></div></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><div><span class="crumb">PROJECT / DEMO-VIBECODING-APP</span><h1>배포하기 전에, 먼저 털어보세요.</h1></div><div class="safe-scope">● 승인된 로컬 대상만</div></header>
+    <main>
+      <section class="workflow" aria-label="보안 검증 워크플로"><div class="step done"><b>01</b><span>프로젝트 이해<small>AI</small></span></div><i>→</i><div class="step" data-step="attack"><b>02</b><span>공격<small>Codex Breaker</small></span></div><i>→</i><div class="step" data-step="verify"><b>03</b><span>검증<small>NeSy</small></span></div><i>→</i><div class="step" data-step="decision"><b>04</b><span>사람 판단<small>Human</small></span></div><i>→</i><div class="step" data-step="repair"><b>05</b><span>수정<small>Codex Builder</small></span></div><i>→</i><div class="step" data-step="replay"><b>06</b><span>재공격<small>NeSy</small></span></div></section>
+      <section id="empty" class="hero-state"><div class="hero-orb"><span>⌁</span></div><p class="eyebrow">NEURO-SYMBOLIC SECURITY HARNESS</p><h2>만들기는 쉬워졌지만,<br/><em>검증은 아직 어렵습니다.</em></h2><p>현재 프로젝트를 분석하고, 실제 사용자 권한으로 공격 시나리오를 실행합니다.</p><div class="target-chip"><i></i><span>demo-vibecoding-app</span><code>GET /api/users/:id</code></div><button id="attack" class="attack-btn"><span>⚡</span> 내 앱 공격해보기</button><small>실제 HTTP 요청을 실행합니다 · localhost 개발 대상</small></section>
+      <div id="dashboard" hidden>
+        <section class="stage-head"><div><p class="eyebrow">LIVE SECURITY REPLAY</p><h2 id="stage-title">실제 공격 결과</h2></div><button id="attack-again" class="quiet-btn">↻ 공격 다시 실행</button></section>
+        <section class="triad">
+          <article class="breaker-panel panel"><div class="panel-kicker red">● CODEX BREAKER</div><h3>공격자 관점</h3><div class="identity"><div class="avatar red-avatar">M</div><div><b>member01</b><span>MEMBER · 일반 회원</span></div></div><div class="attack-route"><span>REQUEST</span><code>GET <b>/api/users/2</b></code><em>↓ 다른 사용자 ID로 변경</em></div><div id="http" class="attack-result">HTTP —</div><div class="target-row"><span>RESULT</span><b id="target-data">응답 대기 중</b></div><div class="breaker-foot">Codex가 실제 요청을 생성·실행하고 증거를 수집했습니다.</div></article>
+          <article class="story-panel panel"><div class="panel-kicker">WHAT IF YOU SHIPPED THIS?</div><div class="incident-symbol">!</div><h2 id="headline">공격 시나리오를 준비하고 있습니다.</h2><p id="story-sub">실제 실행 결과가 이곳에 표시됩니다.</p><ol id="timeline" class="timeline"></ol><div id="impact" class="impact"></div><div class="evidence-strip"><span>ACTOR <b>member01</b></span><span>PATH <b>/api/users/2</b></span><span>OWNER <b>member02</b></span></div></article>
+          <article class="referee-panel panel"><div class="panel-kicker purple">◈ NeSy REFEREE</div><h3>AI 해석과 규칙 판정</h3><section class="neural-box"><div class="section-head"><span>NEURAL INTERPRETATION</span><small>실행 증거를 구조화</small></div><div id="facts" class="facts"></div></section><section class="symbolic-box"><div class="section-head"><span>SYMBOLIC VERIFICATION</span><small>결정적 규칙</small></div><div class="rule-line"><b>BAC-001</b><span>다른 회원 프로필 읽기 금지</span></div><div class="compare"><div><span>EXPECTED</span><b id="expected">DENY</b></div><i>≠</i><div><span>OBSERVED</span><b id="observed">—</b></div></div><div id="verdict" class="verdict"></div></section></article>
+        </section>
+        <section class="decision panel" id="decision"><div class="decision-icon">?</div><div class="decision-main"><p class="panel-kicker amber">HUMAN CHECKPOINT</p><h2 id="decision-title">판단이 필요합니다</h2><p id="decision-copy"></p><div class="decision-meta"><span><b>근거</b> GET /api/users/2</span><span><b>규칙</b> BAC-001</span><span><b>영향</b> 개인정보 노출</span></div></div><div class="decision-actions"><button class="quiet-btn" id="evidence-button">전체 증거 보기</button><button id="fix" class="fix-btn">Codex 수정안 승인 및 검증 <span>→</span></button></div></section>
+        <section id="fix-detail" class="fix-detail panel" hidden><div><p class="panel-kicker blue">🔵 CODEX BUILDER</p><h2>수정안이 적용되었습니다</h2><p>서버 측에 본인 또는 관리자만 허용하는 소유권 검사가 기록됐습니다.</p></div><div class="diff"><span>- 로그인 여부만 확인</span><span>+ ADMIN 또는 본인만 허용</span></div><div class="preserves"><b>유지된 기능</b><span>✓ 관리자 전체 조회</span><span>✓ 본인 프로필 조회</span></div></section>
+        <section class="bottom-grid"><article class="panel graph-panel"><div class="section-head"><span>SECURITY KNOWLEDGE GRAPH</span><small>공격 경로와 정책을 연결</small></div><div id="graph" class="graph"></div><p id="reasoning" class="reasoning"></p></article><article class="panel log-panel"><div class="section-head"><span>CODEX BUILD LOG</span><small>계획 · 실행 · 관찰 · 검증</small></div><div id="logs"></div></article></section>
+        <section class="before-after panel" id="before-after" hidden><div class="before"><span>수정 전</span><b>200 OK</b><p>공격 성공 · 개인정보 노출</p><small>✕ BAC-001 VIOLATION</small></div><div class="arrow">→</div><div class="after"><span>수정 후</span><b>403 FORBIDDEN</b><p>동일 공격 차단</p><small>✓ BAC-001 PASS</small></div><div class="defended"><b>✓ DEFENDED</b><span>공격이 차단되었습니다.</span></div></section>
+      </div>
+      <section class="constitution panel" id="constitution"><div><p class="panel-kicker">SECURITY CONSTITUTION · 승인됨</p><h2>우리 서비스가 절대 하면 안 되는 것</h2></div><div class="constitution-rule"><b>01</b><span>일반 사용자는 다른 사용자의 개인정보를 볼 수 없습니다.<small>BAC-001 · Project Intent + OWASP</small></span></div><div class="constitution-rule"><b>02</b><span>관리자 기능은 관리자만 사용할 수 있습니다.<small>AUTH-002 · 승인 대기</small></span></div></section>
+    </main><footer>VibeCheck · Codex attacks · NeSy verifies · Humans decide</footer>
+  </div><dialog id="evidence-dialog"><button class="close-dialog">×</button><p class="panel-kicker">ATTACK EVIDENCE</p><h2>실제 HTTP 증거</h2><pre id="evidence-content"></pre></dialog><script src="/app.js"></script>
 </body></html>
