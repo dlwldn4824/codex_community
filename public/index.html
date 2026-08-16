@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VibeCheck — 실제 공격으로 증명하는 보안 검증</title><link rel="stylesheet" href="/styles.css" />
+  <title>VibeCheck — 실제 공격으로 증명하는 보안 검증</title><link rel="stylesheet" href="/styles.css" /><link rel="stylesheet" href="/integration.css" />
 </head>
 <body>
   <aside class="sidebar">
@@ -27,6 +27,7 @@
         <section id="fix-detail" class="fix-detail panel" hidden><div><p class="panel-kicker blue">🔵 CODEX BUILDER</p><h2>수정안이 적용되었습니다</h2><p>서버 측에 본인 또는 관리자만 허용하는 소유권 검사가 기록됐습니다.</p></div><div class="diff"><span>- 로그인 여부만 확인</span><span>+ ADMIN 또는 본인만 허용</span></div><div class="preserves"><b>유지된 기능</b><span>✓ 관리자 전체 조회</span><span>✓ 본인 프로필 조회</span></div></section>
         <section class="bottom-grid"><article class="panel graph-panel"><div class="section-head"><span>SECURITY KNOWLEDGE GRAPH</span><small>공격 경로와 정책을 연결</small></div><div id="graph" class="graph"></div><p id="reasoning" class="reasoning"></p></article><article class="panel log-panel"><div class="section-head"><span>CODEX BUILD LOG</span><small>계획 · 실행 · 관찰 · 검증</small></div><div id="logs"></div></article></section>
         <section class="before-after panel" id="before-after" hidden><div class="before"><span>수정 전</span><b>200 OK</b><p>공격 성공 · 개인정보 노출</p><small>✕ BAC-001 VIOLATION</small></div><div class="arrow">→</div><div class="after"><span>수정 후</span><b>403 FORBIDDEN</b><p>동일 공격 차단</p><small>✓ BAC-001 PASS</small></div><div class="defended"><b>✓ DEFENDED</b><span>공격이 차단되었습니다.</span></div></section>
+        <section class="integration panel" aria-label="Jira와 Confluence 연동 데모"><div><p class="panel-kicker blue">ATLASSIAN WORKFLOW · DEMO</p><h2>발견부터 공유까지</h2><p>실제 공격 결과로 생성된 데모 기록입니다. 외부 Jira·Confluence에는 전송하지 않습니다.</p><div class="progress-track"><i id="integration-progress"></i></div><small id="integration-progress-label">공격 결과를 기다리고 있습니다.</small></div><div id="jira-demo" class="integration-item"><b>Jira</b><span>공격 실행 후 티켓 상태가 표시됩니다.</span></div><div id="confluence-demo" class="integration-item"><b>Confluence</b><span>공격 실행 후 증거 문서 상태가 표시됩니다.</span></div></section>
       </div>
       <section class="constitution panel" id="constitution"><div><p class="panel-kicker">SECURITY CONSTITUTION · 승인됨</p><h2>우리 서비스가 절대 하면 안 되는 것</h2></div><div class="constitution-rule"><b>01</b><span>일반 사용자는 다른 사용자의 개인정보를 볼 수 없습니다.<small>BAC-001 · Project Intent + OWASP</small></span></div><div class="constitution-rule"><b>02</b><span>관리자 기능은 관리자만 사용할 수 있습니다.<small>AUTH-002 · 승인 대기</small></span></div></section>
     </main><footer>VibeCheck · Codex attacks · NeSy verifies · Humans decide</footer>

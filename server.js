@@ -4,6 +4,7 @@ const path = require("path");
 const { extractSecurityFacts } = require("./core/facts");
 const { verify } = require("./core/verifier");
 const { buildKnowledgeGraph } = require("./core/kg");
+const { syncFinding } = require("./core/atlassian-demo");
 
 const PORT = Number(process.env.PORT || 3000);
 const targetFile = path.join(__dirname, "target-app/users.js");
@@ -31,6 +32,7 @@ function runRealAttack(callback) {
       const evidence = { attackId: "Attack-001", request: "GET /api/users/2", status: response.statusCode, response: body ? JSON.parse(body) : null, actor: { id: "1", name: "member01", role: "MEMBER" }, targetId: "2", resourceOwner: target, executedAt: new Date().toISOString() };
       const facts = extractSecurityFacts(evidence); const verification = verify(facts); const kg = buildKnowledgeGraph(evidence, facts, verification);
       state.lastRun = { evidence, facts, verification, kg, patched: state.patched, logs: state.logs };
+      state.lastRun.integration = syncFinding(state.lastRun);
       callback(state.lastRun);
     });
   });
@@ -62,6 +64,7 @@ const server = http.createServer((req, res) => {
   if (pathname === "/") return serveFile(res, path.join(__dirname, "public/index.html"), "text/html; charset=utf-8");
   if (pathname === "/app.js") return serveFile(res, path.join(__dirname, "public/app.js"), "text/javascript; charset=utf-8");
   if (pathname === "/styles.css") return serveFile(res, path.join(__dirname, "public/styles.css"), "text/css; charset=utf-8");
+  if (pathname === "/integration.css") return serveFile(res, path.join(__dirname, "public/integration.css"), "text/css; charset=utf-8");
   json(res, 404, { error: "Not found" });
 });
 

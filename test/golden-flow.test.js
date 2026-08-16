@@ -16,8 +16,12 @@ test("Golden Demo: real attack → violation → approval patch → replay pass"
   assert.equal(before.evidence.status, 200);
   assert.equal(before.verification.verdict, "VIOLATION");
   assert.equal(before.kg.reasoning.includes("VIOLATION"), true);
+  assert.equal(before.integration.jira.status, "수정 대기");
+  assert.equal(before.integration.progress.percent, 50);
   const after = await run("/api/approve-fix");
   assert.equal(after.evidence.status, 403);
   assert.equal(after.verification.verdict, "PASS");
+  assert.equal(after.integration.jira.status, "완료");
+  assert.equal(after.integration.progress.percent, 100);
   assert.equal(fs.readFileSync(target, "utf8").includes('requester.role !== "ADMIN"'), true);
 });
