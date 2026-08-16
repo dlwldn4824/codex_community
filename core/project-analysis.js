@@ -221,18 +221,20 @@ function buildUserSecurityMap(project, scan) {
 function buildRepairPlan(project, scan) {
   const describe = finding => {
     const signal = `${finding.rule} ${finding.message} ${finding.file}`.toLowerCase();
-    if (/secret|api.?key|token|password|credential/.test(signal)) return { title: "비밀 정보를 환경 설정으로 분리", reason: "코드에 남은 키·토큰·비밀번호는 저장소와 배포 로그를 통해 노출될 수 있습니다.", before: "const apiKey = \"...\";", after: "const apiKey = process.env.API_KEY;", recheck: "코드와 설정 파일에 실제 비밀 값이 남아 있지 않은지 다시 검사" };
-    if (/path|file|directory|upload/.test(signal)) return { title: "파일 경로 접근 범위 제한", reason: "사용자 입력으로 파일 경로를 만들면 허용되지 않은 파일에 접근할 가능성이 있습니다.", before: "const filePath = userInput;", after: "const filePath = resolveAllowedPath(userInput);\nif (!filePath) return denyAccess();", recheck: "상위 경로 이동과 허용되지 않은 확장자 요청을 다시 검사" };
-    if (/url|uri|http|request|fetch|axios|redirect/.test(signal)) return { title: "외부 요청 대상과 전달 데이터 확인", reason: "외부 URL 요청은 인증 정보나 사용자 데이터가 의도하지 않은 곳으로 전달될 수 있습니다.", before: "await fetch(targetUrl, options);", after: "if (!isAllowedUrl(targetUrl)) return denyRequest();\nawait fetch(targetUrl, safeOptions);", recheck: "허용되지 않은 URL과 민감 정보가 포함된 요청을 다시 검사" };
-    if (/auth|permission|role|user|access/.test(signal)) return { title: "요청자 권한 검사 추가", reason: "로그인 여부만 확인하면 권한이 없는 사용자도 기능에 접근할 수 있습니다.", before: "if (!session) return deny();", after: "if (!session || !hasRequiredPermission(session.user)) return deny();", recheck: "일반 사용자와 관리자 계정으로 동일 기능 접근을 다시 검사" };
-    return { title: "입력값과 보안 설정 검증", reason: "정적 분석이 추가 검토가 필요한 코드 위치를 찾았습니다.", before: "// 현재 처리 로직", after: "// 입력 검증과 권한 확인을 추가", recheck: "수정한 코드 경로를 Semgrep 규칙으로 다시 검사" };
+    const before = finding.snippet?.trim() || "현재 탐지된 코드 줄을 열어 검토";
+    if (/\.github\/workflows|github-actions|action.*pin|mutable-action-tag/.test(signal)) return { title: "GitHub Action 버전을 고정", reason: "변하는 태그(main·v1 등)로 Action을 실행하면 이후 외부 코드가 바뀌어도 같은 배포 흐름에서 실행될 수 있습니다.", before, after: "uses: 공급자/Action@검증한-전체-커밋-SHA\n# 허용한 Action 버전을 정확히 고정", recheck: "워크플로 YAML 문법과 Action SHA 고정 규칙을 다시 검사" };
+    if (/secret|api.?key|token|password|credential/.test(signal)) return { title: "비밀 정보를 환경 설정으로 분리", reason: "코드에 남은 키·토큰·비밀번호는 저장소와 배포 로그를 통해 노출될 수 있습니다.", before, after: "const apiKey = process.env.API_KEY;\n// 실제 값은 안전한 CI Secret에만 저장", recheck: "코드와 설정 파일에 실제 비밀 값이 남아 있지 않은지 다시 검사" };
+    if (/path|file|directory|upload/.test(signal)) return { title: "파일 경로 접근 범위 제한", reason: "사용자 입력으로 파일 경로를 만들면 허용되지 않은 파일에 접근할 가능성이 있습니다.", before, after: "const filePath = resolveAllowedPath(userInput);\nif (!filePath) return denyAccess();", recheck: "상위 경로 이동과 허용되지 않은 확장자 요청을 다시 검사" };
+    if (/url|uri|http|request|fetch|axios|redirect/.test(signal)) return { title: "외부 요청 대상과 전달 데이터 확인", reason: "외부 URL 요청은 인증 정보나 사용자 데이터가 의도하지 않은 곳으로 전달될 수 있습니다.", before, after: "if (!isAllowedUrl(targetUrl)) return denyRequest();\nawait fetch(targetUrl, safeOptions);", recheck: "허용되지 않은 URL과 민감 정보가 포함된 요청을 다시 검사" };
+    if (/auth|permission|role|user|access/.test(signal)) return { title: "요청자 권한 검사 추가", reason: "로그인 여부만 확인하면 권한이 없는 사용자도 기능에 접근할 수 있습니다.", before, after: "if (!session || !hasRequiredPermission(session.user)) return deny();", recheck: "일반 사용자와 관리자 계정으로 동일 기능 접근을 다시 검사" };
+    return { title: "입력값과 보안 설정 검증", reason: "정적 분석이 추가 검토가 필요한 코드 위치를 찾았습니다.", before, after: "// 입력 검증과 권한 확인을 추가", recheck: "수정한 코드 경로를 Semgrep 규칙으로 다시 검사" };
   };
   const unique = new Map();
-  scan.findings.slice(0, 8).forEach(finding => {
+  scan.findings.forEach(finding => {
     const file = path.relative(project.directory, finding.file), proposal = describe(finding), key = `${file}:${proposal.title}`;
     if (!unique.has(key)) unique.set(key, { file, line: finding.line, rule: finding.rule, message: finding.message, ...proposal });
   });
-  return [...unique.values()].slice(0, 5);
+  return [...unique.values()];
 }
 
 module.exports = { analyzeGitHubRepository, buildRepositoryGraph, buildUserSecurityMap, buildRepairPlan };

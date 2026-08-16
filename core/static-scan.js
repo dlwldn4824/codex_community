@@ -22,7 +22,8 @@ function scanStaticCode(targets = ["target-app", "core", "server.js"]) {
         rule: result.check_id,
         file: result.path,
         line: result.start.line,
-        message: result.extra.message
+        message: result.extra.message,
+        snippet: result.extra.lines || ""
       }))
     };
   } catch (error) {
@@ -41,7 +42,7 @@ function scanStaticCodeAsync(targets = ["target-app", "core", "server.js"]) {
       if (error) return resolve({ engine: "Semgrep", status: "UNAVAILABLE", findings: [], error: error.message.split("\n")[0] });
       try {
         const report = JSON.parse(stdout);
-        resolve({ engine: "Semgrep", version: "1.173.0", status: "COMPLETED", findings: report.results.map(result => ({ rule: result.check_id, file: result.path, line: result.start.line, message: result.extra.message })) });
+        resolve({ engine: "Semgrep", version: "1.173.0", status: "COMPLETED", findings: report.results.map(result => ({ rule: result.check_id, file: result.path, line: result.start.line, message: result.extra.message, snippet: result.extra.lines || "" })) });
       } catch (parseError) {
         resolve({ engine: "Semgrep", status: "UNAVAILABLE", findings: [], error: parseError.message });
       }
