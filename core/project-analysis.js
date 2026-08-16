@@ -19,7 +19,7 @@ function run(command, args, options) {
 function walk(directory, files = [], depth = 0) {
   if (depth > 7 || files.length >= 500) return files;
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-    if ([".git", "node_modules", "vendor", "dist", "build"].includes(entry.name)) continue;
+    if ([".git", "node_modules", "vendor", "dist", "build", ".agents", ".codex", ".tools", ".venv", "coverage", "artifacts"].includes(entry.name)) continue;
     const full = path.join(directory, entry.name);
     if (entry.isDirectory()) walk(full, files, depth + 1);
     else files.push(full);

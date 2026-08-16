@@ -4,10 +4,11 @@ const path = require("path");
 const root = path.join(__dirname, "..");
 const toolRoot = path.join(root, ".tools/semgrep");
 const semgrep = path.join(toolRoot, "bin/semgrep");
+const ignoredPaths = ["--exclude", ".agents/**", "--exclude", ".codex/**", "--exclude", ".tools/**", "--exclude", "node_modules/**", "--exclude", "dist/**", "--exclude", "build/**", "--exclude", "coverage/**"];
 
-function scanStaticCode(targets = ["target-app", "core", "server.js"]) {
+function scanStaticCode(targets = ["target-app", "core", "runtime.js"]) {
   try {
-    const output = execFileSync(semgrep, ["scan", "--config", "auto", ...targets, "--json", "--quiet"], {
+    const output = execFileSync(semgrep, ["scan", "--config", "auto", ...ignoredPaths, ...targets, "--json", "--quiet"], {
       cwd: root,
       encoding: "utf8",
       timeout: 45000,
@@ -31,9 +32,9 @@ function scanStaticCode(targets = ["target-app", "core", "server.js"]) {
   }
 }
 
-function scanStaticCodeAsync(targets = ["target-app", "core", "server.js"]) {
+function scanStaticCodeAsync(targets = ["target-app", "core", "runtime.js"]) {
   return new Promise(resolve => {
-    execFile(semgrep, ["scan", "--config", "auto", ...targets, "--json", "--quiet"], {
+    execFile(semgrep, ["scan", "--config", "auto", ...ignoredPaths, ...targets, "--json", "--quiet"], {
       cwd: root,
       encoding: "utf8",
       timeout: 45000,

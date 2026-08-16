@@ -4,11 +4,12 @@
   "private": true,
   "description": "A neuro-symbolic security harness for vibe coding",
   "scripts": {
-    "start": "node server.js",
+    "start": "node runtime.js",
     "test": "node --test test/*.test.js",
     "setup:semgrep": "python3 -m pip install --target .tools/semgrep semgrep"
   },
   "dependencies": {
-    "cytoscape": "^3.34.1"
+    "cytoscape": "^3.34.1",
+    "express": "^5.1.0"
   }
 }

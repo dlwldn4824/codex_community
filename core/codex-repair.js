@@ -19,6 +19,17 @@ function extractOutputText(response) {
   return (response.output || []).flatMap(item => item.content || []).filter(item => item.type === "output_text").map(item => item.text).join("\n");
 }
 
+function explainApiError(error) {
+  const message = String(error?.message || "");
+  if (/exceeded your current quota|insufficient_quota|billing details/i.test(message)) {
+    return "OpenAI API 사용 한도 또는 결제 한도에 도달해 Codex 수정안을 생성하지 못했습니다. OpenAI 플랫폼의 Billing·Usage 설정을 확인한 뒤 다시 시도해 주세요.";
+  }
+  if (/401|incorrect api key|authentication/i.test(message)) {
+    return "OpenAI API 키를 확인할 수 없습니다. .env의 OPENAI_API_KEY 설정을 다시 확인해 주세요.";
+  }
+  return "Codex API 호출에 실패했습니다: " + message.slice(0, 180);
+}
+
 async function requestCodexRepair({ file, finding, source }) {
   if (!process.env.OPENAI_API_KEY) return { status: "NOT_CONFIGURED", reason: "OPENAI_API_KEY가 설정되지 않았습니다." };
   const model = process.env.VIBECHECK_REPAIR_MODEL || "gpt-5.6-terra";
@@ -89,6 +100,7 @@ async function proposeAndApplyCodexRepairs(project, findings) {
     if (selected.length >= max) break;
   }
   const applied = [], reviewRequired = [];
+  let apiFailureCount = 0;
   for (const { finding, file } of selected) {
     try {
       const source = fs.readFileSync(path.join(project.directory, file), "utf8");
@@ -97,9 +109,16 @@ async function proposeAndApplyCodexRepairs(project, findings) {
       const outcome = await applyPatch(project, proposal);
       if (outcome.status === "APPLIED") applied.push({ file, line: finding.line, before: finding.snippet?.trim() || "탐지된 코드", after: proposal.summary, source: "Codex API" });
       else reviewRequired.push({ file, line: finding.line, reason: outcome.reason || proposal.summary, source: "Codex API" });
-    } catch (error) { reviewRequired.push({ file, line: finding.line, reason: error.message, source: "Codex API" }); }
+    } catch (error) {
+      apiFailureCount += 1;
+      reviewRequired.push({ file, line: finding.line, reason: explainApiError(error), source: "Codex API" });
+    }
   }
-  return { status: "COMPLETED", model: process.env.VIBECHECK_REPAIR_MODEL || "gpt-5.6-terra", attempted: selected.length, applied, reviewRequired, reason: `Codex API가 파일 ${selected.length}개에 대해 최소 수정안을 생성·검토했습니다.` };
+  const status = apiFailureCount === selected.length ? "API_UNAVAILABLE" : "COMPLETED";
+  const reason = status === "API_UNAVAILABLE"
+    ? "Codex API가 사용 한도 또는 인증 문제로 수정안을 생성하지 못했습니다."
+    : `Codex API가 파일 ${selected.length}개에 대해 최소 수정안을 생성·검토했습니다.`;
+  return { status, model: process.env.VIBECHECK_REPAIR_MODEL || "gpt-5.6-terra", attempted: selected.length, applied, reviewRequired, reason };
 }
 
 module.exports = { proposeAndApplyCodexRepairs };

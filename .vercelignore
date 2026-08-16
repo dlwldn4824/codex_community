@@ -1,0 +1,16 @@
+# Local development tools and model artefacts are not required by the Vercel UI/API bundle.
+.tools/
+.env
+.venv/
+__pycache__/
+artifacts/
+*.safetensors
+*.pt
+*.tar.gz
+*.zip
+
+# Development-only files
+.git/
+test/
+docs/
+MODEL_ARTIFACTS.md
