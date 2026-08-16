@@ -68,6 +68,9 @@ const server = http.createServer((req, res) => {
   if (pathname === "/onboarding.css") return serveFile(res, path.join(__dirname, "public/onboarding.css"), "text/css; charset=utf-8");
   if (pathname === "/analysis.css") return serveFile(res, path.join(__dirname, "public/analysis.css"), "text/css; charset=utf-8");
   if (pathname === "/results.css") return serveFile(res, path.join(__dirname, "public/results.css"), "text/css; charset=utf-8");
+  if (pathname === "/result-layout.css") return serveFile(res, path.join(__dirname, "public/result-layout.css"), "text/css; charset=utf-8");
+  if (pathname === "/result-simple.css") return serveFile(res, path.join(__dirname, "public/result-simple.css"), "text/css; charset=utf-8");
+  if (pathname === "/result-override.css") return serveFile(res, path.join(__dirname, "public/result-override.css"), "text/css; charset=utf-8");
   json(res, 404, { error: "Not found" });
 });
 
