@@ -44,7 +44,35 @@ function stopAnalysisLogMonitor() { clearInterval(analysisLogTimer); analysisLog
 if (new URLSearchParams(location.search).get("preview") === "analysis") { document.body.classList.remove("onboarding"); document.body.classList.add("analyzing"); document.querySelector("#analysis-target").textContent = "디자인 미리보기 · 실제 분석 전 화면"; renderAnalysisLogs([], 0); }
 function showResult(data) { render(data); dashboard.hidden = true; workflow.hidden = true; constitution.hidden = true; resultPage.hidden = false; solutionPage.hidden = true; const { evidence, facts, verification } = data; const failed = verification.verdict === "VIOLATION"; document.querySelector("#result-sub").textContent = failed ? "일반 회원이 다른 회원의 정보를 실제로 읽을 수 있었습니다." : "같은 공격이 서버에서 차단된 것을 확인했습니다."; document.querySelector("#result-kg").innerHTML = [["사용자", `${facts.actorId} · 일반 회원`], ["행동", "다른 회원 프로필 요청"], ["대상", facts.resourceOwner], ["판정", verification.verdict]].map(([label, value]) => `<div><span>${label}</span><b>${value}</b></div>`).join(""); document.querySelector("#result-verdict").textContent = verification.verdict; document.querySelector("#result-http").textContent = `HTTP ${evidence.status}`; document.querySelector("#result-rule").textContent = verification.rule.id; document.querySelector("#result-impact").textContent = failed ? "개인정보 노출" : "접근 차단"; }
 function showSolution(data) { render(data); dashboard.hidden = true; workflow.hidden = true; constitution.hidden = true; resultPage.hidden = true; solutionPage.hidden = false; const defended = data.verification.verdict === "PASS"; document.querySelector("#solution-title").textContent = defended ? "해결과 재검증이 완료되었습니다." : "해결 방법을 검토하세요."; document.querySelector("#solution-copy").textContent = defended ? "승인된 수정 뒤, 같은 공격이 HTTP 403으로 차단됐습니다." : "실제 증거를 바탕으로 최소 수정안을 제안합니다."; document.querySelector("#solution-fix").hidden = defended; const replay = document.querySelector("#solution-replay"); replay.hidden = !defended; if (defended) replay.innerHTML = `<b>✓ 같은 공격 재검증 통과</b>GET /api/users/2 → HTTP ${data.evidence.status} · ${data.verification.verdict}`; }
-projectForm.addEventListener("submit", async event => { event.preventDefault(); event.stopImmediatePropagation(); const url = projectUrl.value.trim(); if (!url) return; const button = projectForm.querySelector("button"); const original = button.textContent; button.disabled = true; button.textContent = "프로젝트 구조를 읽는 중…"; const parsed = new URL(url); const name = parsed.pathname.split("/").filter(Boolean).pop() || parsed.hostname; document.querySelector("#project-name").textContent = name; document.querySelector("#project-crumb").textContent = `PROJECT / ${name.toUpperCase()}`; document.querySelector("#analysis-target").textContent = "프로젝트 보안 구조를 분석하는 중"; navigateTo("analysis"); startAnalysisLogMonitor(); try { const result = await call("/api/run-attack"); await new Promise(resolve => setTimeout(resolve, 3000)); stopAnalysisLogMonitor(); analysisPercent.textContent = "100%"; showResult(result); navigateTo("result", { replace: true }); } catch (error) { stopAnalysisLogMonitor(); navigateTo("home", { replace: true }); alert(error.message); } finally { button.disabled = false; button.textContent = original; } }, true);
+projectForm.addEventListener("submit", async event => {
+  event.preventDefault(); event.stopImmediatePropagation();
+  const url = projectUrl.value.trim(); if (!url) return;
+  const button = projectForm.querySelector("button"), original = button.textContent;
+  button.disabled = true; button.textContent = "프로젝트 구조를 읽는 중…";
+  const parsed = new URL(url), name = parsed.pathname.split("/").filter(Boolean).pop() || parsed.hostname;
+  const isGitHubRepository = /^https?:\/\/(?:www\.)?github\.com\/[^/]+\/[^/#?]+/.test(url);
+  document.querySelector("#project-name").textContent = name;
+  document.querySelector("#project-crumb").textContent = `PROJECT / ${name.toUpperCase()}`;
+  document.querySelector("#analysis-target").textContent = isGitHubRepository ? "GitHub 저장소를 분석하는 중" : "승인된 로컬 대상의 보안 구조를 분석하는 중";
+  navigateTo("analysis"); startAnalysisLogMonitor();
+  try {
+    let result;
+    if (isGitHubRepository) {
+      const response = await fetch("/api/analyze-project", {
+        method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ url })
+      });
+      result = await response.json();
+      if (!response.ok) throw new Error(result.error || "GitHub 저장소 분석에 실패했습니다.");
+    } else {
+      result = await call("/api/run-attack");
+    }
+    await new Promise(resolve => setTimeout(resolve, 450));
+    stopAnalysisLogMonitor(); analysisPercent.textContent = "100%";
+    showResult(result); navigateTo("result", { replace: true });
+  } catch (error) {
+    stopAnalysisLogMonitor(); navigateTo("home", { replace: true }); alert(error.message);
+  } finally { button.disabled = false; button.textContent = original; }
+}, true);
 document.querySelector("#open-solution").addEventListener("click", () => navigateTo("solution"));
 document.querySelector("#solution-evidence").addEventListener("click", () => { document.querySelector("#evidence-content").textContent = JSON.stringify(lastData.evidence, null, 2); dialog.showModal(); });
 document.querySelector("#solution-fix").addEventListener("click", async () => { if (!confirm("제안된 권한 패치를 적용하고 같은 공격을 다시 실행할까요?")) return; const button = document.querySelector("#solution-fix"); button.disabled = true; button.textContent = "동일 공격 재검증 중…"; try { showSolution(await call("/api/approve-fix")); } catch (error) { alert(error.message); } finally { button.disabled = false; button.textContent = "수정 승인 후 같은 공격 재검증 →"; } });
