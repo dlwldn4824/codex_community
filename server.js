@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const { extractSecurityFacts } = require("./core/facts");
+const { extractSecurityFactsWithModel } = require("./core/facts");
 const { verify } = require("./core/verifier");
 const { buildKnowledgeGraph } = require("./core/kg");
 const { syncFinding } = require("./core/atlassian-demo");
@@ -32,10 +32,10 @@ function runRealAttack(callback) {
   const options = { hostname: "127.0.0.1", port: PORT, path: "/api/users/2", headers: { "x-demo-user": "member01" } };
   const request = http.get(options, (response) => {
     let body = ""; response.on("data", chunk => body += chunk);
-    response.on("end", () => {
+    response.on("end", async () => {
       const target = usersModule().users["2"];
       const evidence = { attackId: "Attack-001", request: "GET /api/users/2", status: response.statusCode, response: body ? JSON.parse(body) : null, actor: { id: "1", name: "member01", role: "MEMBER" }, targetId: "2", resourceOwner: target, executedAt: new Date().toISOString() };
-      const facts = extractSecurityFacts(evidence); const verification = verify(facts); const kg = buildKnowledgeGraph(evidence, facts, verification);
+      const facts = await extractSecurityFactsWithModel(evidence); const verification = verify(facts); const kg = buildKnowledgeGraph(evidence, facts, verification);
       const staticScan = state.staticScan || scanStaticCode();
       state.staticScan = staticScan;
       const policyRag = retrievePolicy(state.companyPolicy);

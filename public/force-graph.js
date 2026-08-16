@@ -25,14 +25,19 @@ showResult = function(data) {
   const nodes = ordered.filter(node => connectedIds.has(node.id));
   const elements = [
     ...nodes.map(node => ({ data: { id: node.id, label: node.label, description: node.description, confidence: node.confidence, sourceFiles: node.sourceFiles || [] } })),
-    ...edges.map((edge, index) => ({ data: { id: edge.id, source: edge.source, target: edge.target, label: edge.displayLabel, labelOffset: ((index % 5) - 2) * 18, risk: edge.securityStatus === "WARNING" || edge.securityStatus === "CRITICAL", explanation: edge.explanation, dataFields: edge.data || [], sourceFiles: edge.sourceFiles || [], technicalDetails: edge.technicalDetails || null } }))
+    ...edges.map((edge, index) => ({
+      group: "edges",
+      classes: edge.securityStatus === "WARNING" || edge.securityStatus === "CRITICAL" ? "risk-edge" : "safe-edge",
+      data: { id: edge.id, source: edge.source, target: edge.target, label: edge.displayLabel, labelOffset: ((index % 5) - 2) * 18, explanation: edge.explanation, dataFields: edge.data || [], sourceFiles: edge.sourceFiles || [], technicalDetails: edge.technicalDetails || null }
+    }))
   ];
   map.className = "service-flow-graph";
   map.innerHTML = `<p class="flow-legend">기능과 데이터가 이동하는 길입니다. <b>빨간 선</b>은 실제 코드 근거가 있어 점검이 필요한 흐름입니다.</p><div class="flow-controls"><button type="button" data-zoom="out" aria-label="축소">−</button><button type="button" data-zoom="in" aria-label="확대">+</button><button type="button" data-zoom="fit" aria-label="전체 보기">□</button></div><div class="service-flow-canvas"></div>`;
   const cy = cytoscape({ container: map.querySelector(".service-flow-canvas"), elements, wheelSensitivity: 0, userZoomingEnabled: false, userPanningEnabled: true, autoungrabify: true, boxSelectionEnabled: false, layout: { name: "breadthfirst", directed: true, spacingFactor: 2.35, padding: 145, animate: false, avoidOverlap: true, nodeDimensionsIncludeLabels: true }, style: [
     { selector: "node", style: { "background-color": "#ffffff", "border-width": 2.5, "border-color": "#52739f", "label": "data(label)", "color": "#0b1830", "font-family": "HiKR, sans-serif", "font-size": 16, "font-weight": 700, "text-wrap": "wrap", "text-max-width": 120, "text-valign": "center", "text-halign": "center", "width": 126, "height": 126, "shape": "ellipse" } },
-    { selector: "edge", style: { "width": 1.6, "line-color": "#7189aa", "target-arrow-color": "#7189aa", "target-arrow-shape": "triangle", "curve-style": "bezier", "control-point-step-size": 60, "label": "data(label)", "color": "#244a7d", "font-family": "HiKR, sans-serif", "font-size": 12, "font-weight": 700, "text-rotation": "none", "text-margin-y": "data(labelOffset)", "text-background-color": "#f9fcff", "text-background-opacity": 1, "text-background-padding": 5 } },
-    { selector: "edge[risk = true]", style: { "width": 2.1, "line-color": "#e44550", "target-arrow-color": "#e44550", "color": "#c92f3c" } },
+    { selector: "edge", style: { "width": 1.6, "target-arrow-shape": "triangle", "curve-style": "bezier", "control-point-step-size": 60, "label": "data(label)", "font-family": "HiKR, sans-serif", "font-size": 12, "font-weight": 700, "text-rotation": "none", "text-margin-y": "data(labelOffset)", "text-background-color": "#f9fcff", "text-background-opacity": 1, "text-background-padding": 5 } },
+    { selector: "edge.safe-edge", style: { "line-color": "#101820", "target-arrow-color": "#101820", "color": "#101820" } },
+    { selector: "edge.risk-edge", style: { "width": 2.1, "line-color": "#e44550", "target-arrow-color": "#e44550", "color": "#c92f3c" } },
     { selector: ":selected", style: { "border-color": "#1558f5", "border-width": 3, "line-color": "#1558f5", "target-arrow-color": "#1558f5" } }
   ] });
   cy.userZoomingEnabled(false);
