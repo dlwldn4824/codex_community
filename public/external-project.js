@@ -60,10 +60,11 @@ showSolution = function(data) {
   const openRecheck = () => {
     const rows = visiblePlan.map((item, index) => `<article class="recheck-row"><b>${String(index + 1).padStart(2, "0")}</b><div><strong>${escape(item.file)} · ${escape(item.title)}</strong><p>수정 전: Semgrep이 ${escape(item.line)}번째 줄 근처를 확인했습니다.</p><p>수정 후 확인: ${escape(item.recheck)}</p></div><em>검토 대기</em></article>`).join("") || `<p>재점검할 수정 항목이 없습니다.</p>`;
     solutionPage.innerHTML = `<p class="eyebrow">RECHECK PLAN</p><h2>수정 뒤 무엇을<br/>다시 확인하나요?</h2><p class="repair-intro">원격 GitHub 저장소에는 수정하지 않았습니다. 아래는 각 제안이 별도 브랜치 또는 승인된 테스트 환경에 적용된 뒤 실행할 실제 재점검 항목입니다.</p><section class="recheck-list">${rows}</section><section class="repair-recheck"><span>검증 순서</span><h3>코드 문법 → 정적 분석 → 실제 흐름</h3><p>먼저 수정 파일의 빌드·테스트 오류를 확인하고, Semgrep을 다시 실행합니다. 승인된 테스트 환경이 있다면 해당 기능의 권한과 전달 데이터를 같은 시나리오로 재점검합니다.</p></section><div class="solution-actions"><button class="quiet-btn" id="back-to-repairs">← 수정안 다시 보기</button><button class="about-cta" id="reanalyze-project">새 분석 시작 →</button></div>`;
-    document.querySelector("#back-to-repairs").addEventListener("click", () => showSolution(data));
-    document.querySelector("#reanalyze-project").addEventListener("click", () => { solutionPage.hidden = true; document.body.classList.remove("abouting"); location.hash = ""; });
+    document.querySelector("#back-to-repairs").addEventListener("click", () => window.vibeNavigate?.("solution"));
+    document.querySelector("#reanalyze-project").addEventListener("click", () => window.vibeNavigate?.("home"));
   };
+  window.vibeShowRecheck = openRecheck;
   solutionPage.innerHTML = `<p class="eyebrow">CODEX REPAIR REVIEW · ${visiblePlan.length} ITEMS</p><h2>${visiblePlan.length}개 수정 지점을<br/>하나씩 검토하세요.</h2><p class="repair-intro">Semgrep이 확인한 ${visiblePlan.length}개 코드 위치를 빠짐없이 보여줍니다. 원격 GitHub 저장소에는 아무것도 수정하거나 반영하지 않습니다.</p><section class="repair-file-list">${cards}</section><div class="solution-actions"><button class="quiet-btn" id="back-to-map">← 보안 지도 돌아가기</button><button class="about-cta" id="open-recheck">다음: 재점검 계획 보기 →</button></div>`;
-  document.querySelector("#back-to-map").addEventListener("click", () => showResult(data));
-  document.querySelector("#open-recheck").addEventListener("click", openRecheck);
+  document.querySelector("#back-to-map").addEventListener("click", () => window.vibeNavigate?.("result"));
+  document.querySelector("#open-recheck").addEventListener("click", () => window.vibeNavigate?.("recheck"));
 };

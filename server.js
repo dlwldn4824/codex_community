@@ -17,7 +17,12 @@ const setAnalysisProgress = (percent, stages) => { state.analysis = { percent, s
 const usersModule = () => { delete require.cache[require.resolve("./target-app/users")]; return require("./target-app/users"); };
 
 function json(res, status, data) { res.writeHead(status, { "content-type": "application/json; charset=utf-8" }); res.end(JSON.stringify(data)); }
-function serveFile(res, file, type) { res.writeHead(200, { "content-type": type }); res.end(fs.readFileSync(file)); }
+function serveFile(res, file, type) {
+  // 개발 데모에서는 최신 UI/분석 로직을 즉시 받아야 합니다.
+  // 이전 JavaScript가 캐시되면 과거 분석의 1개 수정안 화면이 남을 수 있습니다.
+  res.writeHead(200, { "content-type": type, "cache-control": "no-store" });
+  res.end(fs.readFileSync(file));
+}
 function readJson(req, callback) { let body = ""; req.on("data", chunk => { body += chunk; if (body.length > 500000) req.destroy(); }); req.on("end", () => { try { callback(JSON.parse(body || "{}")); } catch { callback(null); } }); }
 
 function handleTarget(req, res, pathname) {
