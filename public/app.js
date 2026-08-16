@@ -7,9 +7,9 @@ const analysisConsole = document.querySelector("#analysis-console-log"), analysi
 // 분석 결과 데이터는 현재 탭의 lastData를 사용하며, 새로고침 뒤에는 홈으로 돌아갑니다.
 function showHome() {
   stopAnalysisLogMonitor();
-  document.body.classList.remove("analyzing");
+  document.body.classList.remove("analyzing", "abouting");
   document.body.classList.add("onboarding");
-  dashboard.hidden = true; workflow.hidden = true; constitution.hidden = true;
+  dashboard.hidden = true; workflow.hidden = true; constitution.hidden = true; empty.hidden = true;
   resultPage.hidden = true; solutionPage.hidden = true;
 }
 function currentRoute() { return location.hash.replace(/^#/, "") || "home"; }
@@ -26,16 +26,33 @@ function applyRoute() {
     document.body.classList.remove("onboarding"); document.body.classList.add("analyzing");
     return;
   }
-  if (!lastData) return showHome();
+  // 분석 결과는 현재 탭 메모리에만 있습니다. 새로고침 뒤 남아 있는
+  // #recheck / #reverify 주소는 이전 화면을 보여주지 않고 홈으로 정리합니다.
+  if (!lastData) {
+    history.replaceState(null, "", location.pathname);
+    return showHome();
+  }
   document.body.classList.remove("onboarding", "analyzing");
   if (route === "result") return showResult(lastData);
   if (route === "solution") return showSolution(lastData);
   if (route === "recheck" && typeof window.vibeShowRecheck === "function") return window.vibeShowRecheck();
   if (route === "reverify" && typeof window.vibeShowReverify === "function") return window.vibeShowReverify();
+  history.replaceState(null, "", location.pathname);
   showHome();
 }
 window.vibeNavigate = navigateTo;
 window.addEventListener("hashchange", applyRoute);
+window.addEventListener("popstate", applyRoute);
+// 브라우저 뒤로가기·새로고침으로 남은 내부 단계 주소는 결과 데이터 없이
+// 복원할 수 없습니다. 이 경우 오래된 대시보드를 남기지 않고 홈 URL로 교체합니다.
+function clearStaleInternalRoute() {
+  const route = currentRoute();
+  if (!lastData && ["result", "solution", "recheck", "reverify"].includes(route)) {
+    location.replace(location.pathname);
+  }
+}
+window.addEventListener("pageshow", clearStaleInternalRoute);
+setTimeout(() => { clearStaleInternalRoute(); applyRoute(); }, 0);
 const analysisTagClass = { VibeCheck: "vibe", Semgrep: "semgrep", Policy: "policy", KG: "kg", Breaker: "breaker", Evidence: "evidence", NeSy: "nesy" };
 function updateAnalysisBars(stages = [0, 0, 0, 0]) { document.querySelectorAll(".analysis-bars i").forEach((bar, index) => { const fill = Math.max(0, Math.min(100, stages[index] || 0)); bar.style.animation = "none"; bar.style.background = `linear-gradient(90deg,#1558f5 ${fill}%,#d9d9d9 ${fill}%)`; }); }
 function renderAnalysisLogs(logs, percent = 0, stages = [0, 0, 0, 0]) { const signature = logs.map(log => `${log.step}:${log.status}:${log.detail}`).join("|"); if (signature !== renderedAnalysisLogs) { analysisConsole.replaceChildren(); logs.forEach(log => { const row = document.createElement("div"), tag = document.createElement("b"), detail = document.createElement("span"); row.className = `analysis-log ${log.status}`; tag.className = analysisTagClass[log.step] || "vibe"; tag.textContent = `[${log.step}]`; detail.textContent = ` ${log.detail}`; row.append(tag, detail); analysisConsole.append(row); }); analysisConsole.scrollTop = analysisConsole.scrollHeight; renderedAnalysisLogs = signature; } analysisPercent.textContent = `${percent}%`; updateAnalysisBars(stages); }
