@@ -7,7 +7,7 @@ const { buildKnowledgeGraph } = require("./core/kg");
 const { syncFinding } = require("./core/atlassian-demo");
 const { scanStaticCode, scanStaticCodeAsync } = require("./core/static-scan");
 const { indexCompanyPolicy, retrievePolicy } = require("./core/policy-rag");
-const { analyzeGitHubRepository, buildRepositoryGraph, buildUserSecurityMap, buildRepairPlan } = require("./core/project-analysis");
+const { analyzeGitHubRepository, applySafeRepairProposals, buildRepositoryGraph, buildUserSecurityMap, buildRepairPlan } = require("./core/project-analysis");
 
 const PORT = Number(process.env.PORT || 3000);
 const targetFile = path.join(__dirname, "target-app/users.js");
@@ -93,8 +93,28 @@ const server = http.createServer((req, res) => {
       log("Semgrep", "running", "연결된 저장소에 실제 오픈소스 규칙을 실행 중..."); setAnalysisProgress(48, [100, 55, 100, 0]);
       const scan = await scanStaticCodeAsync([project.directory]); const graph = buildRepositoryGraph(project, scan), userSecurityMap = buildUserSecurityMap(project, scan), repairPlan = buildRepairPlan(project, scan); fs.rmSync(project.directory, { recursive: true, force: true }); const scanLog = state.logs.at(-1); scanLog.status = scan.status === "COMPLETED" ? "done" : "failed"; scanLog.detail = scan.status === "COMPLETED" ? `실제 정적 분석 ${scan.findings.length}건을 확인했습니다.` : "Semgrep 실행에 실패했습니다."; setAnalysisProgress(78, [100, 100, 100, 30]);
       log("KG", "done", "파일 구조 · API · 인증 관련 파일 관계를 정리했습니다."); setAnalysisProgress(100, [100, 100, 100, 100]);
-      const output = { projectAnalysis: { name: `${project.owner}/${project.repository}`, fileCount: project.fileCount, files: project.files, routes: project.routes, authFiles: project.authFiles, staticScan: scan, graph, userSecurityMap, repairPlan }, logs: state.logs }; state.lastRun = output; json(res, 200, output);
+      const output = { projectAnalysis: { sourceUrl: payload?.url || "", name: `${project.owner}/${project.repository}`, fileCount: project.fileCount, files: project.files, routes: project.routes, authFiles: project.authFiles, staticScan: scan, graph, userSecurityMap, repairPlan }, logs: state.logs }; state.lastRun = output; json(res, 200, output);
     } catch (error) { log("VibeCheck", "failed", error.message); json(res, 400, { error: error.message }); }
+  });
+  if (pathname === "/api/recheck-project" && req.method === "POST") return readJson(req, async payload => {
+    const sourceUrl = payload?.url || state.lastRun?.projectAnalysis?.sourceUrl;
+    if (!sourceUrl) return json(res, 400, { error: "재점검할 GitHub 저장소 분석 결과가 없습니다." });
+    let project;
+    try {
+      project = await analyzeGitHubRepository(sourceUrl);
+      const before = await scanStaticCodeAsync([project.directory]);
+      const repair = await applySafeRepairProposals(project);
+      const after = await scanStaticCodeAsync([project.directory]);
+      json(res, 200, {
+        sourceUrl,
+        before: { findings: before.findings.length, status: before.status },
+        after: { findings: after.findings.length, status: after.status },
+        applied: repair.applied,
+        unresolved: repair.unresolved,
+        note: "원격 GitHub 저장소에는 변경을 보내지 않았습니다. 새로 복제한 로컬 사본에서만 SHA 고정 패치를 적용하고 다시 정적 분석했습니다."
+      });
+    } catch (error) { json(res, 400, { error: error.message }); }
+    finally { if (project?.directory) fs.rmSync(project.directory, { recursive: true, force: true }); }
   });
   if (pathname === "/api/approve-fix" && req.method === "POST") {
     try { applyAuthorizationPatch(); log("05 사람 승인", "done", "서버 측 최소 권한 패치를 적용했습니다."); log("06 동일 공격 재실행", "running", "원래 공격 요청을 그대로 재생합니다."); return runRealAttack(result => { log("07 재검증", result.verification.verdict === "PASS" ? "done" : "failed", `관측: ${result.evidence.status}, 판정: ${result.verification.verdict}`); json(res, 200, result); }); } catch (error) { return json(res, 409, { error: error.message }); }

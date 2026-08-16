@@ -44,6 +44,42 @@ async function analyzeGitHubRepository(url) {
   }
 }
 
+// 원격 저장소에는 절대 쓰지 않습니다. 복제한 임시 사본에서만,
+// Semgrep이 권장하는 GitHub Action SHA 고정 패치를 적용합니다.
+async function applySafeRepairProposals(project) {
+  const applied = [], unresolved = [], resolvedRefs = new Map();
+  const workflowFiles = (project.allFiles || project.files).filter(file => /^\.github\/workflows\/.*\.(ya?ml)$/i.test(file));
+  const resolveActionRef = async (action, reference) => {
+    const key = `${action}@${reference}`;
+    if (resolvedRefs.has(key)) return resolvedRefs.get(key);
+    try {
+      const output = await run("git", ["ls-remote", `https://github.com/${action}.git`, reference], { timeout: 15000 });
+      const sha = output.trim().split(/\s+/)[0];
+      if (!/^[a-f0-9]{40}$/i.test(sha)) throw new Error("커밋 SHA를 찾지 못했습니다.");
+      resolvedRefs.set(key, sha); return sha;
+    } catch (error) { resolvedRefs.set(key, null); return null; }
+  };
+  for (const file of workflowFiles) {
+    const fullPath = path.join(project.directory, file);
+    let source;
+    try { source = fs.readFileSync(fullPath, "utf8"); } catch { continue; }
+    const matches = [...source.matchAll(/^(\s*uses:\s*)([\w.-]+\/[\w.-]+)@([^\s#]+)(.*)$/gm)];
+    let updated = source;
+    for (const match of matches) {
+      const [line, prefix, action, reference, suffix] = match;
+      if (/^[a-f0-9]{40}$/i.test(reference)) continue;
+      const sha = await resolveActionRef(action, reference);
+      const lineNumber = source.slice(0, match.index).split("\n").length;
+      if (!sha) { unresolved.push({ file, line: lineNumber, action, reference }); continue; }
+      const replacement = `${prefix}${action}@${sha}${suffix}`;
+      updated = updated.replace(line, replacement);
+      applied.push({ file, line: lineNumber, before: line.trim(), after: replacement.trim(), action });
+    }
+    if (updated !== source) fs.writeFileSync(fullPath, updated, "utf8");
+  }
+  return { applied, unresolved };
+}
+
 function buildRepositoryGraph(project, scan) {
   const routeFiles = (project.routes.length ? project.routes : project.files.filter(file => /\.(js|ts|tsx|py|java)$/i.test(file)).slice(0, 3)).slice(0, 5);
   const authFiles = project.authFiles.slice(0, 4);
@@ -248,4 +284,4 @@ function buildRepairPlan(project, scan) {
   return [...unique.values()];
 }
 
-module.exports = { analyzeGitHubRepository, buildRepositoryGraph, buildUserSecurityMap, buildRepairPlan };
+module.exports = { analyzeGitHubRepository, applySafeRepairProposals, buildRepositoryGraph, buildUserSecurityMap, buildRepairPlan };
