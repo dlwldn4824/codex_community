@@ -14,6 +14,8 @@ AI는 코드와 공격 결과의 의미를 이해하고, Symbolic Engine은 사�
 | --- | --- |
 | 라이브 데모 | [https://view-check-three.vercel.app](https://view-check-three.vercel.app/) |
 | 시연 영상 | [https://youtu.be/eyd36YSsI-U](https://youtu.be/eyd36YSsI-U) |
+| 발표 자료 PDF | [VibeCheck.pdf](https://github.com/dlwldn4824/vibe_check/blob/main/docs/slides/VibeCheck.pdf) |
+| 채점 근거 발췌 PDF | [VibeCheck-evaluation-extract.pdf](https://github.com/dlwldn4824/vibe_check/blob/main/docs/slides/VibeCheck-evaluation-extract.pdf) |
 | 로컬 실행 | [http://localhost:3000](http://localhost:3000) |
 | 팀 | 박지원 · 유성호 · 이보민 · 이지우 |
 
@@ -435,6 +437,8 @@ Codex는 한 번 코드를 생성하는 도구가 아니라, 계획부터 배포
 
 | 항목 | 위치 |
 | --- | --- |
+| 발표 자료 PDF | [docs/slides/VibeCheck.pdf](https://github.com/dlwldn4824/vibe_check/blob/main/docs/slides/VibeCheck.pdf) |
+| 채점 근거 발췌 PDF | [docs/slides/VibeCheck-evaluation-extract.pdf](https://github.com/dlwldn4824/vibe_check/blob/main/docs/slides/VibeCheck-evaluation-extract.pdf) |
 | 결선 제출 요약 | [docs/submission/FINAL_SUBMISSION.md](docs/submission/FINAL_SUBMISSION.md) |
 | Value & Viability | [docs/VALUE_AND_VIABILITY.md](docs/VALUE_AND_VIABILITY.md) |
 | Codex Build Log | [docs/CODEX_BUILD_LOG.md](docs/CODEX_BUILD_LOG.md) · [JSON](docs/codex-build-log.json) |

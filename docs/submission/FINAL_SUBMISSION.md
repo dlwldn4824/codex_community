@@ -6,8 +6,8 @@ VibeCheck는 바이브 코딩으로 만든 서비스의 코드 구조를 **서�
 
 - 서비스: <https://view-check-three.vercel.app>
 - 저장소: <https://github.com/dlwldn4824/vibe_check>
-- 발표 자료 전체: [codex-community-full.pdf](../../output/pdf/codex-community-full.pdf)
-- 채점 근거 발췌: [codex-community-evaluation-extract.pdf](../../output/pdf/codex-community-evaluation-extract.pdf)
+- 발표 자료 전체: [VibeCheck.pdf](https://github.com/dlwldn4824/vibe_check/blob/main/docs/slides/VibeCheck.pdf)
+- 채점 근거 발췌: [VibeCheck-evaluation-extract.pdf](https://github.com/dlwldn4824/vibe_check/blob/main/docs/slides/VibeCheck-evaluation-extract.pdf)
 - Codex Build Log: [문서](../CODEX_BUILD_LOG.md) · [JSON](../codex-build-log.json)
 - Value & Viability: [문서](../VALUE_AND_VIABILITY.md)
 
